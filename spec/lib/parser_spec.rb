@@ -142,4 +142,155 @@ RSpec.describe RedhawksSchedule::Parser do
       expect(known).to eq(58)
     end
   end
+
+  describe "filtering and ordering" do
+    let(:mixed) do
+      wrap(<<~XML)
+        <item>
+          <title>1/10 7:00 PM Miami University Hockey vs Denver</title>
+          <ev:startdate>2027-01-10T00:00:00.0000000Z</ev:startdate>
+          <s:opponent>Denver</s:opponent>
+        </item>
+        <item>
+          <title>8/16 7:00 PM Miami University Women's Soccer at Xavier</title>
+          <ev:startdate>2026-08-16T23:00:00.0000000Z</ev:startdate>
+          <s:opponent>Xavier</s:opponent>
+        </item>
+      XML
+    end
+
+    it "sorts ascending by start time" do
+      events = described_class.parse(mixed, now: BEFORE_SEASON)
+      expect(events.map { |e| e[:opponent] }).to eq(%w[Xavier Denver])
+    end
+
+    it "drops events that already started" do
+      events = described_class.parse(mixed, now: Time.utc(2026, 12, 1))
+      expect(events.map { |e| e[:opponent] }).to eq(["Denver"])
+    end
+
+    it "keeps a date-only event through the end of its day, Eastern" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>8/29 Miami University Football vs Ohio</title>
+          <ev:startdate>2026-08-29</ev:startdate>
+          <s:opponent>Ohio</s:opponent>
+        </item>
+      XML
+
+      # The feed's "2026-08-29" is an Eastern calendar date, but it parses to
+      # midnight UTC — which is 8pm Eastern on Aug 28. A plain 24-hour window
+      # would therefore hide this game at 8pm Eastern on Aug 29, while it may
+      # still be being played.
+      #
+      # 11pm Eastern on game day — must still be listed:
+      expect(described_class.parse(xml, now: Time.utc(2026, 8, 30, 3, 0))).not_to be_empty
+      # 3am Eastern the next morning — the day is over:
+      expect(described_class.parse(xml, now: Time.utc(2026, 8, 30, 7, 0))).to be_empty
+    end
+  end
+
+  describe "multi-day collapsing" do
+    def golf_day(date)
+      <<~XML
+        <item>
+          <title>#{date[5, 2].to_i}/#{date[8, 2].to_i} Miami University Men's Golf vs MAC Championship- Talis Park</title>
+          <ev:startdate>#{date}</ev:startdate>
+          <ev:enddate>#{date}</ev:enddate>
+          <s:opponent>MAC Championship- Talis Park</s:opponent>
+        </item>
+      XML
+    end
+
+    it "merges consecutive days into one entry with a day count" do
+      xml = wrap(golf_day("2027-04-30") + golf_day("2027-05-01") + golf_day("2027-05-02"))
+      events = described_class.parse(xml, now: BEFORE_SEASON)
+
+      expect(events.length).to eq(1)
+      expect(events.first[:days]).to eq(3)
+      expect(events.first[:start_utc]).to eq(Time.utc(2027, 4, 30))
+      expect(events.first[:end_utc]).to eq(Time.utc(2027, 5, 2))
+    end
+
+    it "does NOT merge separate series against the same opponent" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>11/7 7:00 PM Miami University Hockey vs Western Michigan</title>
+          <ev:startdate>2026-11-07T00:00:00.0000000Z</ev:startdate>
+          <s:opponent>Western Michigan</s:opponent>
+        </item>
+        <item>
+          <title>2/13 7:00 PM Miami University Hockey vs Western Michigan</title>
+          <ev:startdate>2027-02-13T00:00:00.0000000Z</ev:startdate>
+          <s:opponent>Western Michigan</s:opponent>
+        </item>
+      XML
+
+      expect(described_class.parse(xml, now: BEFORE_SEASON).length).to eq(2)
+    end
+
+    it "does not merge different sports that happen to share a date" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>8/28 7:00 PM Miami University Women's Soccer vs Ohio</title>
+          <ev:startdate>2026-08-28T23:00:00.0000000Z</ev:startdate>
+          <s:opponent>Ohio</s:opponent>
+        </item>
+        <item>
+          <title>8/28 6:00 PM Miami University Women's Volleyball vs Ohio</title>
+          <ev:startdate>2026-08-28T22:00:00.0000000Z</ev:startdate>
+          <s:opponent>Ohio</s:opponent>
+        </item>
+      XML
+
+      expect(described_class.parse(xml, now: BEFORE_SEASON).length).to eq(2)
+    end
+
+    it "merges tournament days even when another sport sorts between them" do
+      # The regression case. Two golf days 17 hours apart with a soccer match
+      # in between: an implementation that only compares against the previous
+      # row leaves these as two rows instead of one.
+      xml = wrap(
+        golf_day("2026-08-29") + <<~XML + golf_day("2026-08-30")
+          <item>
+            <title>8/29 7:00 PM Miami University Women's Soccer vs Butler</title>
+            <ev:startdate>2026-08-29T23:00:00.0000000Z</ev:startdate>
+            <s:opponent>Butler</s:opponent>
+          </item>
+        XML
+      )
+
+      events = described_class.parse(xml, now: BEFORE_SEASON)
+      golf = events.select { |e| e[:sport] == "Men's Golf" }
+
+      expect(golf.length).to eq(1)
+      expect(golf.first[:days]).to eq(2)
+    end
+
+    it "reduces the real feed from 141 items to 101 rows" do
+      xml = File.read(File.join(__dir__, "../fixtures/calendar.rss"))
+      events = described_class.parse(xml, now: BEFORE_SEASON)
+
+      expect(events.length).to eq(101)
+      expect(events.count { |e| e[:days] > 1 }).to eq(36)
+      # Nothing is dropped by collapsing — every original item is accounted for.
+      expect(events.sum { |e| e[:days] }).to eq(141)
+    end
+
+    it "leaves no two rows for the same matchup within the merge window" do
+      xml = File.read(File.join(__dir__, "../fixtures/calendar.rss"))
+      events = described_class.parse(xml, now: BEFORE_SEASON)
+
+      last_end = {}
+      leaks =
+        events.count do |event|
+          key = [event[:sport], event[:opponent]]
+          previous_end = last_end[key]
+          last_end[key] = event[:end_utc]
+          previous_end && (event[:start_utc] - previous_end) <= 48 * 60 * 60
+        end
+
+      expect(leaks).to eq(0)
+    end
+  end
 end

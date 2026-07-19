@@ -20,7 +20,13 @@ module RedhawksSchedule
     TEAM_PREFIX = /\AMiami University\s+/i
     SEPARATOR = /\s+(vs|at)\s+/i
 
-    DAY_SECONDS = 86_400
+    # A date-only event has no time of day, and the feed publishes Eastern
+    # calendar dates. Midnight UTC on such a date is 8pm Eastern the PREVIOUS
+    # day, so a plain 24-hour window drops the game at 8pm Eastern on the day
+    # it is actually played. 30 hours covers the full Eastern day in both EDT
+    # and EST, lingering at most ~2 hours past midnight Eastern — much better
+    # than hiding a game that has not been played yet.
+    DATE_ONLY_GRACE = 30 * 60 * 60
     COLLAPSE_WINDOW = 48 * 60 * 60
 
     def self.parse(xml, now: Time.now.utc)
@@ -77,12 +83,9 @@ module RedhawksSchedule
       [match.pre_match.strip, match[1].casecmp?("at") ? "away" : "home", match.post_match.strip]
     end
 
-    # A date-only event has no time of day, so it stays listed for its whole
-    # day. Anchoring it to midnight UTC and filtering on that would drop
-    # tonight's TBA game at 8pm the previous evening, Eastern.
     def upcoming(events)
       events.reject do |event|
-        cutoff = event[:time_known] ? event[:start_utc] : event[:start_utc] + DAY_SECONDS
+        cutoff = event[:time_known] ? event[:start_utc] : event[:start_utc] + DATE_ONLY_GRACE
         cutoff < @now
       end
     end
