@@ -293,4 +293,80 @@ RSpec.describe RedhawksSchedule::Parser do
       expect(leaks).to eq(0)
     end
   end
+
+  describe "malformed input" do
+    it "returns empty for non-XML" do
+      expect(described_class.parse("<html><body>502 Bad Gateway</body></html>")).to eq([])
+    end
+
+    it "returns empty for an empty string" do
+      expect(described_class.parse("")).to eq([])
+    end
+
+    it "returns empty for nil" do
+      expect(described_class.parse(nil)).to eq([])
+    end
+
+    it "skips items with no start date but keeps the rest" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>8/16 7:00 PM Miami University Women's Soccer at Xavier</title>
+        </item>
+        <item>
+          <title>8/20 7:00 PM Miami University Women's Soccer vs Morehead State</title>
+          <ev:startdate>2026-08-20T23:00:00.0000000Z</ev:startdate>
+          <s:opponent>Morehead State</s:opponent>
+        </item>
+      XML
+
+      events = described_class.parse(xml, now: BEFORE_SEASON)
+      expect(events.map { |e| e[:opponent] }).to eq(["Morehead State"])
+    end
+
+    it "skips items whose start date is an unparseable string" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>8/16 7:00 PM Miami University Hockey vs Denver</title>
+          <ev:startdate>not a date</ev:startdate>
+        </item>
+      XML
+
+      expect(described_class.parse(xml, now: BEFORE_SEASON)).to eq([])
+    end
+
+    it "tolerates a literal TBA timestamp" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>8/16 Miami University Hockey vs Denver</title>
+          <ev:startdate>TBA</ev:startdate>
+        </item>
+      XML
+
+      expect { described_class.parse(xml, now: BEFORE_SEASON) }.not_to raise_error
+    end
+
+    it "handles a title with no vs/at separator by treating it as the sport" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>8/16 Miami University Cross Country Championship</title>
+          <ev:startdate>2026-08-16</ev:startdate>
+        </item>
+      XML
+
+      event = described_class.parse(xml, now: BEFORE_SEASON).first
+      expect(event[:sport]).to eq("Cross Country Championship")
+      expect(event[:home_away]).to eq("home")
+    end
+
+    it "decodes HTML entities in titles" do
+      xml = wrap(<<~XML)
+        <item>
+          <title>8/16 7:00 PM Miami University Women&#39;s Soccer at Xavier</title>
+          <ev:startdate>2026-08-16T23:00:00.0000000Z</ev:startdate>
+        </item>
+      XML
+
+      expect(described_class.parse(xml, now: BEFORE_SEASON).first[:sport]).to eq("Women's Soccer")
+    end
+  end
 end
