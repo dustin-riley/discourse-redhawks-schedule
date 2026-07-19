@@ -343,6 +343,26 @@ RSpec.describe RedhawksSchedule::Parser do
       XML
 
       expect { described_class.parse(xml, now: BEFORE_SEASON) }.not_to raise_error
+      expect(described_class.parse(xml, now: BEFORE_SEASON)).to eq([])
+    end
+
+    it "does not raise on a response truncated mid-item" do
+      # The realistic failure mode: an HTTP response cut off mid-stream,
+      # unlike the well-formed-but-wrong `<html>...</html>` case above.
+      xml = <<~XML
+        <?xml version="1.0" encoding="utf-8"?>
+        <rss version="2.0"
+             xmlns:ev="http://purl.org/rss/1.0/modules/event/"
+             xmlns:s="http://sidearmsports.com/schemas/cal_rss/1.0/">
+          <channel>
+            <item>
+              <title>8/16 7:00 PM Miami University Women's Soccer at Xavier</title>
+              <ev:startdate>2026-08-16T23:00:00.0000000Z</ev:startdate>
+      XML
+
+      result = nil
+      expect { result = described_class.parse(xml, now: BEFORE_SEASON) }.not_to raise_error
+      expect(result).to be_an(Array)
     end
 
     it "handles a title with no vs/at separator by treating it as the sport" do
