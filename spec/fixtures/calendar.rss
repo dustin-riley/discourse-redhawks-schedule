@@ -1,0 +1,2553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ev="http://purl.org/rss/1.0/modules/event/" xmlns:s="http://sidearmsports.com/schemas/cal_rss/1.0/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>Miami University Athletics</title>
+<link>https://miamiredhawks.com</link>
+<atom:link rel="self" href="https://miamiredhawks.com/calendar.ashx/calendar.rss" />
+<description></description>
+<item>
+<title>8/8 7:00 PM Miami University Women&#39;s Soccer vs Purdue Fort Wayne (Exhibition)</title>
+<description>Miami University Women&#39;s Soccer vs Purdue Fort Wayne (Exhibition)\n https://miamiredhawks.com/calendar.aspx?game_id=20924&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20924&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20924&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-08-08T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-09T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-08T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-08T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Purdue-Fort-Wayne.png</s:opponentlogo>
+<s:opponent>Purdue Fort Wayne (Exhibition)</s:opponent>
+<s:gameid>20924</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/12 2:00 PM Miami University Women&#39;s Volleyball vs Xavier- Exhibition</title>
+<description>Miami University Women&#39;s Volleyball vs Xavier- Exhibition\n https://miamiredhawks.com/calendar.aspx?game_id=20894&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20894&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20894&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-08-12T18:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-12T20:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-12T14:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-12T16:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Xavier_.png</s:opponentlogo>
+<s:opponent>Xavier</s:opponent>
+<s:gameid>20894</s:gameid>
+<s:gamepromoname>Exhibition</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/16 7:00 PM Miami University Women&#39;s Soccer at Xavier</title>
+<description>Miami University Women&#39;s Soccer at Xavier\n https://miamiredhawks.com/calendar.aspx?game_id=20926&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20926&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20926&amp;sport_id=16</guid>
+<ev:location>Cincinnati, Ohio</ev:location>
+<ev:startdate>2026-08-16T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-17T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-16T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-16T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Xavier_.png</s:opponentlogo>
+<s:opponent>Xavier</s:opponent>
+<s:gameid>20926</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/20 7:00 PM Miami University Women&#39;s Soccer vs Morehead State</title>
+<description>Miami University Women&#39;s Soccer vs Morehead State\n https://miamiredhawks.com/calendar.aspx?game_id=20927&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20927&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20927&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-08-20T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-21T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-20T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-20T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/n6.png</s:opponentlogo>
+<s:opponent>Morehead State</s:opponent>
+<s:gameid>20927</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/22 2:00 PM Miami University Women&#39;s Volleyball vs Wright State- Exhibition</title>
+<description>Miami University Women&#39;s Volleyball vs Wright State- Exhibition\n https://miamiredhawks.com/calendar.aspx?game_id=20895&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20895&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20895&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-08-22T18:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-22T20:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-22T14:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-22T16:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Wright_State_Raiders_200x200.png</s:opponentlogo>
+<s:opponent>Wright State</s:opponent>
+<s:gameid>20895</s:gameid>
+<s:gamepromoname>Exhibition</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/23 7:00 PM Miami University Women&#39;s Soccer vs Butler</title>
+<description>Miami University Women&#39;s Soccer vs Butler\n https://miamiredhawks.com/calendar.aspx?game_id=20928&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20928&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20928&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-08-23T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-24T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-23T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-23T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Butler-Bulldog.png</s:opponentlogo>
+<s:opponent>Butler</s:opponent>
+<s:gameid>20928</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/27 8:00 PM Miami University Women&#39;s Soccer at Middle Tennessee</title>
+<description>Miami University Women&#39;s Soccer at Middle Tennessee\n https://miamiredhawks.com/calendar.aspx?game_id=20929&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20929&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20929&amp;sport_id=16</guid>
+<ev:location>Murfreesboro, Tenn.</ev:location>
+<ev:startdate>2026-08-28T00:00:00.0000001Z</ev:startdate>
+<ev:enddate>2026-08-28T02:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-27T20:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-27T22:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Middle-Tenn.png</s:opponentlogo>
+<s:opponent>Middle Tennessee</s:opponent>
+<s:gameid>20929</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/28 11:00 AM Miami University Women&#39;s Volleyball vs McNeese</title>
+<description>Miami University Women&#39;s Volleyball vs McNeese\n https://miamiredhawks.com/calendar.aspx?game_id=20896&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20896&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20896&amp;sport_id=20</guid>
+<ev:location>Huntsville, Texas</ev:location>
+<ev:startdate>2026-08-28T15:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-28T17:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-28T11:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-28T13:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/mcneese_state_logo.png</s:opponentlogo>
+<s:opponent>McNeese</s:opponent>
+<s:gameid>20896</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/28 8:00 PM Miami University Women&#39;s Volleyball at Sam Houston</title>
+<description>Miami University Women&#39;s Volleyball at Sam Houston\n https://miamiredhawks.com/calendar.aspx?game_id=20901&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20901&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20901&amp;sport_id=20</guid>
+<ev:location>Huntsville, Texas</ev:location>
+<ev:startdate>2026-08-29T00:00:00.0000001Z</ev:startdate>
+<ev:enddate>2026-08-29T02:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-28T20:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-28T22:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Sam_Houston.png</s:opponentlogo>
+<s:opponent>Sam Houston</s:opponent>
+<s:gameid>20901</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/29 Miami University Men&#39;s Golf vs Virtues Intercollegiate- Virtues Golf Club</title>
+<description>Miami University Men&#39;s Golf vs Virtues Intercollegiate- Virtues Golf Club\n https://miamiredhawks.com/calendar.aspx?game_id=20952&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20952&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20952&amp;sport_id=8</guid>
+<ev:location>Nashport, Ohio</ev:location>
+<ev:startdate>2026-08-29</ev:startdate>
+<ev:enddate>2026-08-29T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-29</s:localstartdate>
+<s:localenddate>2026-08-29T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>Virtues Intercollegiate</s:opponent>
+<s:gameid>20952</s:gameid>
+<s:gamepromoname>Virtues Golf Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/29 12:00 PM Miami University Women&#39;s Volleyball vs Cal State Fullerton</title>
+<description>Miami University Women&#39;s Volleyball vs Cal State Fullerton\n https://miamiredhawks.com/calendar.aspx?game_id=20897&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20897&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20897&amp;sport_id=20</guid>
+<ev:location>Huntsville, Texas</ev:location>
+<ev:startdate>2026-08-29T16:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-29T18:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-29T12:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-29T14:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Fullerton.png</s:opponentlogo>
+<s:opponent>Cal State Fullerton</s:opponent>
+<s:gameid>20897</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/30 Miami University Men&#39;s Golf vs Virtues Intercollegiate- Virtues Golf Club</title>
+<description>Miami University Men&#39;s Golf vs Virtues Intercollegiate- Virtues Golf Club\n https://miamiredhawks.com/calendar.aspx?game_id=20951&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20951&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20951&amp;sport_id=8</guid>
+<ev:location>Nashport, Ohio</ev:location>
+<ev:startdate>2026-08-30</ev:startdate>
+<ev:enddate>2026-08-30T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-30</s:localstartdate>
+<s:localenddate>2026-08-30T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>Virtues Intercollegiate</s:opponent>
+<s:gameid>20951</s:gameid>
+<s:gamepromoname>Virtues Golf Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>8/30 7:00 PM Miami University Women&#39;s Soccer vs Youngstown State</title>
+<description>Miami University Women&#39;s Soccer vs Youngstown State\n https://miamiredhawks.com/calendar.aspx?game_id=20930&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20930&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20930&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-08-30T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-08-31T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-08-30T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-08-30T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Youngstown.png</s:opponentlogo>
+<s:opponent>Youngstown State</s:opponent>
+<s:gameid>20930</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/3 4:00 PM Miami University Women&#39;s Soccer at Eastern Kentucky</title>
+<description>Miami University Women&#39;s Soccer at Eastern Kentucky\n https://miamiredhawks.com/calendar.aspx?game_id=20931&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20931&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20931&amp;sport_id=16</guid>
+<ev:location>Richmond, Ky.</ev:location>
+<ev:startdate>2026-09-03T20:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-03T22:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-03T16:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-03T18:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/E Logo for Sidearm.png</s:opponentlogo>
+<s:opponent>Eastern Kentucky</s:opponent>
+<s:gameid>20931</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/4 10:30 AM Miami University Women&#39;s Volleyball vs Evansville</title>
+<description>Miami University Women&#39;s Volleyball vs Evansville\n https://miamiredhawks.com/calendar.aspx?game_id=20898&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20898&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20898&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-04T14:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-04T16:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-04T10:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-04T12:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Aces.png</s:opponentlogo>
+<s:opponent>Evansville</s:opponent>
+<s:gameid>20898</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/4 1:30 PM Miami University Women&#39;s Volleyball vs Purdue Fort Wayne vs. Kansas City</title>
+<description>Miami University Women&#39;s Volleyball vs Purdue Fort Wayne vs. Kansas City\n https://miamiredhawks.com/calendar.aspx?game_id=21020&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=21020&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=21020&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-04T17:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-04T19:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-04T13:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-04T15:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo></s:opponentlogo>
+<s:opponent>Purdue Fort Wayne vs. Kansas City</s:opponent>
+<s:gameid>21020</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/4 4:30 PM Miami University Women&#39;s Volleyball vs Evansville vs. Purdue Fort Wayne</title>
+<description>Miami University Women&#39;s Volleyball vs Evansville vs. Purdue Fort Wayne\n https://miamiredhawks.com/calendar.aspx?game_id=21021&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=21021&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=21021&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-04T20:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-04T22:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-04T16:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-04T18:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo></s:opponentlogo>
+<s:opponent>Evansville vs. Purdue Fort Wayne</s:opponent>
+<s:gameid>21021</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/4 7:30 PM Miami University Women&#39;s Volleyball vs Kansas City</title>
+<description>Miami University Women&#39;s Volleyball vs Kansas City\n https://miamiredhawks.com/calendar.aspx?game_id=20899&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20899&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20899&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-04T23:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-05T01:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-04T19:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-04T21:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/umkc_logo.png</s:opponentlogo>
+<s:opponent>Kansas City</s:opponent>
+<s:gameid>20899</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/5 12:00 PM Miami University Women&#39;s Volleyball vs Kansas City vs. Evansville</title>
+<description>Miami University Women&#39;s Volleyball vs Kansas City vs. Evansville\n https://miamiredhawks.com/calendar.aspx?game_id=21022&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=21022&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=21022&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-05T16:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-05T18:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-05T12:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-05T14:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo></s:opponentlogo>
+<s:opponent>Kansas City vs. Evansville</s:opponent>
+<s:gameid>21022</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/5 12:30 PM Miami University Football at Pittsburgh</title>
+<description>Miami University Football at Pittsburgh\nTV: CW Network\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\n https://miamiredhawks.com/calendar.aspx?game_id=20836&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20836&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20836&amp;sport_id=4</guid>
+<ev:location>Pittsburgh, Pa.</ev:location>
+<ev:startdate>2026-09-05T16:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-05T19:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-05T12:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-05T15:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/pitt_logo_200x200.png</s:opponentlogo>
+<s:opponent>Pittsburgh</s:opponent>
+<s:gameid>20836</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/5 3:00 PM Miami University Women&#39;s Volleyball vs Purdue Fort Wayne</title>
+<description>Miami University Women&#39;s Volleyball vs Purdue Fort Wayne\n https://miamiredhawks.com/calendar.aspx?game_id=20900&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20900&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20900&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-05T19:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-05T21:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-05T15:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-05T17:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Purdue-Fort-Wayne.png</s:opponentlogo>
+<s:opponent>Purdue Fort Wayne</s:opponent>
+<s:gameid>20900</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/6 Miami University Men&#39;s Golf at Island Resort Intercollegiate- Sage Run Golf Course</title>
+<description>Miami University Men&#39;s Golf at Island Resort Intercollegiate- Sage Run Golf Course\n https://miamiredhawks.com/calendar.aspx?game_id=20953&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20953&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20953&amp;sport_id=8</guid>
+<ev:location>Harris, Mich.</ev:location>
+<ev:startdate>2026-09-06</ev:startdate>
+<ev:enddate>2026-09-06T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-06</s:localstartdate>
+<s:localenddate>2026-09-06T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/South_Dakota_State.png</s:opponentlogo>
+<s:opponent>Island Resort Intercollegiate</s:opponent>
+<s:gameid>20953</s:gameid>
+<s:gamepromoname>Sage Run Golf Course</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/6 6:00 PM Miami University Women&#39;s Soccer vs LSU</title>
+<description>Miami University Women&#39;s Soccer vs LSU\n https://miamiredhawks.com/calendar.aspx?game_id=20925&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20925&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20925&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-09-06T22:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-07T00:00:00.0000001Z</ev:enddate>
+<s:localstartdate>2026-09-06T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-06T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/LSU_New.png</s:opponentlogo>
+<s:opponent>LSU</s:opponent>
+<s:gameid>20925</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/7 Miami University Men&#39;s Golf at Island Resort Intercollegiate- Sage Run Golf Course</title>
+<description>Miami University Men&#39;s Golf at Island Resort Intercollegiate- Sage Run Golf Course\n https://miamiredhawks.com/calendar.aspx?game_id=20954&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20954&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20954&amp;sport_id=8</guid>
+<ev:location>Harris, Mich.</ev:location>
+<ev:startdate>2026-09-07</ev:startdate>
+<ev:enddate>2026-09-07T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-07</s:localstartdate>
+<s:localenddate>2026-09-07T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/South_Dakota_State.png</s:opponentlogo>
+<s:opponent>Island Resort Intercollegiate</s:opponent>
+<s:gameid>20954</s:gameid>
+<s:gamepromoname>Sage Run Golf Course</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/11 1:30 PM Miami University Women&#39;s Volleyball vs Nicholls</title>
+<description>Miami University Women&#39;s Volleyball vs Nicholls\n https://miamiredhawks.com/calendar.aspx?game_id=20902&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20902&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20902&amp;sport_id=20</guid>
+<ev:location>Montgomery, Ala.</ev:location>
+<ev:startdate>2026-09-11T17:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-11T19:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-11T13:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-11T15:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Nicholls-State.png</s:opponentlogo>
+<s:opponent>Nicholls</s:opponent>
+<s:gameid>20902</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/11 7:00 PM Miami University Women&#39;s Soccer vs Western Carolina</title>
+<description>Miami University Women&#39;s Soccer vs Western Carolina\n https://miamiredhawks.com/calendar.aspx?game_id=20932&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20932&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20932&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-09-11T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-12T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-11T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-11T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Western_Carolina_PNG.png</s:opponentlogo>
+<s:opponent>Western Carolina</s:opponent>
+<s:gameid>20932</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/11 8:00 PM Miami University Women&#39;s Volleyball vs Alabama State</title>
+<description>Miami University Women&#39;s Volleyball vs Alabama State\n https://miamiredhawks.com/calendar.aspx?game_id=20904&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20904&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20904&amp;sport_id=20</guid>
+<ev:location>Montgomery, Ala.</ev:location>
+<ev:startdate>2026-09-12T00:00:00.0000001Z</ev:startdate>
+<ev:enddate>2026-09-12T02:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-11T20:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-11T22:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo></s:opponentlogo>
+<s:opponent>Alabama State</s:opponent>
+<s:gameid>20904</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/12 12:00 PM Miami University Women&#39;s Volleyball vs South Carolina State</title>
+<description>Miami University Women&#39;s Volleyball vs South Carolina State\n https://miamiredhawks.com/calendar.aspx?game_id=20903&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20903&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20903&amp;sport_id=20</guid>
+<ev:location>Montgomery, Ala.</ev:location>
+<ev:startdate>2026-09-12T16:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-12T18:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-12T12:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-12T14:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/s5.png</s:opponentlogo>
+<s:opponent>South Carolina State</s:opponent>
+<s:gameid>20903</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/12 1:00 PM Miami University Football vs Holy Cross</title>
+<description>Miami University Football vs Holy Cross\nTV: ESPN+\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\nTickets: https://redhawktix.evenue.net/events/FBSE\n https://miamiredhawks.com/calendar.aspx?game_id=20837&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20837&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20837&amp;sport_id=4</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-12T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-12T20:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-12T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-12T16:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Holy-Cross.png</s:opponentlogo>
+<s:opponent>Holy Cross</s:opponent>
+<s:gameid>20837</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+<s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+</s:links>
+</item>
+<item>
+<title>9/14 Miami University Men&#39;s Golf vs RedHawk Intercollegiate- Pittsburgh Field Club</title>
+<description>Miami University Men&#39;s Golf vs RedHawk Intercollegiate- Pittsburgh Field Club\n https://miamiredhawks.com/calendar.aspx?game_id=20955&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20955&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20955&amp;sport_id=8</guid>
+<ev:location>Pittsburgh, Pa.</ev:location>
+<ev:startdate>2026-09-14</ev:startdate>
+<ev:enddate>2026-09-14T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-14</s:localstartdate>
+<s:localenddate>2026-09-14T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>RedHawk Intercollegiate</s:opponent>
+<s:gameid>20955</s:gameid>
+<s:gamepromoname>Pittsburgh Field Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/15 Miami University Men&#39;s Golf vs RedHawk Intercollegiate- Pittsburgh Field Club</title>
+<description>Miami University Men&#39;s Golf vs RedHawk Intercollegiate- Pittsburgh Field Club\n https://miamiredhawks.com/calendar.aspx?game_id=20956&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20956&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20956&amp;sport_id=8</guid>
+<ev:location>Pittsburgh, Pa.</ev:location>
+<ev:startdate>2026-09-15</ev:startdate>
+<ev:enddate>2026-09-15T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-15</s:localstartdate>
+<s:localenddate>2026-09-15T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>RedHawk Intercollegiate</s:opponent>
+<s:gameid>20956</s:gameid>
+<s:gamepromoname>Pittsburgh Field Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/17 7:00 PM Miami University Women&#39;s Soccer vs Akron</title>
+<description>Miami University Women&#39;s Soccer vs Akron\n https://miamiredhawks.com/calendar.aspx?game_id=20933&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20933&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20933&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-09-17T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-18T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-17T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-17T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/android-chrome-192x192.png</s:opponentlogo>
+<s:opponent>Akron</s:opponent>
+<s:gameid>20933</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/18 6:30 PM Miami University Women&#39;s Volleyball vs Northern Kentucky</title>
+<description>Miami University Women&#39;s Volleyball vs Northern Kentucky\n https://miamiredhawks.com/calendar.aspx?game_id=20905&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20905&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20905&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-18T22:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-19T00:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-18T18:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-18T20:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/nku_logo.png</s:opponentlogo>
+<s:opponent>Northern Kentucky</s:opponent>
+<s:gameid>20905</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/19 3:30 PM Miami University Football at Cincinnati</title>
+<description>Miami University Football at Cincinnati\nTV: ESPN+\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\n https://miamiredhawks.com/calendar.aspx?game_id=20838&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20838&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20838&amp;sport_id=4</guid>
+<ev:location>Cincinnati Ohio</ev:location>
+<ev:startdate>2026-09-19T19:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-19T22:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-19T15:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-19T18:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/University-of-Cincinnati.png</s:opponentlogo>
+<s:opponent>Cincinnati</s:opponent>
+<s:gameid>20838</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/19 4:00 PM Miami University Women&#39;s Volleyball at Northern Kentucky</title>
+<description>Miami University Women&#39;s Volleyball at Northern Kentucky\n https://miamiredhawks.com/calendar.aspx?game_id=20906&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20906&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20906&amp;sport_id=20</guid>
+<ev:location>Highland Heights, Ky.</ev:location>
+<ev:startdate>2026-09-19T20:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-19T22:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-19T16:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-19T18:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/nku_logo.png</s:opponentlogo>
+<s:opponent>Northern Kentucky</s:opponent>
+<s:gameid>20906</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/20 Miami University Men&#39;s Golf at 2nd Swing Gopher Invitational- Windsong Farm Golf Club</title>
+<description>Miami University Men&#39;s Golf at 2nd Swing Gopher Invitational- Windsong Farm Golf Club\n https://miamiredhawks.com/calendar.aspx?game_id=20957&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20957&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20957&amp;sport_id=8</guid>
+<ev:location>Maple Grove, Minn.</ev:location>
+<ev:startdate>2026-09-20</ev:startdate>
+<ev:enddate>2026-09-20T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-20</s:localstartdate>
+<s:localenddate>2026-09-20T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Minnesota-200.png</s:opponentlogo>
+<s:opponent>2nd Swing Gopher Invitational</s:opponent>
+<s:gameid>20957</s:gameid>
+<s:gamepromoname>Windsong Farm Golf Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/20 1:00 PM Miami University Women&#39;s Soccer at Kent State</title>
+<description>Miami University Women&#39;s Soccer at Kent State\n https://miamiredhawks.com/calendar.aspx?game_id=20934&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20934&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20934&amp;sport_id=16</guid>
+<ev:location>Kent, Ohio</ev:location>
+<ev:startdate>2026-09-20T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-20T19:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-20T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-20T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/kent_state_new.png</s:opponentlogo>
+<s:opponent>Kent State</s:opponent>
+<s:gameid>20934</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/21 Miami University Men&#39;s Golf at 2nd Swing Gopher Invitational- Windsong Farm Golf Club</title>
+<description>Miami University Men&#39;s Golf at 2nd Swing Gopher Invitational- Windsong Farm Golf Club\n https://miamiredhawks.com/calendar.aspx?game_id=20958&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20958&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20958&amp;sport_id=8</guid>
+<ev:location>Maple Grove, Minn.</ev:location>
+<ev:startdate>2026-09-21</ev:startdate>
+<ev:enddate>2026-09-21T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-21</s:localstartdate>
+<s:localenddate>2026-09-21T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Minnesota-200.png</s:opponentlogo>
+<s:opponent>2nd Swing Gopher Invitational</s:opponent>
+<s:gameid>20958</s:gameid>
+<s:gamepromoname>Windsong Farm Golf Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/24 6:00 PM Miami University Women&#39;s Volleyball at Bowling Green</title>
+<description>Miami University Women&#39;s Volleyball at Bowling Green\n https://miamiredhawks.com/calendar.aspx?game_id=20907&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20907&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20907&amp;sport_id=20</guid>
+<ev:location>Bowling Green, Ohio</ev:location>
+<ev:startdate>2026-09-24T22:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-25T00:00:00.0000001Z</ev:enddate>
+<s:localstartdate>2026-09-24T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-24T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Bowling_Green_200x200_Logo.png</s:opponentlogo>
+<s:opponent>Bowling Green</s:opponent>
+<s:gameid>20907</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/25 6:00 PM Miami University Women&#39;s Volleyball at Bowling Green</title>
+<description>Miami University Women&#39;s Volleyball at Bowling Green\n https://miamiredhawks.com/calendar.aspx?game_id=20908&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20908&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20908&amp;sport_id=20</guid>
+<ev:location>Bowling Green, Ohio</ev:location>
+<ev:startdate>2026-09-25T22:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-26T00:00:00.0000001Z</ev:enddate>
+<s:localstartdate>2026-09-25T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-25T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Bowling_Green_200x200_Logo.png</s:opponentlogo>
+<s:opponent>Bowling Green</s:opponent>
+<s:gameid>20908</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/26 Miami University Football vs Connecticut- Homecoming</title>
+<description>Miami University Football vs Connecticut- Homecoming\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\nTickets: https://redhawktix.evenue.net/events/FBSE\n https://miamiredhawks.com/calendar.aspx?game_id=20839&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20839&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20839&amp;sport_id=4</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-26</ev:startdate>
+<ev:enddate>2026-09-26T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-26</s:localstartdate>
+<s:localenddate>2026-09-26T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Husky_.png</s:opponentlogo>
+<s:opponent>Connecticut</s:opponent>
+<s:gameid>20839</s:gameid>
+<s:gamepromoname>Homecoming</s:gamepromoname>
+<s:links>
+<s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+</s:links>
+</item>
+<item>
+<title>9/27 Miami University Men&#39;s Golf vs Alumni Outing- Hueston Woods Golf Course</title>
+<description>Miami University Men&#39;s Golf vs Alumni Outing- Hueston Woods Golf Course\n https://miamiredhawks.com/calendar.aspx?game_id=20959&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20959&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20959&amp;sport_id=8</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-09-27</ev:startdate>
+<ev:enddate>2026-09-27T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-27</s:localstartdate>
+<s:localenddate>2026-09-27T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>Alumni Outing</s:opponent>
+<s:gameid>20959</s:gameid>
+<s:gamepromoname>Hueston Woods Golf Course</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>9/27 1:00 PM Miami University Women&#39;s Soccer vs Ball State</title>
+<description>Miami University Women&#39;s Soccer vs Ball State\n https://miamiredhawks.com/calendar.aspx?game_id=20935&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20935&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20935&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-09-27T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-09-27T19:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-09-27T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-09-27T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Ball_State_200x200.png</s:opponentlogo>
+<s:opponent>Ball State</s:opponent>
+<s:gameid>20935</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/1 6:30 PM Miami University Women&#39;s Volleyball vs Buffalo</title>
+<description>Miami University Women&#39;s Volleyball vs Buffalo\n https://miamiredhawks.com/calendar.aspx?game_id=20909&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20909&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20909&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-01T22:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-02T00:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-01T18:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-01T20:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/BuffaloLogo2019.png</s:opponentlogo>
+<s:opponent>Buffalo</s:opponent>
+<s:gameid>20909</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/1 7:00 PM Miami University Women&#39;s Soccer vs Buffalo</title>
+<description>Miami University Women&#39;s Soccer vs Buffalo\n https://miamiredhawks.com/calendar.aspx?game_id=20936&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20936&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20936&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-10-01T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-02T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-01T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-01T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/BuffaloLogo2019.png</s:opponentlogo>
+<s:opponent>Buffalo</s:opponent>
+<s:gameid>20936</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/2 Miami University Men&#39;s Golf vs The Indy at Forest Hills (Individuals Only)- Forest Hills</title>
+<description>Miami University Men&#39;s Golf vs The Indy at Forest Hills (Individuals Only)- Forest Hills\n https://miamiredhawks.com/calendar.aspx?game_id=20960&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20960&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20960&amp;sport_id=8</guid>
+<ev:location>Richmond, Ind.</ev:location>
+<ev:startdate>2026-10-02</ev:startdate>
+<ev:enddate>2026-10-02T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-02</s:localstartdate>
+<s:localenddate>2026-10-02T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>The Indy at Forest Hills (Individuals Only)</s:opponent>
+<s:gameid>20960</s:gameid>
+<s:gamepromoname>Forest Hills</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/2 Miami University Hockey at Northern Michigan</title>
+<description>Miami University Hockey at Northern Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20850&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20850&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20850&amp;sport_id=9</guid>
+<ev:location>Marquette, Mich.</ev:location>
+<ev:startdate>2026-10-02</ev:startdate>
+<ev:enddate>2026-10-02T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-02</s:localstartdate>
+<s:localenddate>2026-10-02T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/NMU_Athletics_Wildcat_Head_Mark_RGB.png</s:opponentlogo>
+<s:opponent>Northern Michigan</s:opponent>
+<s:gameid>20850</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/2 6:30 PM Miami University Women&#39;s Volleyball vs Buffalo</title>
+<description>Miami University Women&#39;s Volleyball vs Buffalo\n https://miamiredhawks.com/calendar.aspx?game_id=20910&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20910&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20910&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-02T22:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-03T00:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-02T18:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-02T20:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/BuffaloLogo2019.png</s:opponentlogo>
+<s:opponent>Buffalo</s:opponent>
+<s:gameid>20910</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/3 Miami University Football vs Bowling Green</title>
+<description>Miami University Football vs Bowling Green\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\nTickets: https://redhawktix.evenue.net/events/FBSE\n https://miamiredhawks.com/calendar.aspx?game_id=20840&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20840&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20840&amp;sport_id=4</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-03</ev:startdate>
+<ev:enddate>2026-10-03T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-03</s:localstartdate>
+<s:localenddate>2026-10-03T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Bowling_Green_200x200_Logo.png</s:opponentlogo>
+<s:opponent>Bowling Green</s:opponent>
+<s:gameid>20840</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+<s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+</s:links>
+</item>
+<item>
+<title>10/3 Miami University Hockey at Northern Michigan</title>
+<description>Miami University Hockey at Northern Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20851&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20851&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20851&amp;sport_id=9</guid>
+<ev:location>Marquette, Mich.</ev:location>
+<ev:startdate>2026-10-03</ev:startdate>
+<ev:enddate>2026-10-03T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-03</s:localstartdate>
+<s:localenddate>2026-10-03T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/NMU_Athletics_Wildcat_Head_Mark_RGB.png</s:opponentlogo>
+<s:opponent>Northern Michigan</s:opponent>
+<s:gameid>20851</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/4 1:00 PM Miami University Women&#39;s Soccer at Central Michigan</title>
+<description>Miami University Women&#39;s Soccer at Central Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20937&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20937&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20937&amp;sport_id=16</guid>
+<ev:location>Mount Pleasant, Mich.</ev:location>
+<ev:startdate>2026-10-04T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-04T19:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-04T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-04T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/c_200x200.png</s:opponentlogo>
+<s:opponent>Central Michigan</s:opponent>
+<s:gameid>20937</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/6 6:00 PM Miami University Women&#39;s Volleyball at Ball State</title>
+<description>Miami University Women&#39;s Volleyball at Ball State\n https://miamiredhawks.com/calendar.aspx?game_id=20911&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20911&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20911&amp;sport_id=20</guid>
+<ev:location>Muncie, Ind.</ev:location>
+<ev:startdate>2026-10-06T22:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-07T00:00:00.0000001Z</ev:enddate>
+<s:localstartdate>2026-10-06T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-06T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Ball_State_200x200.png</s:opponentlogo>
+<s:opponent>Ball State</s:opponent>
+<s:gameid>20911</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/9 6:30 PM Miami University Women&#39;s Volleyball vs Central Michigan</title>
+<description>Miami University Women&#39;s Volleyball vs Central Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20912&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20912&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20912&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-09T22:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-10T00:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-09T18:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-09T20:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/c_200x200.png</s:opponentlogo>
+<s:opponent>Central Michigan</s:opponent>
+<s:gameid>20912</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/10 Miami University Football at Massachusetts</title>
+<description>Miami University Football at Massachusetts\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\n https://miamiredhawks.com/calendar.aspx?game_id=20841&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20841&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20841&amp;sport_id=4</guid>
+<ev:location>Amherst, Mass.</ev:location>
+<ev:startdate>2026-10-10</ev:startdate>
+<ev:enddate>2026-10-10T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-10</s:localstartdate>
+<s:localenddate>2026-10-10T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/UMass.png</s:opponentlogo>
+<s:opponent>Massachusetts</s:opponent>
+<s:gameid>20841</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/11 1:00 PM Miami University Women&#39;s Soccer at Eastern Michigan</title>
+<description>Miami University Women&#39;s Soccer at Eastern Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20938&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20938&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20938&amp;sport_id=16</guid>
+<ev:location>Ypsilanti, Mich.</ev:location>
+<ev:startdate>2026-10-11T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-11T19:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-11T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-11T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/EMU_021820.png</s:opponentlogo>
+<s:opponent>Eastern Michigan</s:opponent>
+<s:gameid>20938</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/12 Miami University Men&#39;s Golf vs Moraine Intercollegiate- Moraine Country Club</title>
+<description>Miami University Men&#39;s Golf vs Moraine Intercollegiate- Moraine Country Club\n https://miamiredhawks.com/calendar.aspx?game_id=20961&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20961&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20961&amp;sport_id=8</guid>
+<ev:location>Kettering, Ohio</ev:location>
+<ev:startdate>2026-10-12</ev:startdate>
+<ev:enddate>2026-10-12T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-12</s:localstartdate>
+<s:localenddate>2026-10-12T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>Moraine Intercollegiate</s:opponent>
+<s:gameid>20961</s:gameid>
+<s:gamepromoname>Moraine Country Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/12 Miami University Men&#39;s Golf at Raider Individual (Individuals Only)- CC of the North</title>
+<description>Miami University Men&#39;s Golf at Raider Individual (Individuals Only)- CC of the North\n https://miamiredhawks.com/calendar.aspx?game_id=20963&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20963&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20963&amp;sport_id=8</guid>
+<ev:location>Kettering, Ohio</ev:location>
+<ev:startdate>2026-10-12</ev:startdate>
+<ev:enddate>2026-10-12T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-12</s:localstartdate>
+<s:localenddate>2026-10-12T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Wright_State_Raiders_200x200.png</s:opponentlogo>
+<s:opponent>Raider Individual (Individuals Only)</s:opponent>
+<s:gameid>20963</s:gameid>
+<s:gamepromoname>CC of the North</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/13 Miami University Men&#39;s Golf at Raider Individual (Individuals Only)- CC of the North</title>
+<description>Miami University Men&#39;s Golf at Raider Individual (Individuals Only)- CC of the North\n https://miamiredhawks.com/calendar.aspx?game_id=20964&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20964&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20964&amp;sport_id=8</guid>
+<ev:location>Kettering, Ohio</ev:location>
+<ev:startdate>2026-10-13</ev:startdate>
+<ev:enddate>2026-10-13T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-13</s:localstartdate>
+<s:localenddate>2026-10-13T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Wright_State_Raiders_200x200.png</s:opponentlogo>
+<s:opponent>Raider Individual (Individuals Only)</s:opponent>
+<s:gameid>20964</s:gameid>
+<s:gamepromoname>CC of the North</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/13 Miami University Men&#39;s Golf vs Moraine Intercollegiate- Moraine Country Club</title>
+<description>Miami University Men&#39;s Golf vs Moraine Intercollegiate- Moraine Country Club\n https://miamiredhawks.com/calendar.aspx?game_id=20962&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20962&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20962&amp;sport_id=8</guid>
+<ev:location>Kettering, Ohio</ev:location>
+<ev:startdate>2026-10-13</ev:startdate>
+<ev:enddate>2026-10-13T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-13</s:localstartdate>
+<s:localenddate>2026-10-13T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>Moraine Intercollegiate</s:opponent>
+<s:gameid>20962</s:gameid>
+<s:gamepromoname>Moraine Country Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/15 Miami University Hockey vs Robert Morris</title>
+<description>Miami University Hockey vs Robert Morris\n https://miamiredhawks.com/calendar.aspx?game_id=20855&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20855&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20855&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2026-10-15</ev:startdate>
+<ev:enddate>2026-10-15T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-15</s:localstartdate>
+<s:localenddate>2026-10-15T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/RMU_200x200.png</s:opponentlogo>
+<s:opponent>Robert Morris</s:opponent>
+<s:gameid>20855</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/15 6:00 PM Miami University Women&#39;s Volleyball at Eastern Michigan</title>
+<description>Miami University Women&#39;s Volleyball at Eastern Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20913&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20913&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20913&amp;sport_id=20</guid>
+<ev:location>Ypsilanti, Mich.</ev:location>
+<ev:startdate>2026-10-15T22:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-16T00:00:00.0000001Z</ev:enddate>
+<s:localstartdate>2026-10-15T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-15T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/EMU_021820.png</s:opponentlogo>
+<s:opponent>Eastern Michigan</s:opponent>
+<s:gameid>20913</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/15 7:00 PM Miami University Women&#39;s Soccer vs Ohio</title>
+<description>Miami University Women&#39;s Soccer vs Ohio\n https://miamiredhawks.com/calendar.aspx?game_id=20939&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20939&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20939&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-10-15T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-16T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-15T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-15T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Ohio_Bobcats.png</s:opponentlogo>
+<s:opponent>Ohio</s:opponent>
+<s:gameid>20939</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/16 6:00 PM Miami University Women&#39;s Volleyball at Eastern Michigan</title>
+<description>Miami University Women&#39;s Volleyball at Eastern Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20914&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20914&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20914&amp;sport_id=20</guid>
+<ev:location>Ypsilanti, Mich.</ev:location>
+<ev:startdate>2026-10-16T22:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-17T00:00:00.0000001Z</ev:enddate>
+<s:localstartdate>2026-10-16T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-16T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/EMU_021820.png</s:opponentlogo>
+<s:opponent>Eastern Michigan</s:opponent>
+<s:gameid>20914</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/17 Miami University Football vs Akron- Family Weekend</title>
+<description>Miami University Football vs Akron- Family Weekend\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\nTickets: https://redhawktix.evenue.net/events/FBSE\n https://miamiredhawks.com/calendar.aspx?game_id=20842&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20842&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20842&amp;sport_id=4</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-17</ev:startdate>
+<ev:enddate>2026-10-17T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-17</s:localstartdate>
+<s:localenddate>2026-10-17T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/android-chrome-192x192.png</s:opponentlogo>
+<s:opponent>Akron</s:opponent>
+<s:gameid>20842</s:gameid>
+<s:gamepromoname>Family Weekend</s:gamepromoname>
+<s:links>
+<s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+</s:links>
+</item>
+<item>
+<title>10/17 Miami University Hockey at Robert Morris</title>
+<description>Miami University Hockey at Robert Morris\n https://miamiredhawks.com/calendar.aspx?game_id=20854&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20854&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20854&amp;sport_id=9</guid>
+<ev:location>Moon Township, Pa.</ev:location>
+<ev:startdate>2026-10-17</ev:startdate>
+<ev:enddate>2026-10-17T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-17</s:localstartdate>
+<s:localenddate>2026-10-17T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/RMU_200x200.png</s:opponentlogo>
+<s:opponent>Robert Morris</s:opponent>
+<s:gameid>20854</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/18 1:00 PM Miami University Women&#39;s Soccer at Massachusetts</title>
+<description>Miami University Women&#39;s Soccer at Massachusetts\n https://miamiredhawks.com/calendar.aspx?game_id=20940&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20940&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20940&amp;sport_id=16</guid>
+<ev:location>Amherst, Mass.</ev:location>
+<ev:startdate>2026-10-18T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-18T19:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-18T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-18T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/UMass.png</s:opponentlogo>
+<s:opponent>Massachusetts</s:opponent>
+<s:gameid>20940</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/19 Miami University Men&#39;s Golf at Flyer Invitational- NCR - South</title>
+<description>Miami University Men&#39;s Golf at Flyer Invitational- NCR - South\n https://miamiredhawks.com/calendar.aspx?game_id=20972&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20972&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20972&amp;sport_id=8</guid>
+<ev:location>Kettering, Ohio</ev:location>
+<ev:startdate>2026-10-19</ev:startdate>
+<ev:enddate>2026-10-19T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-19</s:localstartdate>
+<s:localenddate>2026-10-19T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Dayton_1Color.png</s:opponentlogo>
+<s:opponent>Flyer Invitational</s:opponent>
+<s:gameid>20972</s:gameid>
+<s:gamepromoname>NCR - South</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/20 Miami University Men&#39;s Golf at Flyer Invitational- NCR - South</title>
+<description>Miami University Men&#39;s Golf at Flyer Invitational- NCR - South\n https://miamiredhawks.com/calendar.aspx?game_id=21019&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=21019&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=21019&amp;sport_id=8</guid>
+<ev:location>Kettering, Ohio</ev:location>
+<ev:startdate>2026-10-20</ev:startdate>
+<ev:enddate>2026-10-20T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-20</s:localstartdate>
+<s:localenddate>2026-10-20T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Dayton_1Color.png</s:opponentlogo>
+<s:opponent>Flyer Invitational</s:opponent>
+<s:gameid>21019</s:gameid>
+<s:gamepromoname>NCR - South</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/20 6:30 PM Miami University Women&#39;s Volleyball vs Ball State</title>
+<description>Miami University Women&#39;s Volleyball vs Ball State\n https://miamiredhawks.com/calendar.aspx?game_id=20915&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20915&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20915&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-20T22:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-21T00:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-20T18:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-20T20:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Ball_State_200x200.png</s:opponentlogo>
+<s:opponent>Ball State</s:opponent>
+<s:gameid>20915</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/23 Miami University Hockey vs Alaska Anchorage</title>
+<description>Miami University Hockey vs Alaska Anchorage\n https://miamiredhawks.com/calendar.aspx?game_id=20856&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20856&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20856&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2026-10-23</ev:startdate>
+<ev:enddate>2026-10-23T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-23</s:localstartdate>
+<s:localenddate>2026-10-23T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Alaska Anchorage.png</s:opponentlogo>
+<s:opponent>Alaska Anchorage</s:opponent>
+<s:gameid>20856</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/24 Miami University Hockey vs Alaska Anchorage</title>
+<description>Miami University Hockey vs Alaska Anchorage\n https://miamiredhawks.com/calendar.aspx?game_id=20857&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20857&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20857&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2026-10-24</ev:startdate>
+<ev:enddate>2026-10-24T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-24</s:localstartdate>
+<s:localenddate>2026-10-24T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Alaska Anchorage.png</s:opponentlogo>
+<s:opponent>Alaska Anchorage</s:opponent>
+<s:gameid>20857</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/24 Miami University Football at Central Michigan</title>
+<description>Miami University Football at Central Michigan\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\n https://miamiredhawks.com/calendar.aspx?game_id=20843&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20843&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20843&amp;sport_id=4</guid>
+<ev:location>Mount Pleasant, Mich.</ev:location>
+<ev:startdate>2026-10-24</ev:startdate>
+<ev:enddate>2026-10-24T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-24</s:localstartdate>
+<s:localenddate>2026-10-24T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/c_200x200.png</s:opponentlogo>
+<s:opponent>Central Michigan</s:opponent>
+<s:gameid>20843</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/24 4:00 PM Miami University Women&#39;s Volleyball vs Akron</title>
+<description>Miami University Women&#39;s Volleyball vs Akron\n https://miamiredhawks.com/calendar.aspx?game_id=20916&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20916&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20916&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-24T20:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-24T22:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-24T16:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-24T18:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/android-chrome-192x192.png</s:opponentlogo>
+<s:opponent>Akron</s:opponent>
+<s:gameid>20916</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/25 1:00 PM Miami University Women&#39;s Soccer at Western Michigan</title>
+<description>Miami University Women&#39;s Soccer at Western Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20941&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20941&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20941&amp;sport_id=16</guid>
+<ev:location>Kalamazoo, Mich.</ev:location>
+<ev:startdate>2026-10-25T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-25T19:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-25T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-25T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/spirit mark-full color (1).png</s:opponentlogo>
+<s:opponent>Western Michigan</s:opponent>
+<s:gameid>20941</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/29 7:00 PM Miami University Women&#39;s Soccer vs Bowling Green</title>
+<description>Miami University Women&#39;s Soccer vs Bowling Green\n https://miamiredhawks.com/calendar.aspx?game_id=20942&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20942&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20942&amp;sport_id=16</guid>
+<ev:location>Oxford, Ohio, Bobby Kramig Field</ev:location>
+<ev:startdate>2026-10-29T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-30T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-29T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-29T21:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Bowling_Green_200x200_Logo.png</s:opponentlogo>
+<s:opponent>Bowling Green</s:opponent>
+<s:gameid>20942</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/30 Miami University Hockey vs St. Thomas</title>
+<description>Miami University Hockey vs St. Thomas\n https://miamiredhawks.com/calendar.aspx?game_id=20858&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20858&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20858&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2026-10-30</ev:startdate>
+<ev:enddate>2026-10-30T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-30</s:localstartdate>
+<s:localenddate>2026-10-30T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/University_of-_St_Thomas.png</s:opponentlogo>
+<s:opponent>St. Thomas</s:opponent>
+<s:gameid>20858</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/30 6:30 PM Miami University Women&#39;s Volleyball vs Toledo</title>
+<description>Miami University Women&#39;s Volleyball vs Toledo\n https://miamiredhawks.com/calendar.aspx?game_id=20917&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20917&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20917&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-30T22:30:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-31T00:30:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-30T18:30:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-30T20:30:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/2021_Toledo_200x200.png</s:opponentlogo>
+<s:opponent>Toledo</s:opponent>
+<s:gameid>20917</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/31 Miami University Hockey vs St. Thomas</title>
+<description>Miami University Hockey vs St. Thomas\n https://miamiredhawks.com/calendar.aspx?game_id=20859&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20859&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20859&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2026-10-31</ev:startdate>
+<ev:enddate>2026-10-31T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-31</s:localstartdate>
+<s:localenddate>2026-10-31T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/University_of-_St_Thomas.png</s:opponentlogo>
+<s:opponent>St. Thomas</s:opponent>
+<s:gameid>20859</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>10/31 4:00 PM Miami University Women&#39;s Volleyball vs Toledo</title>
+<description>Miami University Women&#39;s Volleyball vs Toledo\n https://miamiredhawks.com/calendar.aspx?game_id=20918&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20918&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20918&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-10-31T20:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-10-31T22:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-10-31T16:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-10-31T18:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/2021_Toledo_200x200.png</s:opponentlogo>
+<s:opponent>Toledo</s:opponent>
+<s:gameid>20918</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/1 1:00 PM Miami University Women&#39;s Soccer at Toledo</title>
+<description>Miami University Women&#39;s Soccer at Toledo\n https://miamiredhawks.com/calendar.aspx?game_id=20943&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20943&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20943&amp;sport_id=16</guid>
+<ev:location>Toledo, Ohio</ev:location>
+<ev:startdate>2026-11-01T18:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-11-01T20:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-01T13:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-11-01T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/2021_Toledo_200x200.png</s:opponentlogo>
+<s:opponent>Toledo</s:opponent>
+<s:gameid>20943</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/3 7:00 PM Miami University Football vs Buffalo</title>
+<description>Miami University Football vs Buffalo\nTV: ESPN2/ESPNU\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\nTickets: https://redhawktix.evenue.net/events/FBSE\n https://miamiredhawks.com/calendar.aspx?game_id=20844&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20844&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20844&amp;sport_id=4</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-11-04T00:00:00.0000001Z</ev:startdate>
+<ev:enddate>2026-11-04T03:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-03T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-11-03T22:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/BuffaloLogo2019.png</s:opponentlogo>
+<s:opponent>Buffalo</s:opponent>
+<s:gameid>20844</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+<s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+</s:links>
+</item>
+<item>
+<title>11/6 Miami University Hockey at Minnesota Duluth</title>
+<description>Miami University Hockey at Minnesota Duluth\n https://miamiredhawks.com/calendar.aspx?game_id=20860&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20860&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20860&amp;sport_id=9</guid>
+<ev:location>Duluth, Minn.</ev:location>
+<ev:startdate>2026-11-06</ev:startdate>
+<ev:enddate>2026-11-06T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-06</s:localstartdate>
+<s:localenddate>2026-11-06T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/University-of-Minnesota-Duluth.png</s:opponentlogo>
+<s:opponent>Minnesota Duluth</s:opponent>
+<s:gameid>20860</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/7 Miami University Hockey at Minnesota Duluth</title>
+<description>Miami University Hockey at Minnesota Duluth\n https://miamiredhawks.com/calendar.aspx?game_id=20861&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20861&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20861&amp;sport_id=9</guid>
+<ev:location>Duluth, Minn.</ev:location>
+<ev:startdate>2026-11-07</ev:startdate>
+<ev:enddate>2026-11-07T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-07</s:localstartdate>
+<s:localenddate>2026-11-07T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/University-of-Minnesota-Duluth.png</s:opponentlogo>
+<s:opponent>Minnesota Duluth</s:opponent>
+<s:gameid>20861</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/7 Miami University Women&#39;s Soccer vs MAC Tournament Quarterfinal</title>
+<description>Miami University Women&#39;s Soccer vs MAC Tournament Quarterfinal\n https://miamiredhawks.com/calendar.aspx?game_id=20944&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20944&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20944&amp;sport_id=16</guid>
+<ev:location>Columbus, Ohio</ev:location>
+<ev:startdate>2026-11-07</ev:startdate>
+<ev:enddate>2026-11-07T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-07</s:localstartdate>
+<s:localenddate>2026-11-07T02:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Mid-American-Conference.png</s:opponentlogo>
+<s:opponent>MAC Tournament Quarterfinal</s:opponent>
+<s:gameid>20944</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/7 4:00 PM Miami University Women&#39;s Volleyball at Kent State University</title>
+<description>Miami University Women&#39;s Volleyball at Kent State University\n https://miamiredhawks.com/calendar.aspx?game_id=20919&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20919&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20919&amp;sport_id=20</guid>
+<ev:location>Kent, Ohio</ev:location>
+<ev:startdate>2026-11-07T21:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-11-07T23:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-07T16:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-11-07T18:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/kent_state_new.png</s:opponentlogo>
+<s:opponent>Kent State University</s:opponent>
+<s:gameid>20919</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/8 Miami University Women&#39;s Volleyball at Ohio</title>
+<description>Miami University Women&#39;s Volleyball at Ohio\n https://miamiredhawks.com/calendar.aspx?game_id=20920&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20920&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20920&amp;sport_id=20</guid>
+<ev:location>Athens, Ohio</ev:location>
+<ev:startdate>2026-11-08</ev:startdate>
+<ev:enddate>2026-11-08T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-08</s:localstartdate>
+<s:localenddate>2026-11-08T02:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Ohio_Bobcats.png</s:opponentlogo>
+<s:opponent>Ohio</s:opponent>
+<s:gameid>20920</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/10 Miami University Women&#39;s Soccer vs MAC Tournament Semifinal</title>
+<description>Miami University Women&#39;s Soccer vs MAC Tournament Semifinal\n https://miamiredhawks.com/calendar.aspx?game_id=20945&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20945&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20945&amp;sport_id=16</guid>
+<ev:location>Columbus, Ohio</ev:location>
+<ev:startdate>2026-11-10</ev:startdate>
+<ev:enddate>2026-11-10T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-10</s:localstartdate>
+<s:localenddate>2026-11-10T02:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Mid-American-Conference.png</s:opponentlogo>
+<s:opponent>MAC Tournament Semifinal</s:opponent>
+<s:gameid>20945</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/10 7:00 PM Miami University Football vs Ohio</title>
+<description>Miami University Football vs Ohio\nTV: ESPN2/ESPNU/CBS Sports\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\nTickets: https://redhawktix.evenue.net/events/FBSE\n https://miamiredhawks.com/calendar.aspx?game_id=20845&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20845&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20845&amp;sport_id=4</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-11-11T00:00:00.0000001Z</ev:startdate>
+<ev:enddate>2026-11-11T03:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-10T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-11-10T22:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Ohio_Bobcats.png</s:opponentlogo>
+<s:opponent>Ohio</s:opponent>
+<s:gameid>20845</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+<s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+</s:links>
+</item>
+<item>
+<title>11/12 6:00 PM Miami University Women&#39;s Volleyball vs Ohio</title>
+<description>Miami University Women&#39;s Volleyball vs Ohio\n https://miamiredhawks.com/calendar.aspx?game_id=20921&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20921&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20921&amp;sport_id=20</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2026-11-12T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-11-13T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-12T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-11-12T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Ohio_Bobcats.png</s:opponentlogo>
+<s:opponent>Ohio</s:opponent>
+<s:gameid>20921</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/13 Miami University Women&#39;s Soccer vs MAC Tournament Final</title>
+<description>Miami University Women&#39;s Soccer vs MAC Tournament Final\n https://miamiredhawks.com/calendar.aspx?game_id=20946&amp;amp;sport_id=16</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20946&amp;sport_id=16</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20946&amp;sport_id=16</guid>
+<ev:location>Columbus, Ohio</ev:location>
+<ev:startdate>2026-11-13</ev:startdate>
+<ev:enddate>2026-11-13T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-13</s:localstartdate>
+<s:localenddate>2026-11-13T02:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Mid-American-Conference.png</s:opponentlogo>
+<s:opponent>MAC Tournament Final</s:opponent>
+<s:gameid>20946</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/13 Miami University Hockey vs Omaha</title>
+<description>Miami University Hockey vs Omaha\n https://miamiredhawks.com/calendar.aspx?game_id=20862&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20862&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20862&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2026-11-13</ev:startdate>
+<ev:enddate>2026-11-13T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-13</s:localstartdate>
+<s:localenddate>2026-11-13T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/omaha_logo_200x200.png</s:opponentlogo>
+<s:opponent>Omaha</s:opponent>
+<s:gameid>20862</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/13 6:00 PM Miami University Women&#39;s Volleyball at Western Michigan</title>
+<description>Miami University Women&#39;s Volleyball at Western Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20922&amp;amp;sport_id=20</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20922&amp;sport_id=20</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20922&amp;sport_id=20</guid>
+<ev:location>Kalamazoo, Mich.</ev:location>
+<ev:startdate>2026-11-13T23:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-11-14T01:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-13T18:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-11-13T20:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/spirit mark-full color (1).png</s:opponentlogo>
+<s:opponent>Western Michigan</s:opponent>
+<s:gameid>20922</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/14 Miami University Hockey vs Omaha</title>
+<description>Miami University Hockey vs Omaha\n https://miamiredhawks.com/calendar.aspx?game_id=20863&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20863&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20863&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2026-11-14</ev:startdate>
+<ev:enddate>2026-11-14T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-14</s:localstartdate>
+<s:localenddate>2026-11-14T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/omaha_logo_200x200.png</s:opponentlogo>
+<s:opponent>Omaha</s:opponent>
+<s:gameid>20863</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/17 7:00 PM Miami University Football at Kent State</title>
+<description>Miami University Football at Kent State\nTV: ESPN2/ESPNU/CBS Sports\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\n https://miamiredhawks.com/calendar.aspx?game_id=20846&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20846&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20846&amp;sport_id=4</guid>
+<ev:location>Kent, Ohio</ev:location>
+<ev:startdate>2026-11-18T00:00:00.0000001Z</ev:startdate>
+<ev:enddate>2026-11-18T03:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-17T19:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-11-17T22:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/kent_state_new.png</s:opponentlogo>
+<s:opponent>Kent State</s:opponent>
+<s:gameid>20846</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/20 Miami University Hockey at Colorado College</title>
+<description>Miami University Hockey at Colorado College\n https://miamiredhawks.com/calendar.aspx?game_id=20864&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20864&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20864&amp;sport_id=9</guid>
+<ev:location>Colorado Springs, Colo.</ev:location>
+<ev:startdate>2026-11-20</ev:startdate>
+<ev:enddate>2026-11-20T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-20</s:localstartdate>
+<s:localenddate>2026-11-20T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/ColoradoCollege.png</s:opponentlogo>
+<s:opponent>Colorado College</s:opponent>
+<s:gameid>20864</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/21 Miami University Hockey at Colorado College</title>
+<description>Miami University Hockey at Colorado College\n https://miamiredhawks.com/calendar.aspx?game_id=20865&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20865&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20865&amp;sport_id=9</guid>
+<ev:location>Colorado Springs, Colo.</ev:location>
+<ev:startdate>2026-11-21</ev:startdate>
+<ev:enddate>2026-11-21T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-21</s:localstartdate>
+<s:localenddate>2026-11-21T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/ColoradoCollege.png</s:opponentlogo>
+<s:opponent>Colorado College</s:opponent>
+<s:gameid>20865</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/24 Miami University Football at Western Michigan</title>
+<description>Miami University Football at Western Michigan\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\n https://miamiredhawks.com/calendar.aspx?game_id=20847&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20847&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20847&amp;sport_id=4</guid>
+<ev:location>Kalamazoo, Mich.</ev:location>
+<ev:startdate>2026-11-24</ev:startdate>
+<ev:enddate>2026-11-24T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-24</s:localstartdate>
+<s:localenddate>2026-11-24T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/spirit mark-full color (1).png</s:opponentlogo>
+<s:opponent>Western Michigan</s:opponent>
+<s:gameid>20847</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/27 Miami University Hockey at Stonehill</title>
+<description>Miami University Hockey at Stonehill\n https://miamiredhawks.com/calendar.aspx?game_id=20866&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20866&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20866&amp;sport_id=9</guid>
+<ev:location>Boston, Mass.</ev:location>
+<ev:startdate>2026-11-27</ev:startdate>
+<ev:enddate>2026-11-27T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-27</s:localstartdate>
+<s:localenddate>2026-11-27T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Stonehill_2022.png</s:opponentlogo>
+<s:opponent>Stonehill</s:opponent>
+<s:gameid>20866</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>11/28 Miami University Hockey at Stonehill</title>
+<description>Miami University Hockey at Stonehill\n https://miamiredhawks.com/calendar.aspx?game_id=20891&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20891&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20891&amp;sport_id=9</guid>
+<ev:location>Boston, Mass.</ev:location>
+<ev:startdate>2026-11-28</ev:startdate>
+<ev:enddate>2026-11-28T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-11-28</s:localstartdate>
+<s:localenddate>2026-11-28T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Stonehill_2022.png</s:opponentlogo>
+<s:opponent>Stonehill</s:opponent>
+<s:gameid>20891</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>12/4 Miami University Hockey at Western Michigan</title>
+<description>Miami University Hockey at Western Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20868&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20868&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20868&amp;sport_id=9</guid>
+<ev:location>Kalamazoo, Mich.</ev:location>
+<ev:startdate>2026-12-04</ev:startdate>
+<ev:enddate>2026-12-04T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-12-04</s:localstartdate>
+<s:localenddate>2026-12-04T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/spirit mark-full color (1).png</s:opponentlogo>
+<s:opponent>Western Michigan</s:opponent>
+<s:gameid>20868</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>12/5 Miami University Hockey at Western Michigan</title>
+<description>Miami University Hockey at Western Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20869&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20869&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20869&amp;sport_id=9</guid>
+<ev:location>Kalamazoo, Mich.</ev:location>
+<ev:startdate>2026-12-05</ev:startdate>
+<ev:enddate>2026-12-05T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-12-05</s:localstartdate>
+<s:localenddate>2026-12-05T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/spirit mark-full color (1).png</s:opponentlogo>
+<s:opponent>Western Michigan</s:opponent>
+<s:gameid>20869</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>12/5 12:00 PM Miami University Football vs MAC Championship</title>
+<description>Miami University Football vs MAC Championship\nTV: ESPN\nRadio: Miami Radio Network\nStreaming Audio: https://miamiredhawks.com/sports/2018/9/25/listen-on-tunein\n https://miamiredhawks.com/calendar.aspx?game_id=20848&amp;amp;sport_id=4</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20848&amp;sport_id=4</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20848&amp;sport_id=4</guid>
+<ev:location>Detroit, Mich. (Ford Field)</ev:location>
+<ev:startdate>2026-12-05T17:00:00.0000000Z</ev:startdate>
+<ev:enddate>2026-12-05T20:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2026-12-05T12:00:00.0000000</s:localstartdate>
+<s:localenddate>2026-12-05T15:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Mid-American-Conference.png</s:opponentlogo>
+<s:opponent>MAC Championship</s:opponent>
+<s:gameid>20848</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/1 Miami University Hockey at Maine</title>
+<description>Miami University Hockey at Maine\n https://miamiredhawks.com/calendar.aspx?game_id=20867&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20867&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20867&amp;sport_id=9</guid>
+<ev:location>Orono, Maine</ev:location>
+<ev:startdate>2027-01-01</ev:startdate>
+<ev:enddate>2027-01-01T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-01</s:localstartdate>
+<s:localenddate>2027-01-01T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Maine.png</s:opponentlogo>
+<s:opponent>Maine</s:opponent>
+<s:gameid>20867</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/2 Miami University Hockey at Maine</title>
+<description>Miami University Hockey at Maine\n https://miamiredhawks.com/calendar.aspx?game_id=20870&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20870&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20870&amp;sport_id=9</guid>
+<ev:location>Orono, Maine</ev:location>
+<ev:startdate>2027-01-02</ev:startdate>
+<ev:enddate>2027-01-02T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-02</s:localstartdate>
+<s:localenddate>2027-01-02T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Maine.png</s:opponentlogo>
+<s:opponent>Maine</s:opponent>
+<s:gameid>20870</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/8 Miami University Hockey vs North Dakota</title>
+<description>Miami University Hockey vs North Dakota\n https://miamiredhawks.com/calendar.aspx?game_id=20871&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20871&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20871&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-01-08</ev:startdate>
+<ev:enddate>2027-01-08T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-08</s:localstartdate>
+<s:localenddate>2027-01-08T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/NorthDakota-FightingHawks.png</s:opponentlogo>
+<s:opponent>North Dakota</s:opponent>
+<s:gameid>20871</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/9 Miami University Hockey vs North Dakota</title>
+<description>Miami University Hockey vs North Dakota\n https://miamiredhawks.com/calendar.aspx?game_id=20872&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20872&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20872&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-01-09</ev:startdate>
+<ev:enddate>2027-01-09T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-09</s:localstartdate>
+<s:localenddate>2027-01-09T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/NorthDakota-FightingHawks.png</s:opponentlogo>
+<s:opponent>North Dakota</s:opponent>
+<s:gameid>20872</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/15 Miami University Hockey at St. Cloud State</title>
+<description>Miami University Hockey at St. Cloud State\n https://miamiredhawks.com/calendar.aspx?game_id=20873&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20873&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20873&amp;sport_id=9</guid>
+<ev:location>St. Cloud, Minn.</ev:location>
+<ev:startdate>2027-01-15</ev:startdate>
+<ev:enddate>2027-01-15T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-15</s:localstartdate>
+<s:localenddate>2027-01-15T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Saint-Cloud-State.png</s:opponentlogo>
+<s:opponent>St. Cloud State</s:opponent>
+<s:gameid>20873</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/16 Miami University Hockey at St. Cloud State</title>
+<description>Miami University Hockey at St. Cloud State\n https://miamiredhawks.com/calendar.aspx?game_id=20874&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20874&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20874&amp;sport_id=9</guid>
+<ev:location>St. Cloud, Minn.</ev:location>
+<ev:startdate>2027-01-16</ev:startdate>
+<ev:enddate>2027-01-16T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-16</s:localstartdate>
+<s:localenddate>2027-01-16T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Saint-Cloud-State.png</s:opponentlogo>
+<s:opponent>St. Cloud State</s:opponent>
+<s:gameid>20874</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/22 Miami University Hockey vs Arizona State</title>
+<description>Miami University Hockey vs Arizona State\n https://miamiredhawks.com/calendar.aspx?game_id=20875&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20875&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20875&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-01-22</ev:startdate>
+<ev:enddate>2027-01-22T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-22</s:localstartdate>
+<s:localenddate>2027-01-22T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Arizona-State.png</s:opponentlogo>
+<s:opponent>Arizona State</s:opponent>
+<s:gameid>20875</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>1/23 Miami University Hockey vs Arizona State</title>
+<description>Miami University Hockey vs Arizona State\n https://miamiredhawks.com/calendar.aspx?game_id=20876&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20876&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20876&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-01-23</ev:startdate>
+<ev:enddate>2027-01-23T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-01-23</s:localstartdate>
+<s:localenddate>2027-01-23T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Arizona-State.png</s:opponentlogo>
+<s:opponent>Arizona State</s:opponent>
+<s:gameid>20876</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/5 Miami University Hockey at St. Thomas</title>
+<description>Miami University Hockey at St. Thomas\n https://miamiredhawks.com/calendar.aspx?game_id=20877&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20877&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20877&amp;sport_id=9</guid>
+<ev:location>St. Paul, Minn.</ev:location>
+<ev:startdate>2027-02-05</ev:startdate>
+<ev:enddate>2027-02-05T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-05</s:localstartdate>
+<s:localenddate>2027-02-05T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/University_of-_St_Thomas.png</s:opponentlogo>
+<s:opponent>St. Thomas</s:opponent>
+<s:gameid>20877</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/6 Miami University Hockey at St. Thomas</title>
+<description>Miami University Hockey at St. Thomas\n https://miamiredhawks.com/calendar.aspx?game_id=20878&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20878&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20878&amp;sport_id=9</guid>
+<ev:location>St. Paul, Minn.</ev:location>
+<ev:startdate>2027-02-06</ev:startdate>
+<ev:enddate>2027-02-06T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-06</s:localstartdate>
+<s:localenddate>2027-02-06T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/University_of-_St_Thomas.png</s:opponentlogo>
+<s:opponent>St. Thomas</s:opponent>
+<s:gameid>20878</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/6 Miami University Men&#39;s Golf at Thomas Sharkey Individual (Individuals Only)- GSU Campus Course</title>
+<description>Miami University Men&#39;s Golf at Thomas Sharkey Individual (Individuals Only)- GSU Campus Course\n https://miamiredhawks.com/calendar.aspx?game_id=20965&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20965&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20965&amp;sport_id=8</guid>
+<ev:location>Statesboro, Ga.</ev:location>
+<ev:startdate>2027-02-06</ev:startdate>
+<ev:enddate>2027-02-06T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-06</s:localstartdate>
+<s:localenddate>2027-02-06T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Georgia-Southern.png</s:opponentlogo>
+<s:opponent>Thomas Sharkey Individual (Individuals Only)</s:opponent>
+<s:gameid>20965</s:gameid>
+<s:gamepromoname>GSU Campus Course</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/7 Miami University Men&#39;s Golf at Thomas Sharkey Individual (Individuals Only)- GSU Campus Course</title>
+<description>Miami University Men&#39;s Golf at Thomas Sharkey Individual (Individuals Only)- GSU Campus Course\n https://miamiredhawks.com/calendar.aspx?game_id=20966&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20966&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20966&amp;sport_id=8</guid>
+<ev:location>Statesboro, Ga.</ev:location>
+<ev:startdate>2027-02-07</ev:startdate>
+<ev:enddate>2027-02-07T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-07</s:localstartdate>
+<s:localenddate>2027-02-07T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Georgia-Southern.png</s:opponentlogo>
+<s:opponent>Thomas Sharkey Individual (Individuals Only)</s:opponent>
+<s:gameid>20966</s:gameid>
+<s:gamepromoname>GSU Campus Course</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/12 Miami University Hockey vs Denver</title>
+<description>Miami University Hockey vs Denver\n https://miamiredhawks.com/calendar.aspx?game_id=20879&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20879&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20879&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-02-12</ev:startdate>
+<ev:enddate>2027-02-12T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-12</s:localstartdate>
+<s:localenddate>2027-02-12T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Denver_2022.png</s:opponentlogo>
+<s:opponent>Denver</s:opponent>
+<s:gameid>20879</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/13 Miami University Hockey vs Denver</title>
+<description>Miami University Hockey vs Denver\n https://miamiredhawks.com/calendar.aspx?game_id=20880&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20880&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20880&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-02-13</ev:startdate>
+<ev:enddate>2027-02-13T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-13</s:localstartdate>
+<s:localenddate>2027-02-13T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Denver_2022.png</s:opponentlogo>
+<s:opponent>Denver</s:opponent>
+<s:gameid>20880</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/15 Miami University Men&#39;s Golf at Border Olympics- Laredo Country Club</title>
+<description>Miami University Men&#39;s Golf at Border Olympics- Laredo Country Club\n https://miamiredhawks.com/calendar.aspx?game_id=20970&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20970&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20970&amp;sport_id=8</guid>
+<ev:location>Laredo, Texas</ev:location>
+<ev:startdate>2027-02-15</ev:startdate>
+<ev:enddate>2027-02-15T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-15</s:localstartdate>
+<s:localenddate>2027-02-15T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/houston.png</s:opponentlogo>
+<s:opponent>Border Olympics</s:opponent>
+<s:gameid>20970</s:gameid>
+<s:gamepromoname>Laredo Country Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/16 Miami University Men&#39;s Golf at Border Olympics- Laredo Country Club</title>
+<description>Miami University Men&#39;s Golf at Border Olympics- Laredo Country Club\n https://miamiredhawks.com/calendar.aspx?game_id=20971&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20971&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20971&amp;sport_id=8</guid>
+<ev:location>Laredo, Texas</ev:location>
+<ev:startdate>2027-02-16</ev:startdate>
+<ev:enddate>2027-02-16T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-16</s:localstartdate>
+<s:localenddate>2027-02-16T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/houston.png</s:opponentlogo>
+<s:opponent>Border Olympics</s:opponent>
+<s:gameid>20971</s:gameid>
+<s:gamepromoname>Laredo Country Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/19 Miami University Hockey at North Dakota</title>
+<description>Miami University Hockey at North Dakota\n https://miamiredhawks.com/calendar.aspx?game_id=20881&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20881&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20881&amp;sport_id=9</guid>
+<ev:location>Grand Forks, N.D.</ev:location>
+<ev:startdate>2027-02-19</ev:startdate>
+<ev:enddate>2027-02-19T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-19</s:localstartdate>
+<s:localenddate>2027-02-19T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/NorthDakota-FightingHawks.png</s:opponentlogo>
+<s:opponent>North Dakota</s:opponent>
+<s:gameid>20881</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/20 Miami University Hockey at North Dakota</title>
+<description>Miami University Hockey at North Dakota\n https://miamiredhawks.com/calendar.aspx?game_id=20882&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20882&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20882&amp;sport_id=9</guid>
+<ev:location>Grand Forks, N.D.</ev:location>
+<ev:startdate>2027-02-20</ev:startdate>
+<ev:enddate>2027-02-20T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-20</s:localstartdate>
+<s:localenddate>2027-02-20T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/NorthDakota-FightingHawks.png</s:opponentlogo>
+<s:opponent>North Dakota</s:opponent>
+<s:gameid>20882</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/26 Miami University Hockey vs Western Michigan</title>
+<description>Miami University Hockey vs Western Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20883&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20883&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20883&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-02-26</ev:startdate>
+<ev:enddate>2027-02-26T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-26</s:localstartdate>
+<s:localenddate>2027-02-26T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/spirit mark-full color (1).png</s:opponentlogo>
+<s:opponent>Western Michigan</s:opponent>
+<s:gameid>20883</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>2/27 Miami University Hockey vs Western Michigan</title>
+<description>Miami University Hockey vs Western Michigan\n https://miamiredhawks.com/calendar.aspx?game_id=20884&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20884&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20884&amp;sport_id=9</guid>
+<ev:location>Oxford, Ohio, Goggin Ice Center</ev:location>
+<ev:startdate>2027-02-27</ev:startdate>
+<ev:enddate>2027-02-27T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-02-27</s:localstartdate>
+<s:localenddate>2027-02-27T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/spirit mark-full color (1).png</s:opponentlogo>
+<s:opponent>Western Michigan</s:opponent>
+<s:gameid>20884</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/5 Miami University Hockey vs NCHC First Round (Best-of-3)</title>
+<description>Miami University Hockey vs NCHC First Round (Best-of-3)\n https://miamiredhawks.com/calendar.aspx?game_id=20885&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20885&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20885&amp;sport_id=9</guid>
+<ev:location></ev:location>
+<ev:startdate>2027-03-05</ev:startdate>
+<ev:enddate>2027-03-05T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-05</s:localstartdate>
+<s:localenddate>2027-03-05T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/2017/6/13/mioh_17_ftr_logo_nchc.png</s:opponentlogo>
+<s:opponent>NCHC First Round (Best-of-3)</s:opponent>
+<s:gameid>20885</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/6 Miami University Hockey vs NCHC First Round (Best-of-3)</title>
+<description>Miami University Hockey vs NCHC First Round (Best-of-3)\n https://miamiredhawks.com/calendar.aspx?game_id=20886&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20886&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20886&amp;sport_id=9</guid>
+<ev:location></ev:location>
+<ev:startdate>2027-03-06</ev:startdate>
+<ev:enddate>2027-03-06T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-06</s:localstartdate>
+<s:localenddate>2027-03-06T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/2017/6/13/mioh_17_ftr_logo_nchc.png</s:opponentlogo>
+<s:opponent>NCHC First Round (Best-of-3)</s:opponent>
+<s:gameid>20886</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/7 Miami University Hockey vs NCHC First Round (Best-of-3)</title>
+<description>Miami University Hockey vs NCHC First Round (Best-of-3)\n https://miamiredhawks.com/calendar.aspx?game_id=20887&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20887&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20887&amp;sport_id=9</guid>
+<ev:location></ev:location>
+<ev:startdate>2027-03-07</ev:startdate>
+<ev:enddate>2027-03-07T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-07</s:localstartdate>
+<s:localenddate>2027-03-07T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/2017/6/13/mioh_17_ftr_logo_nchc.png</s:opponentlogo>
+<s:opponent>NCHC First Round (Best-of-3)</s:opponent>
+<s:gameid>20887</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/12 Miami University Hockey vs NCHC Quarterfinal (If necessary)</title>
+<description>Miami University Hockey vs NCHC Quarterfinal (If necessary)\n https://miamiredhawks.com/calendar.aspx?game_id=20888&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20888&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20888&amp;sport_id=9</guid>
+<ev:location></ev:location>
+<ev:startdate>2027-03-12</ev:startdate>
+<ev:enddate>2027-03-12T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-12</s:localstartdate>
+<s:localenddate>2027-03-12T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/2017/6/13/mioh_17_ftr_logo_nchc.png</s:opponentlogo>
+<s:opponent>NCHC Quarterfinal (If necessary)</s:opponent>
+<s:gameid>20888</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/13 Miami University Hockey vs NCHC Semifinal</title>
+<description>Miami University Hockey vs NCHC Semifinal\n https://miamiredhawks.com/calendar.aspx?game_id=20889&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20889&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20889&amp;sport_id=9</guid>
+<ev:location></ev:location>
+<ev:startdate>2027-03-13</ev:startdate>
+<ev:enddate>2027-03-13T08:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-13</s:localstartdate>
+<s:localenddate>2027-03-13T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/2017/6/13/mioh_17_ftr_logo_nchc.png</s:opponentlogo>
+<s:opponent>NCHC Semifinal</s:opponent>
+<s:gameid>20889</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/19 Miami University Hockey vs NCHC Championship</title>
+<description>Miami University Hockey vs NCHC Championship\n https://miamiredhawks.com/calendar.aspx?game_id=20890&amp;amp;sport_id=9</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20890&amp;sport_id=9</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20890&amp;sport_id=9</guid>
+<ev:location></ev:location>
+<ev:startdate>2027-03-19</ev:startdate>
+<ev:enddate>2027-03-21T03:59:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-19</s:localstartdate>
+<s:localenddate>2027-03-20T23:59:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/2017/6/13/mioh_17_ftr_logo_nchc.png</s:opponentlogo>
+<s:opponent>NCHC Championship</s:opponent>
+<s:gameid>20890</s:gameid>
+<s:gamepromoname></s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/19 Miami University Men&#39;s Golf at Schenkel Invitational- Forest Heights Golf &amp; CC</title>
+<description>Miami University Men&#39;s Golf at Schenkel Invitational- Forest Heights Golf &amp; CC\n https://miamiredhawks.com/calendar.aspx?game_id=20967&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20967&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20967&amp;sport_id=8</guid>
+<ev:location>Statesboro, Ga.</ev:location>
+<ev:startdate>2027-03-19</ev:startdate>
+<ev:enddate>2027-03-19T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-19</s:localstartdate>
+<s:localenddate>2027-03-19T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Georgia-Southern.png</s:opponentlogo>
+<s:opponent>Schenkel Invitational</s:opponent>
+<s:gameid>20967</s:gameid>
+<s:gamepromoname>Forest Heights Golf &amp; CC</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/20 Miami University Men&#39;s Golf at Schenkel Invitational- Forest Heights Golf &amp; CC</title>
+<description>Miami University Men&#39;s Golf at Schenkel Invitational- Forest Heights Golf &amp; CC\n https://miamiredhawks.com/calendar.aspx?game_id=20968&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20968&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20968&amp;sport_id=8</guid>
+<ev:location>Statesboro, Ga.</ev:location>
+<ev:startdate>2027-03-20</ev:startdate>
+<ev:enddate>2027-03-20T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-20</s:localstartdate>
+<s:localenddate>2027-03-20T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Georgia-Southern.png</s:opponentlogo>
+<s:opponent>Schenkel Invitational</s:opponent>
+<s:gameid>20968</s:gameid>
+<s:gamepromoname>Forest Heights Golf &amp; CC</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>3/21 Miami University Men&#39;s Golf at Schenkel Invitational- Forest Heights Golf &amp; CC</title>
+<description>Miami University Men&#39;s Golf at Schenkel Invitational- Forest Heights Golf &amp; CC\n https://miamiredhawks.com/calendar.aspx?game_id=20969&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20969&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20969&amp;sport_id=8</guid>
+<ev:location>Statesboro, Ga.</ev:location>
+<ev:startdate>2027-03-21</ev:startdate>
+<ev:enddate>2027-03-21T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-03-21</s:localstartdate>
+<s:localenddate>2027-03-21T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Georgia-Southern.png</s:opponentlogo>
+<s:opponent>Schenkel Invitational</s:opponent>
+<s:gameid>20969</s:gameid>
+<s:gamepromoname>Forest Heights Golf &amp; CC</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/4 Miami University Men&#39;s Golf at Calusa Cup- Calusa Pines</title>
+<description>Miami University Men&#39;s Golf at Calusa Cup- Calusa Pines\n https://miamiredhawks.com/calendar.aspx?game_id=20974&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20974&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20974&amp;sport_id=8</guid>
+<ev:location>Naples, Fla.</ev:location>
+<ev:startdate>2027-04-04</ev:startdate>
+<ev:enddate>2027-04-04T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-04</s:localstartdate>
+<s:localenddate>2027-04-04T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/uiowa.png</s:opponentlogo>
+<s:opponent>Calusa Cup</s:opponent>
+<s:gameid>20974</s:gameid>
+<s:gamepromoname>Calusa Pines</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/5 Miami University Men&#39;s Golf at Calusa Cup- Calusa Pines</title>
+<description>Miami University Men&#39;s Golf at Calusa Cup- Calusa Pines\n https://miamiredhawks.com/calendar.aspx?game_id=20975&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20975&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20975&amp;sport_id=8</guid>
+<ev:location>Naples, Fla.</ev:location>
+<ev:startdate>2027-04-05</ev:startdate>
+<ev:enddate>2027-04-05T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-05</s:localstartdate>
+<s:localenddate>2027-04-05T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/uiowa.png</s:opponentlogo>
+<s:opponent>Calusa Cup</s:opponent>
+<s:gameid>20975</s:gameid>
+<s:gamepromoname>Calusa Pines</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/6 Miami University Men&#39;s Golf at Calusa Cup- Calusa Pines</title>
+<description>Miami University Men&#39;s Golf at Calusa Cup- Calusa Pines\n https://miamiredhawks.com/calendar.aspx?game_id=20976&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20976&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20976&amp;sport_id=8</guid>
+<ev:location>Naples, Fla.</ev:location>
+<ev:startdate>2027-04-06</ev:startdate>
+<ev:enddate>2027-04-06T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-06</s:localstartdate>
+<s:localenddate>2027-04-06T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/uiowa.png</s:opponentlogo>
+<s:opponent>Calusa Cup</s:opponent>
+<s:gameid>20976</s:gameid>
+<s:gamepromoname>Calusa Pines</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/12 Miami University Men&#39;s Golf vs Indian Ridge Shootout- Indian Ridge Golf Club</title>
+<description>Miami University Men&#39;s Golf vs Indian Ridge Shootout- Indian Ridge Golf Club\n https://miamiredhawks.com/calendar.aspx?game_id=21018&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=21018&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=21018&amp;sport_id=8</guid>
+<ev:location>Oxford, Ohio</ev:location>
+<ev:startdate>2027-04-12</ev:startdate>
+<ev:enddate>2027-04-12T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-12</s:localstartdate>
+<s:localenddate>2027-04-12T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Miami-OH.png</s:opponentlogo>
+<s:opponent>Indian Ridge Shootout</s:opponent>
+<s:gameid>21018</s:gameid>
+<s:gamepromoname>Indian Ridge Golf Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/17 Miami University Men&#39;s Golf at Spring Boilermaker Invitational- Kampen-Cosler</title>
+<description>Miami University Men&#39;s Golf at Spring Boilermaker Invitational- Kampen-Cosler\n https://miamiredhawks.com/calendar.aspx?game_id=20979&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20979&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20979&amp;sport_id=8</guid>
+<ev:location>West Lafayette, Ind.</ev:location>
+<ev:startdate>2027-04-17</ev:startdate>
+<ev:enddate>2027-04-17T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-17</s:localstartdate>
+<s:localenddate>2027-04-17T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/purdue_200x200.png</s:opponentlogo>
+<s:opponent>Spring Boilermaker Invitational</s:opponent>
+<s:gameid>20979</s:gameid>
+<s:gamepromoname>Kampen-Cosler</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/24 Miami University Men&#39;s Golf at Fighting Illini Spring Collegiate- Atkins Golf Club</title>
+<description>Miami University Men&#39;s Golf at Fighting Illini Spring Collegiate- Atkins Golf Club\n https://miamiredhawks.com/calendar.aspx?game_id=20980&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20980&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20980&amp;sport_id=8</guid>
+<ev:location>Urbana, Ill.</ev:location>
+<ev:startdate>2027-04-24</ev:startdate>
+<ev:enddate>2027-04-24T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-24</s:localstartdate>
+<s:localenddate>2027-04-24T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/site-Illinois.png</s:opponentlogo>
+<s:opponent>Fighting Illini Spring Collegiate</s:opponent>
+<s:gameid>20980</s:gameid>
+<s:gamepromoname>Atkins Golf Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/25 Miami University Men&#39;s Golf at Fighting Illini Spring Collegiate- Atkins Golf Club</title>
+<description>Miami University Men&#39;s Golf at Fighting Illini Spring Collegiate- Atkins Golf Club\n https://miamiredhawks.com/calendar.aspx?game_id=20981&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20981&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20981&amp;sport_id=8</guid>
+<ev:location>Urbana, Ill.</ev:location>
+<ev:startdate>2027-04-25</ev:startdate>
+<ev:enddate>2027-04-25T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-25</s:localstartdate>
+<s:localenddate>2027-04-25T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/site-Illinois.png</s:opponentlogo>
+<s:opponent>Fighting Illini Spring Collegiate</s:opponent>
+<s:gameid>20981</s:gameid>
+<s:gamepromoname>Atkins Golf Club</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>4/30 Miami University Men&#39;s Golf vs MAC Championship- Talis Park</title>
+<description>Miami University Men&#39;s Golf vs MAC Championship- Talis Park\n https://miamiredhawks.com/calendar.aspx?game_id=20982&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20982&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20982&amp;sport_id=8</guid>
+<ev:location>Naples, Fla.</ev:location>
+<ev:startdate>2027-04-30</ev:startdate>
+<ev:enddate>2027-04-30T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-04-30</s:localstartdate>
+<s:localenddate>2027-04-30T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Mid-American-Conference.png</s:opponentlogo>
+<s:opponent>MAC Championship</s:opponent>
+<s:gameid>20982</s:gameid>
+<s:gamepromoname>Talis Park</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>5/1 Miami University Men&#39;s Golf vs MAC Championship- Talis Park</title>
+<description>Miami University Men&#39;s Golf vs MAC Championship- Talis Park\n https://miamiredhawks.com/calendar.aspx?game_id=20983&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20983&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20983&amp;sport_id=8</guid>
+<ev:location>Naples, Fla.</ev:location>
+<ev:startdate>2027-05-01</ev:startdate>
+<ev:enddate>2027-05-01T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-05-01</s:localstartdate>
+<s:localenddate>2027-05-01T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Mid-American-Conference.png</s:opponentlogo>
+<s:opponent>MAC Championship</s:opponent>
+<s:gameid>20983</s:gameid>
+<s:gamepromoname>Talis Park</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+<item>
+<title>5/2 Miami University Men&#39;s Golf vs MAC Championship- Talis Park</title>
+<description>Miami University Men&#39;s Golf vs MAC Championship- Talis Park\n https://miamiredhawks.com/calendar.aspx?game_id=20984&amp;amp;sport_id=8</description>
+<link>https://miamiredhawks.com/calendar.aspx?game_id=20984&amp;sport_id=8</link>
+<guid isPermaLink="true">https://miamiredhawks.com/calendar.aspx?game_id=20984&amp;sport_id=8</guid>
+<ev:location>Naples, Fla.</ev:location>
+<ev:startdate>2027-05-02</ev:startdate>
+<ev:enddate>2027-05-02T07:00:00.0000000Z</ev:enddate>
+<s:localstartdate>2027-05-02</s:localstartdate>
+<s:localenddate>2027-05-02T03:00:00.0000000</s:localenddate>
+<s:teamlogo>https://miamiredhawks.com/images/logos/site/site.png</s:teamlogo>
+<s:opponentlogo>https://miamiredhawks.com/images/logos/Mid-American-Conference.png</s:opponentlogo>
+<s:opponent>MAC Championship</s:opponent>
+<s:gameid>20984</s:gameid>
+<s:gamepromoname>Talis Park</s:gamepromoname>
+<s:links>
+</s:links>
+</item>
+</channel>
+</rss>
