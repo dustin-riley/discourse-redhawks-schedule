@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    redhawks_schedule_enabled: "Fetch the Miami Athletics calendar and serve it at /redhawks-schedule.json."
+    redhawks_schedule_feed_url: "URL of the athletics RSS calendar feed."

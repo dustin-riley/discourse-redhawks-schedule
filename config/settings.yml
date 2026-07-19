@@ -1,0 +1,6 @@
+plugins:
+  redhawks_schedule_enabled:
+    default: true
+    client: true
+  redhawks_schedule_feed_url:
+    default: "https://miamiredhawks.com/calendar.ashx/calendar.rss"
