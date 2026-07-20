@@ -216,4 +216,62 @@ RSpec.describe RedhawksSchedule::RecruitParser do
 
     expect(parsed["composite_rating"]).to be_nil
   end
+
+  it "extracts composite stars from the composite section" do
+    expect(hs["composite_stars"]).to eq(3)
+  end
+
+  # Enrolled players have a single rankings section, which rankings_section
+  # falls back to. That fallback must not be mistaken for a composite, so
+  # composite_stars must stay nil here even though the lone section has a
+  # perfectly good stars-block.
+  it "returns nil composite stars for a single-section page" do
+    expect(enrolled["composite_stars"]).to be_nil
+  end
+
+  it "returns nil composite stars when there is no rankings section at all" do
+    parsed = described_class.parse("<html><body><h1 class='name'>No Rank</h1></body></html>")
+    expect(parsed["composite_stars"]).to be_nil
+  end
+
+  # Mirrors "returns nil composite for a single-section page whose section has
+  # a decimal rank-block" above, adapted to stars: the enrolled fixture alone
+  # doesn't prove composite_section has no fallback for stars, because a
+  # wrongly-added fallback would just read the same stars-block that
+  # composite_stars is "supposed" to be nil for anyway — nothing distinguishes
+  # the right answer from the wrong one by inspection. This document instead
+  # gives the single, non-composite-titled section a stars-block under a
+  # title that is NOT "247Sports" either, so a fallback is the only way it
+  # could produce a non-nil result. With no fallback, composite_section finds
+  # nothing (no title starts with "247Sports Composite") and composite_stars
+  # is nil; with a fallback to the first ".rankings-section", it would wrongly
+  # return 3.
+  it "does not fall back to another section for composite stars" do
+    single_section_html = <<~HTML
+      <html><body>
+        <h1 class="name">Solo Section</h1>
+        <section class="rankings-section">
+          <h3 class="title">Some Other Ranking</h3>
+          <div class="stars-block">
+            <span class="icon-starsolid yellow"></span>
+            <span class="icon-starsolid yellow"></span>
+            <span class="icon-starsolid yellow"></span>
+            <span class="icon-starsolid lightgrey"></span>
+            <span class="icon-starsolid lightgrey"></span>
+          </div>
+        </section>
+      </body></html>
+    HTML
+
+    parsed = described_class.parse(single_section_html)
+
+    expect(parsed["composite_stars"]).to be_nil
+  end
+
+  # Regression guard: refactoring star-counting into shared logic must not
+  # change stars' own behavior on either fixture.
+  it "still counts stars correctly for both fixtures after sharing the logic" do
+    expect(hs["stars"]).to eq(3)
+    expect(enrolled["stars"]).to eq(3)
+  end
 end

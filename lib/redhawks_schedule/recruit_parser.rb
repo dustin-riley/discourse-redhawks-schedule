@@ -40,6 +40,7 @@ module RedhawksSchedule
         "rating" => rating,
         "composite_rating" => composite_rating,
         "stars" => stars,
+        "composite_stars" => composite_stars,
         "ranks" => ranks,
         "offers" => offers,
       }
@@ -141,7 +142,19 @@ module RedhawksSchedule
     # and must not be counted. This is the least stable selector in the file —
     # a rating with no stars is a class-name change, not a missing rating.
     def stars
-      section = rankings_section
+      stars_in(rankings_section)
+    end
+
+    # Same star-counting rule as `stars`, applied to the composite section
+    # instead. Shared so the least-stable selector in the file only needs
+    # updating in one place. Relies on `composite_section`'s deliberate lack
+    # of fallback: a single-section page yields a nil section here, and nil
+    # in is nil out.
+    def composite_stars
+      stars_in(composite_section)
+    end
+
+    def stars_in(section)
       return nil if section.nil?
 
       block = section.at_css(".stars-block")
