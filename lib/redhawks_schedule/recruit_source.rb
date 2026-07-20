@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "nokogiri"
+
 module RedhawksSchedule
   # The security boundary for recruit fetching.
   #
@@ -42,5 +44,43 @@ module RedhawksSchedule
 
       "#{BASE}/#{slug}/"
     end
+
+    INTERESTS_HOSTS = ["247sports.com", "www.247sports.com"].freeze
+    INTERESTS_PATH = %r{\A/recruitment/([a-z0-9-]+-\d+)/recruitinterests/?\z}i.freeze
+
+    # The player page carries a link to the recruit's full interests page, and
+    # the recruitment id in it cannot be derived from the player slug — so the
+    # href has to be scraped. Scraping a URL out of a page we do not control
+    # and then fetching it is exactly the SSRF hole `url_for` exists to
+    # prevent, so the result is validated here and rebuilt from the matched
+    # slug rather than passed through. A string match alone is not enough:
+    # `evil-247sports.com` and `247sports.com.attacker.net` satisfy almost any
+    # substring test you would write. Only the parsed host is trustworthy.
+    def self.interests_url_from(html)
+      return nil unless html.is_a?(String) && !html.empty?
+
+      document = Nokogiri::HTML(html)
+      document.css("a[href]").each do |anchor|
+        url = parse_interests_href(anchor["href"])
+        return url unless url.nil?
+      end
+      nil
+    rescue StandardError
+      nil
+    end
+
+    def self.parse_interests_href(href)
+      uri = URI.parse(href.to_s)
+      return nil unless uri.scheme == "https"
+      return nil unless INTERESTS_HOSTS.include?(uri.host.to_s.downcase)
+
+      match = INTERESTS_PATH.match(uri.path.to_s)
+      return nil if match.nil?
+
+      "https://247sports.com/recruitment/#{match[1].downcase}/recruitinterests/"
+    rescue URI::InvalidURIError
+      nil
+    end
+    private_class_method :parse_interests_href
   end
 end
