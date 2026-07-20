@@ -18,7 +18,11 @@ module ::Jobs
       return if body.blank?
 
       recruit = ::RedhawksSchedule::RecruitParser.parse(body)
-      return if recruit.nil?
+
+      if recruit.nil?
+        renew_tombstone(slug)
+        return
+      end
 
       PluginStore.set(
         ::RedhawksSchedule::PLUGIN_NAME,
@@ -36,6 +40,23 @@ module ::Jobs
     rescue StandardError => e
       Rails.logger.warn("[redhawks-recruit] fetch failed: #{e.class}: #{e.message}")
       nil
+    end
+
+    # A refresh that fails to parse only ever replaces a tombstone (or an
+    # absent entry) with a fresh tombstone, resetting the negative-cache
+    # clock. It must never overwrite a *good* cached entry: a transient 247
+    # hiccup on a stale-but-real recruit must cost freshness, not the card
+    # itself.
+    def renew_tombstone(slug)
+      key = ::RedhawksSchedule.recruit_store_key(slug)
+      current = PluginStore.get(::RedhawksSchedule::PLUGIN_NAME, key)
+      return unless current.nil? || (current.is_a?(Hash) && current["tombstone"] == true)
+
+      PluginStore.set(
+        ::RedhawksSchedule::PLUGIN_NAME,
+        key,
+        { "fetched_at" => Time.now.utc.iso8601, "tombstone" => true },
+      )
     end
   end
 end

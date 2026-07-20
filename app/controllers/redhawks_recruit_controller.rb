@@ -6,20 +6,37 @@ class RedhawksRecruitController < ::ApplicationController
   requires_login false
   skip_before_action :check_xhr, :preload_json, :redirect_to_login_if_required, raise: false
 
+  # Sentinel distinguishing "the store read blew up" from "the store read
+  # succeeded and found nothing" — the two look identical as a bare nil, but
+  # only the latter should fall into fetch_inline. Confusing them turns a
+  # database outage into an outbound-fetch storm.
+  READ_FAILED = :read_failed
+
   def show
     slug = params[:slug].to_s
     return render_missing unless ::RedhawksSchedule::RecruitSource.valid_slug?(slug)
 
+    # The kill switch has to cover the network-facing half too, not just the
+    # background job — otherwise turning it off stops refreshes but leaves the
+    # endpoint happily fetching and serving.
+    return render_missing unless SiteSetting.redhawks_recruit_enabled
+
     entry = read_store(slug)
+    return render_missing if entry == READ_FAILED
 
     if entry.nil?
       entry = fetch_inline(slug)
       return render_missing if entry.nil?
     elsif stale?(entry)
-      # Serve the stale copy now and refresh behind the reader. Nobody waits on
-      # 247, and the card self-heals within a day.
-      ::Jobs.enqueue(:refresh_redhawks_recruit, slug: slug)
+      # Serve the current copy now and refresh behind the reader. Nobody waits
+      # on 247. For a real entry that's the stale card; for a tombstone that's
+      # nothing, so this request still 404s below, but the next one may not.
+      enqueue_refresh(slug)
     end
+
+    # A tombstone is a server-side "we already checked, there's nothing" —
+    # it must never reach a response body, only ever the 404 status.
+    return render_missing if tombstone?(entry)
 
     response.headers["Cache-Control"] = "public, max-age=900"
     render json: entry
@@ -31,20 +48,33 @@ class RedhawksRecruitController < ::ApplicationController
     PluginStore.get(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule.recruit_store_key(slug))
   rescue StandardError => e
     Rails.logger.warn("[redhawks-recruit] store read failed: #{e.class}: #{e.message}")
-    nil
+    READ_FAILED
+  end
+
+  def tombstone?(entry)
+    entry.is_a?(Hash) && entry["tombstone"] == true
   end
 
   def stale?(entry)
-    fetched_at = entry["fetched_at"]
-    return true if fetched_at.blank?
+    # A malformed entry (wrong type entirely, or a fetched_at that isn't a
+    # string) is treated as stale rather than raising: Time.iso8601 raises
+    # TypeError (not ArgumentError) on a non-string, and this is a
+    # silent-failure boundary, not a place to 500.
+    return true unless entry.is_a?(Hash)
 
-    Time.now.utc - Time.iso8601(fetched_at) >= ::RedhawksSchedule::RECRUIT_TTL
-  rescue ArgumentError
+    fetched_at = entry["fetched_at"]
+    return true unless fetched_at.is_a?(String)
+
+    ttl = tombstone?(entry) ? ::RedhawksSchedule::RECRUIT_NEGATIVE_TTL : ::RedhawksSchedule::RECRUIT_TTL
+    Time.now.utc - Time.iso8601(fetched_at) >= ttl
+  rescue ArgumentError, TypeError
     true
   end
 
   # Nothing cached: the reader would otherwise get no card at all, so pay the
-  # fetch once. Every later view is served from the store.
+  # fetch once. Every later view is served from the store — including a
+  # negative result, so a slug that doesn't exist costs one fetch, not one per
+  # request forever.
   def fetch_inline(slug)
     url = ::RedhawksSchedule::RecruitSource.url_for(slug)
     return nil if url.nil?
@@ -53,14 +83,40 @@ class RedhawksRecruitController < ::ApplicationController
     return nil if body.blank?
 
     recruit = ::RedhawksSchedule::RecruitParser.parse(body)
-    return nil if recruit.nil?
+    entry =
+      if recruit.nil?
+        { "fetched_at" => Time.now.utc.iso8601, "tombstone" => true }
+      else
+        { "fetched_at" => Time.now.utc.iso8601, "recruit" => recruit }
+      end
 
-    entry = { "fetched_at" => Time.now.utc.iso8601, "recruit" => recruit }
-    PluginStore.set(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule.recruit_store_key(slug), entry)
+    # A store write failure must not throw away a fetch that already
+    # succeeded — the caller still has a good `entry` in hand even if it
+    # couldn't be persisted for the next reader.
+    write_store(slug, entry)
     entry
   rescue StandardError => e
     Rails.logger.warn("[redhawks-recruit] inline fetch failed for #{slug}: #{e.class}: #{e.message}")
     nil
+  end
+
+  def write_store(slug, entry)
+    PluginStore.set(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule.recruit_store_key(slug), entry)
+  rescue StandardError => e
+    Rails.logger.warn("[redhawks-recruit] store write failed for #{slug}: #{e.class}: #{e.message}")
+  end
+
+  # A short Redis flag collapses N concurrent readers of one stale card into a
+  # single enqueued job instead of N identical ones all fetching the same URL.
+  # If Redis itself is unreachable, skip the refresh rather than risk raising
+  # out of a request that would otherwise have served fine.
+  def enqueue_refresh(slug)
+    key = "redhawks_recruit_refresh_lock:#{slug}"
+    return unless Discourse.redis.set(key, "1", ex: ::RedhawksSchedule::RECRUIT_REFRESH_LOCK_TTL, nx: true)
+
+    ::Jobs.enqueue(:refresh_redhawks_recruit, slug: slug)
+  rescue StandardError => e
+    Rails.logger.warn("[redhawks-recruit] refresh enqueue failed for #{slug}: #{e.class}: #{e.message}")
   end
 
   # 404 with an empty body. The component treats any non-200 as "leave the

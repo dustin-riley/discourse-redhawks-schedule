@@ -13,6 +13,18 @@ module ::RedhawksSchedule
   STORE_KEY = "events"
   RECRUIT_TTL = 86_400
 
+  # A parse failure (nonexistent player, or a page 247 has changed shape on) is
+  # cached too, as a tombstone, so the 48KB fetch that produced "nothing here"
+  # isn't repeated on every anonymous request for the slug. Shorter than
+  # RECRUIT_TTL so a page that goes live shortly after we first checked isn't
+  # hidden for a full day.
+  RECRUIT_NEGATIVE_TTL = 3_600
+
+  # How long a "someone already enqueued a refresh for this slug" flag lives in
+  # Redis. Only needs to outlast one 247 fetch, so concurrent readers of a
+  # stale card collapse into a single job instead of one each.
+  RECRUIT_REFRESH_LOCK_TTL = 60
+
   def self.recruit_store_key(slug)
     "recruit:#{slug}"
   end
