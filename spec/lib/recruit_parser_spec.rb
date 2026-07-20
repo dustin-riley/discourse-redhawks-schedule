@@ -191,4 +191,29 @@ RSpec.describe RedhawksSchedule::RecruitParser do
   it "returns nil composite for a single-section page" do
     expect(enrolled["composite_rating"]).to be_nil
   end
+
+  # The enrolled fixture alone doesn't prove composite_section has no
+  # fallback: its lone section's rank-block is an integer ("87"), which
+  # composite_rating's decimal regex rejects no matter which section fed it.
+  # This document instead gives the single, non-composite-titled section a
+  # decimal rank-block — the one value a wrongly-added fallback would
+  # actually leak through. With no fallback, composite_section finds nothing
+  # (no title starts with "247Sports Composite") and composite_rating is
+  # nil; with a fallback to the first ".rankings-section", it would wrongly
+  # return 0.86.
+  it "returns nil composite for a single-section page whose section has a decimal rank-block" do
+    single_section_decimal_html = <<~HTML
+      <html><body>
+        <h1 class="name">Solo Section</h1>
+        <section class="rankings-section">
+          <h3 class="title">247Sports</h3>
+          <div class="rank-block">0.8600</div>
+        </section>
+      </body></html>
+    HTML
+
+    parsed = described_class.parse(single_section_decimal_html)
+
+    expect(parsed["composite_rating"]).to be_nil
+  end
 end
