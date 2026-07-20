@@ -37,6 +37,9 @@ module RedhawksSchedule
         "high_school" => details["High School"],
         "city" => details["City"],
         "class_year" => details["Class"],
+        "rating" => rating,
+        "stars" => stars,
+        "ranks" => ranks,
       }
     end
 
@@ -83,6 +86,42 @@ module RedhawksSchedule
         value = spans[1].text.strip
         out[label] = value unless label.empty? || value.empty?
       end
+    end
+
+    def rating
+      raw = text_at(".rankings-section .rank-block").to_s
+      raw =~ /\A\d+\z/ ? raw.to_i : nil
+    end
+
+    # Filled stars are `.icon-starsolid.yellow`; empty ones are `.lightgrey`
+    # and must not be counted. This is the least stable selector in the file —
+    # a rating with no stars is a class-name change, not a missing rating.
+    def stars
+      block = document.at_css(".rankings-section .stars-block")
+      return nil if block.nil?
+
+      count = block.css("span.icon-starsolid.yellow").length
+      count.zero? ? nil : count
+    end
+
+    def ranks
+      section = document.at_css(".rankings-section")
+      return [] if section.nil?
+
+      section
+        .css("ul.ranks-list li")
+        .map do |li|
+          label = li.at_css("b")
+          value = li.at_css("strong")
+          next nil if label.nil? || value.nil?
+
+          label_text = label.text.strip
+          value_text = value.text.strip
+          next nil if label_text.empty? || value_text !~ /\A\d+\z/
+
+          { "label" => label_text, "value" => value_text.to_i }
+        end
+        .compact
     end
   end
 end

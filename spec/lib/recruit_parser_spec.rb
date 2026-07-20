@@ -58,4 +58,35 @@ RSpec.describe RedhawksSchedule::RecruitParser do
     expect(enrolled["position"]).to eq("WR")
     expect(enrolled["height"]).to eq("6-1")
   end
+
+  it "extracts the composite rating as an integer" do
+    expect(hs["rating"]).to eq(86)
+    expect(enrolled["rating"]).to eq(87)
+  end
+
+  it "counts filled stars only" do
+    expect(hs["stars"]).to eq(3)
+    expect(enrolled["stars"]).to eq(3)
+  end
+
+  it "extracts position and state ranks with their labels" do
+    expect(hs["ranks"]).to eq(
+      [{ "label" => "QB", "value" => 67 }, { "label" => "OH", "value" => 52 }],
+    )
+  end
+
+  it "extracts ranks for the enrolled player" do
+    expect(enrolled["ranks"]).to eq(
+      [{ "label" => "WR", "value" => 157 }, { "label" => "TN", "value" => 35 }],
+    )
+  end
+
+  # An absent rating and a zero rating mean different things; the card omits
+  # the whole cluster rather than rendering "0" or "NR".
+  it "returns nil rating and stars when the section is absent" do
+    parsed = described_class.parse("<html><body><h1 class='name'>No Rank</h1></body></html>")
+    expect(parsed["rating"]).to be_nil
+    expect(parsed["stars"]).to be_nil
+    expect(parsed["ranks"]).to eq([])
+  end
 end
