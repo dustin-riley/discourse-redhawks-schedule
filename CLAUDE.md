@@ -4,13 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A **Discourse plugin** that fetches the Miami University Athletics RSS calendar
-server-side every 30 minutes and serves upcoming events at
-`/redhawks-schedule.json`.
+A **Discourse plugin** serving two unrelated features, each fetched server-side
+and rendered by its own theme component:
 
-It exists because `miamiredhawks.com` sends no CORS headers, so a browser cannot
-fetch that feed directly. The companion theme component
-(`../miamihawktalk-schedule/`) renders this JSON in the sidebar.
+| Endpoint | Source | Component |
+|---|---|---|
+| `/redhawks-schedule.json` | Miami Athletics RSS calendar, refreshed every 30 min | `../miamihawktalk-schedule/` |
+| `/redhawks-recruit.json` | 247Sports player pages, fetched per slug on demand | `../miamihawktalk-recruits/` |
+
+The schedule exists because `miamiredhawks.com` sends no CORS headers, so a
+browser cannot fetch that feed directly. The two halves share only this repo and
+the PluginStore.
+
+**Working on the recruit half — the parsers, `RecruitSource`, `RecruitAssembler`,
+the recruit controller or job, or the payload shape — use the `recruit-pipeline`
+skill.** It is a public unauthenticated endpoint that scrapes a third party, and
+the invariants are not guessable from the code alone.
 
 ## Deploying costs downtime
 
@@ -40,10 +49,15 @@ sudo -E -u discourse bundle exec rails runner 'puts PluginStore.get("discourse-r
 ## Tests
 
 ```bash
-~/.gem/ruby/2.6.0/bin/rspec spec/lib/parser_spec.rb
+~/.gem/ruby/2.6.0/bin/rspec spec/
 ```
 
-`rspec` is installed user-scoped and is **not** on `PATH`.
+`rspec` is installed user-scoped and is **not** on `PATH`. Run the whole
+directory — there are five spec files, and naming one runs a fraction of them.
+
+**ActiveSupport is not loaded here.** Matchers that depend on it (`be_in`,
+`in?`) fail. Use plain matchers or `satisfy {}`. The controller and jobs do run
+inside Rails and may use `blank?`; their specs cannot.
 
 **Local Ruby is 2.6.10; the container runs 3.x.** Syntax newer than 2.6 —
 `filter_map`, `Hash#except`, endless method definitions, rightward assignment —
