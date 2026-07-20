@@ -88,8 +88,29 @@ module RedhawksSchedule
       end
     end
 
+    # A page can carry two `.rankings-section` blocks — the plain "247Sports"
+    # rating and the separate "247Sports Composite®" rating — and nothing but
+    # `h3.title` text tells them apart; both share every other class. We want
+    # the plain one: the composite's rank-block is a decimal ("0.8600") that
+    # reads as no rating at all, and its ranks-list holds composite position
+    # numbers, not the plain rank/state numbers the sidebar shows elsewhere.
+    # Falling back to the first section keeps single-section pages (enrolled
+    # players) working without a title to match.
+    def rankings_section
+      document.css(".rankings-section").find { |s| text_at_node(s, "h3.title") == "247Sports" } ||
+        document.at_css(".rankings-section")
+    end
+
+    def text_at_node(node, selector)
+      child = node.at_css(selector)
+      child ? child.text.strip : nil
+    end
+
     def rating
-      raw = text_at(".rankings-section .rank-block").to_s
+      section = rankings_section
+      return nil if section.nil?
+
+      raw = text_at_node(section, ".rank-block").to_s
       raw =~ /\A\d+\z/ ? raw.to_i : nil
     end
 
@@ -97,7 +118,10 @@ module RedhawksSchedule
     # and must not be counted. This is the least stable selector in the file —
     # a rating with no stars is a class-name change, not a missing rating.
     def stars
-      block = document.at_css(".rankings-section .stars-block")
+      section = rankings_section
+      return nil if section.nil?
+
+      block = section.at_css(".stars-block")
       return nil if block.nil?
 
       count = block.css("span.icon-starsolid.yellow").length
@@ -105,7 +129,7 @@ module RedhawksSchedule
     end
 
     def ranks
-      section = document.at_css(".rankings-section")
+      section = rankings_section
       return [] if section.nil?
 
       section

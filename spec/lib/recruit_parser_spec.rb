@@ -81,6 +81,54 @@ RSpec.describe RedhawksSchedule::RecruitParser do
     )
   end
 
+  # In every current fixture the plain "247Sports" section happens to come
+  # before "247Sports Composite®" in document order, so a parser that just
+  # grabbed the first `.rankings-section` would pass every test above for the
+  # wrong reason. This fixture reverses that order — composite first, plain
+  # second — to prove the selection is driven by the h3.title text, not by
+  # position. Under a first-section-wins reading, "rating" would come from
+  # the composite's decimal rank-block ("0.8600") and silently return nil
+  # (its regex only matches whole numbers), and "ranks" would return the
+  # composite's numbers (70/50) instead of the plain ones (67/52).
+  it "selects the plain 247Sports section by title even when it is not first in document order" do
+    reversed_order_html = <<~HTML
+      <html><body>
+        <h1 class="name">Reversed Order</h1>
+        <section class="rankings-section">
+          <h3 class="title">247Sports Composite&reg;</h3>
+          <div class="rank-block">0.8600</div>
+          <ul class="ranks-list">
+            <li><b>QB</b><strong>70</strong></li>
+            <li><b>OH</b><strong>50</strong></li>
+          </ul>
+        </section>
+        <section class="rankings-section">
+          <h3 class="title">247Sports</h3>
+          <div class="stars-block">
+            <span class="icon-starsolid yellow"></span>
+            <span class="icon-starsolid yellow"></span>
+            <span class="icon-starsolid yellow"></span>
+            <span class="icon-starsolid lightgrey"></span>
+            <span class="icon-starsolid lightgrey"></span>
+          </div>
+          <div class="rank-block">86</div>
+          <ul class="ranks-list">
+            <li><b>QB</b><strong>67</strong></li>
+            <li><b>OH</b><strong>52</strong></li>
+          </ul>
+        </section>
+      </body></html>
+    HTML
+
+    parsed = described_class.parse(reversed_order_html)
+
+    expect(parsed["rating"]).to eq(86)
+    expect(parsed["stars"]).to eq(3)
+    expect(parsed["ranks"]).to eq(
+      [{ "label" => "QB", "value" => 67 }, { "label" => "OH", "value" => 52 }],
+    )
+  end
+
   # An absent rating and a zero rating mean different things; the card omits
   # the whole cluster rather than rendering "0" or "NR".
   it "returns nil rating and stars when the section is absent" do
