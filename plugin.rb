@@ -35,6 +35,23 @@ module ::RedhawksSchedule
   # recruits for long.
   RECRUIT_FETCH_FAILURE_COOLDOWN_TTL = 300
 
+  # Bounds new outbound fetches (cache misses) per requesting IP. A cache hit
+  # is never limited — this only guards the inline-fetch path, so a popular
+  # post serving many reads of an already-fetched card is unaffected.
+  #
+  # A slug walk of well-formed-but-fake slugs is pure cache misses — every
+  # request is a distinct slug, so nothing here is ever cached, and every hit
+  # both costs a 247 round trip and writes a permanent tombstone row. A real
+  # reader can only produce a burst of cache misses by opening a thread that
+  # onebox-embeds several never-before-seen recruit links at once —
+  # realistically at most a couple dozen for a full recruiting-class post,
+  # all rendered within a few seconds of the page loading. 20 requests per 60
+  # seconds comfortably covers that burst while making a walk of any size
+  # slow enough to not be worth running: sustaining it for, say, 1,000 slugs
+  # takes 50 minutes at this ceiling.
+  RECRUIT_FETCH_RATE_LIMIT_MAX = 20
+  RECRUIT_FETCH_RATE_LIMIT_SECS = 60
+
   def self.recruit_store_key(slug)
     "recruit:#{slug}"
   end

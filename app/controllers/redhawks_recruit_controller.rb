@@ -91,7 +91,27 @@ class RedhawksRecruitController < ::ApplicationController
   # fetch once. Every later view is served from the store — including a
   # negative result, so a slug that doesn't exist costs one fetch, not one per
   # request forever.
+  #
+  # Only this path is rate-limited, never a cache hit: a popular post
+  # legitimately serves many reads of the same already-fetched card, and
+  # those must stay unlimited. What must be bounded is *new* outbound fetches
+  # from one IP — a slug walk of well-formed-but-fake slugs never repeats a
+  # slug, so it is pure cache misses, one inline fetch and one tombstone row
+  # per request, with no reaper. A real reader can only ever cause a burst of
+  # cache misses by opening a thread that onebox-embeds many recruit links
+  # that have never been fetched before — realistically a couple dozen at
+  # once for a full recruiting-class post — so the limit is set well above
+  # that and far below what a slug walk needs to be worth running.
   def fetch_inline(slug)
+    begin
+      inline_fetch_rate_limiter(request.remote_ip).performed!
+    rescue RateLimiter::LimitExceeded
+      # Our own throttle, not a 247 failure — must not trip the
+      # fetch-failure cooldown above, which is reserved for 247 itself
+      # misbehaving.
+      return nil
+    end
+
     url = ::RedhawksSchedule::RecruitSource.url_for(slug)
     # Not a fetch failure — this is url_for rejecting the slug before any
     # network call was attempted, so it must not trip the cooldown.
@@ -120,6 +140,15 @@ class RedhawksRecruitController < ::ApplicationController
     Rails.logger.warn("[redhawks-recruit] inline fetch failed for #{slug}: #{e.class}: #{e.message}")
     set_fetch_failure_cooldown
     nil
+  end
+
+  def inline_fetch_rate_limiter(remote_ip)
+    RateLimiter.new(
+      nil,
+      "redhawks_recruit_fetch:#{remote_ip}",
+      ::RedhawksSchedule::RECRUIT_FETCH_RATE_LIMIT_MAX,
+      ::RedhawksSchedule::RECRUIT_FETCH_RATE_LIMIT_SECS,
+    )
   end
 
   def fetch_failure_cooldown_active?

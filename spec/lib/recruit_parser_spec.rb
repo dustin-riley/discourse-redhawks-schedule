@@ -149,10 +149,14 @@ RSpec.describe RedhawksSchedule::RecruitParser do
     expect(miami["offered"]).to eq(true)
   end
 
-  it "records a status for non-committed schools" do
+  # 247 marks a plain offer's interest-level with title="none" — an absence,
+  # not a status word — so the parser normalizes it to nil rather than
+  # passing through the string "none", which would otherwise render as a
+  # status chip reading "None" next to a school that has, in fact, offered.
+  it "normalizes a plain offer's status to nil, not the string \"none\"" do
     toledo = hs["offers"].find { |o| o["team"] == "Toledo" }
     expect(toledo["offered"]).to eq(true)
-    expect(toledo["status"]).not_to eq("committed")
+    expect(toledo["status"]).to be_nil
   end
 
   # nil, not [] — the card omits the panel entirely rather than rendering an

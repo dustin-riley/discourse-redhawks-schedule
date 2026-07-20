@@ -174,9 +174,19 @@ module RedhawksSchedule
     end
 
     # The `title` attribute is lowercase and more stable than the visible text.
+    #
+    # 247 uses "none" to mean "no special interest level recorded" — a plain
+    # offer with nothing more to say — not a status word. That is an absence,
+    # so it is normalized to nil here rather than passed through as the
+    # string "none", which would otherwise render as a status chip reading
+    # "None" next to a school that has, in fact, offered. Checked against
+    # both fixtures: "committed" and "none" are the only values 247 sends;
+    # "none" is the only one carrying this "nothing to say" meaning.
     def interest_status(level)
       return nil if level.nil?
-      presence(level["title"]) || presence(level.text).to_s.downcase
+      status = presence(level["title"]) || presence(level.text).to_s.downcase
+      return nil if status.to_s.downcase == "none"
+      status
     end
   end
 end
