@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "nokogiri"
+require "uri"
 
 module RedhawksSchedule
   # The security boundary for recruit fetching.
@@ -78,7 +79,7 @@ module RedhawksSchedule
       return nil if match.nil?
 
       "https://247sports.com/recruitment/#{match[1].downcase}/recruitinterests/"
-    rescue URI::InvalidURIError
+    rescue URI::Error
       nil
     end
     private_class_method :parse_interests_href
