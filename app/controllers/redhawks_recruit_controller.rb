@@ -12,6 +12,18 @@ class RedhawksRecruitController < ::ApplicationController
   # database outage into an outbound-fetch storm.
   READ_FAILED = :read_failed
 
+  # Distinct from the store's "tombstone" concept: a tombstone says 247 was
+  # reached and said the player doesn't exist. This key says the opposite —
+  # we never got a clean answer at all, whether from a throttle, a block, a
+  # timeout, or an empty body — so it must not poison anything player-specific
+  # and must expire fast. Global rather than per-slug: the failure mode this
+  # guards against is 247 refusing *us*, not one player, and that's exactly
+  # what a slug walk provokes. A per-slug flag would let the walk simply keep
+  # moving to the next slug on every failure — no defense at all — whereas one
+  # flag makes every slug in the walk turn away at the door as soon as 247
+  # starts erroring.
+  FETCH_FAILURE_COOLDOWN_KEY = "redhawks_recruit_fetch_failure_cooldown"
+
   def show
     slug = params[:slug].to_s
     return render_missing unless ::RedhawksSchedule::RecruitSource.valid_slug?(slug)
@@ -25,6 +37,10 @@ class RedhawksRecruitController < ::ApplicationController
     return render_missing if entry == READ_FAILED
 
     if entry.nil?
+      # Only entries we don't already have are gated — a cached hit above,
+      # fresh or stale, is served regardless of the cooldown below.
+      return render_missing if fetch_failure_cooldown_active?
+
       entry = fetch_inline(slug)
       return render_missing if entry.nil?
     elsif stale?(entry)
@@ -77,10 +93,15 @@ class RedhawksRecruitController < ::ApplicationController
   # request forever.
   def fetch_inline(slug)
     url = ::RedhawksSchedule::RecruitSource.url_for(slug)
+    # Not a fetch failure — this is url_for rejecting the slug before any
+    # network call was attempted, so it must not trip the cooldown.
     return nil if url.nil?
 
     body = FinalDestination::HTTP.get(URI(url))
-    return nil if body.blank?
+    if body.blank?
+      set_fetch_failure_cooldown
+      return nil
+    end
 
     recruit = ::RedhawksSchedule::RecruitParser.parse(body)
     entry =
@@ -97,7 +118,29 @@ class RedhawksRecruitController < ::ApplicationController
     entry
   rescue StandardError => e
     Rails.logger.warn("[redhawks-recruit] inline fetch failed for #{slug}: #{e.class}: #{e.message}")
+    set_fetch_failure_cooldown
     nil
+  end
+
+  def fetch_failure_cooldown_active?
+    Discourse.redis.get(FETCH_FAILURE_COOLDOWN_KEY).present?
+  rescue StandardError => e
+    Rails.logger.warn("[redhawks-recruit] cooldown read failed: #{e.class}: #{e.message}")
+    # Same fail-closed direction as enqueue_refresh's lock, but the other way
+    # round: an unreachable Redis means we can't tell if we're in cooldown, so
+    # assume the worst and skip the fetch rather than risk adding to whatever
+    # is already going wrong for 247.
+    true
+  end
+
+  def set_fetch_failure_cooldown
+    Discourse.redis.set(
+      FETCH_FAILURE_COOLDOWN_KEY,
+      "1",
+      ex: ::RedhawksSchedule::RECRUIT_FETCH_FAILURE_COOLDOWN_TTL,
+    )
+  rescue StandardError => e
+    Rails.logger.warn("[redhawks-recruit] cooldown write failed: #{e.class}: #{e.message}")
   end
 
   def write_store(slug, entry)

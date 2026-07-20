@@ -25,6 +25,16 @@ module ::RedhawksSchedule
   # stale card collapse into a single job instead of one each.
   RECRUIT_REFRESH_LOCK_TTL = 60
 
+  # A fetch failure (throttle, block, timeout, empty body) says nothing about
+  # whether a player exists, so it must never be recorded as a tombstone — but
+  # it does mean 247 is currently unhappy with *us*, not with one slug. That's
+  # why this cooldown is global rather than per-slug: the attack this defends
+  # against is a slug walk, and a per-slug flag would let the walk simply move
+  # to the next slug on every failure, which is no defense at all. Short
+  # relative to RECRUIT_NEGATIVE_TTL so a transient outage doesn't hide real
+  # recruits for long.
+  RECRUIT_FETCH_FAILURE_COOLDOWN_TTL = 300
+
   def self.recruit_store_key(slug)
     "recruit:#{slug}"
   end
