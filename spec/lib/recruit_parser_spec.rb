@@ -29,4 +29,33 @@ RSpec.describe RedhawksSchedule::RecruitParser do
   it "returns nil for empty input" do
     expect(described_class.parse("")).to be_nil
   end
+
+  it "extracts position from the metrics list" do
+    expect(hs["position"]).to eq("QB")
+  end
+
+  it "extracts height and weight from the metrics list" do
+    expect(hs["height"]).to eq("6-1.5")
+    expect(hs["weight"]).to eq("170")
+  end
+
+  it "extracts high school and city from the details list" do
+    expect(hs["high_school"]).to eq("Cincinnati Elder")
+    expect(hs["city"]).to eq("Cincinnati, OH")
+  end
+
+  it "extracts class year for a high school recruit" do
+    expect(hs["class_year"]).to eq("2027")
+  end
+
+  # The enrolled player's details list has an "Exp" row where a recruit has
+  # "Class". Reading by index would return the eligibility range here.
+  it "returns no class year for an enrolled player" do
+    expect(enrolled["class_year"]).to be_nil
+  end
+
+  it "still reads the enrolled player's metrics" do
+    expect(enrolled["position"]).to eq("WR")
+    expect(enrolled["height"]).to eq("6-1")
+  end
 end

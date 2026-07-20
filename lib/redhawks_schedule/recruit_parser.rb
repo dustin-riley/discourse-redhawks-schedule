@@ -25,7 +25,19 @@ module RedhawksSchedule
       name = extract_name
       return nil if name.nil?
 
-      { "name" => name, "photo" => meta("og:image") }
+      metrics = labeled_list("ul.metrics-list")
+      details = labeled_list("ul.details")
+
+      {
+        "name" => name,
+        "photo" => meta("og:image"),
+        "position" => metrics["Pos"],
+        "height" => metrics["Height"],
+        "weight" => metrics["Weight"],
+        "high_school" => details["High School"],
+        "city" => details["City"],
+        "class_year" => details["Class"],
+      }
     end
 
     private
@@ -58,6 +70,19 @@ module RedhawksSchedule
       return nil if value.nil?
       stripped = value.strip
       stripped.empty? ? nil : stripped
+    end
+
+    # Builds { "Label" => "Value" } from <li><span>Label</span><span>Value</span></li>.
+    # Keyed by label because the row set differs between page types.
+    def labeled_list(selector)
+      document.css("#{selector} li").each_with_object({}) do |li, out|
+        spans = li.css("span")
+        next if spans.length < 2
+
+        label = spans[0].text.strip
+        value = spans[1].text.strip
+        out[label] = value unless label.empty? || value.empty?
+      end
     end
   end
 end
