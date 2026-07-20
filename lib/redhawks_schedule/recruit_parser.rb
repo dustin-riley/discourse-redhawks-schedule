@@ -40,6 +40,7 @@ module RedhawksSchedule
         "rating" => rating,
         "stars" => stars,
         "ranks" => ranks,
+        "offers" => offers,
       }
     end
 
@@ -146,6 +147,36 @@ module RedhawksSchedule
           { "label" => label_text, "value" => value_text.to_i }
         end
         .compact
+    end
+
+    # nil when the page has no offers section at all (enrolled players), as
+    # distinct from an empty list. The card omits the panel for nil.
+    def offers
+      rows = document.css("li").select { |li| li.at_css(".college-comp__interest-level") }
+      return nil if rows.empty?
+
+      rows
+        .map do |li|
+          team = team_name(li)
+          next nil if team.nil?
+
+          level = li.at_css(".college-comp__interest-level")
+          { "team" => team, "status" => interest_status(level), "offered" => !li.at_css(".college-comp__offer-check").nil? }
+        end
+        .compact
+    end
+
+    # The team name lives in the link text, not an image title — 247Sports'
+    # team logo <img> carries no title attribute on this page type.
+    def team_name(li)
+      link = li.at_css("a.college-comp__team-name-link")
+      presence(link && link.text)
+    end
+
+    # The `title` attribute is lowercase and more stable than the visible text.
+    def interest_status(level)
+      return nil if level.nil?
+      presence(level["title"]) || presence(level.text).to_s.downcase
     end
   end
 end

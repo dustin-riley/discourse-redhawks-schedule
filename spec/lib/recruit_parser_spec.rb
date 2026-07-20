@@ -137,4 +137,27 @@ RSpec.describe RedhawksSchedule::RecruitParser do
     expect(parsed["stars"]).to be_nil
     expect(parsed["ranks"]).to eq([])
   end
+
+  it "extracts every offer with team and status" do
+    teams = hs["offers"].map { |o| o["team"] }
+    expect(teams).to include("Miami (OH)", "Kent State", "Toledo", "Gardner-Webb")
+  end
+
+  it "marks the committed school" do
+    miami = hs["offers"].find { |o| o["team"] == "Miami (OH)" }
+    expect(miami["status"]).to eq("committed")
+    expect(miami["offered"]).to eq(true)
+  end
+
+  it "records a status for non-committed schools" do
+    toledo = hs["offers"].find { |o| o["team"] == "Toledo" }
+    expect(toledo["offered"]).to eq(true)
+    expect(toledo["status"]).not_to eq("committed")
+  end
+
+  # nil, not [] — the card omits the panel entirely rather than rendering an
+  # empty bordered box.
+  it "returns nil offers when the page has no offers section" do
+    expect(enrolled["offers"]).to be_nil
+  end
 end
