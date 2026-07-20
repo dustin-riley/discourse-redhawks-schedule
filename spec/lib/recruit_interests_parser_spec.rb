@@ -43,6 +43,40 @@ RSpec.describe RedhawksSchedule::RecruitInterestsParser do
     expect(rows.map { |r| r["offered"] }.uniq).to all(satisfy { |v| [true, false].include?(v) })
   end
 
+  # All four rows in the fixture read "Offer: Yes", so the spec above never
+  # exercises the false branch of offered? — a parser that always returned
+  # true would pass it. These use small inline HTML, mirroring the real
+  # markup's leading space before the nested "Offer:" heading span (the
+  # flattened text is " Offer:  Yes  ", not a clean "Offer: Yes"), to prove
+  # both the nil-node short circuit and the "yes" comparison actually gate
+  # the result.
+  it "reads an explicit \"Offer: No\" as false" do
+    html = <<~HTML
+      <li><div class="left"><div class="first_blk"><a>Case Western</a></div>
+      <div class="secondary_blk"><span class="offer"> <span class="heading">Offer:</span>  No  </span></div></div></li>
+    HTML
+    row = described_class.parse(html).first
+    expect(row["offered"]).to eq(false)
+  end
+
+  it "reads a row with no offer span at all as false" do
+    html = <<~HTML
+      <li><div class="left"><div class="first_blk"><a>Case Western</a></div>
+      <div class="secondary_blk"><span class="roster"> <span class="heading">Roster Outlook:</span> None </span></div></div></li>
+    HTML
+    row = described_class.parse(html).first
+    expect(row["offered"]).to eq(false)
+  end
+
+  it "reads an explicit \"Offer: Yes\" as true" do
+    html = <<~HTML
+      <li><div class="left"><div class="first_blk"><a>Case Western</a></div>
+      <div class="secondary_blk"><span class="offer"> <span class="heading">Offer:</span>  Yes  </span></div></div></li>
+    HTML
+    row = described_class.parse(html).first
+    expect(row["offered"]).to eq(true)
+  end
+
   it "returns nil when the page has no school rows" do
     expect(described_class.parse("<html><body></body></html>")).to be_nil
   end
