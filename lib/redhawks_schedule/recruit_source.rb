@@ -57,12 +57,30 @@ module RedhawksSchedule
     # slug rather than passed through. A string match alone is not enough:
     # `evil-247sports.com` and `247sports.com.attacker.net` satisfy almost any
     # substring test you would write. Only the parsed host is trustworthy.
-    def self.interests_url_from(html)
+    # `player_slug` is optional only so the security-boundary specs can exercise
+    # host and scheme handling in isolation; every production caller passes it,
+    # and should. Without it this returns the *first* recruitinterests anchor on
+    # the page, and 247 is free to render a "similar recruits" module whose link
+    # precedes the subject's own — which would attribute another teenager's
+    # scholarship offers to this one, silently and in a card that reads as fact.
+    # With it, the recruitment slug's name portion must match the player slug's,
+    # and anything else is skipped. Returning nil (a card with the player page's
+    # partial offers) is always better than guessing.
+    def self.interests_url_from(html, player_slug = nil)
       return nil unless html.is_a?(String) && !html.empty?
+
+      expected = nil
+      unless player_slug.nil?
+        # A caller that hands us a slug we cannot vet gets nil rather than the
+        # unfiltered first-anchor behaviour it was trying to avoid.
+        return nil unless valid_slug?(player_slug)
+
+        expected = slug_name(player_slug)
+      end
 
       document = Nokogiri::HTML(html)
       document.css("a[href]").each do |anchor|
-        url = parse_interests_href(anchor["href"])
+        url = parse_interests_href(anchor["href"], expected)
         return url unless url.nil?
       end
       nil
@@ -70,7 +88,15 @@ module RedhawksSchedule
       nil
     end
 
-    def self.parse_interests_href(href)
+    # "kaden-estep-46165474" -> "kaden-estep". The trailing id differs between
+    # the player slug and the recruitment slug for the same person (they are
+    # different 247 id spaces), so only the name portion can be compared.
+    def self.slug_name(slug)
+      slug.to_s.downcase.sub(/-\d+\z/, "")
+    end
+    private_class_method :slug_name
+
+    def self.parse_interests_href(href, expected_name = nil)
       uri = URI.parse(href.to_s)
       return nil unless uri.scheme == "https"
       return nil unless INTERESTS_HOSTS.include?(uri.host.to_s.downcase)
@@ -78,7 +104,10 @@ module RedhawksSchedule
       match = INTERESTS_PATH.match(uri.path.to_s)
       return nil if match.nil?
 
-      "https://247sports.com/recruitment/#{match[1].downcase}/recruitinterests/"
+      found = match[1].downcase
+      return nil if !expected_name.nil? && slug_name(found) != expected_name
+
+      "https://247sports.com/recruitment/#{found}/recruitinterests/"
     rescue URI::Error
       nil
     end

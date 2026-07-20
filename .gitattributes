@@ -1,0 +1,7 @@
+# Ruby sources are always text. Belt-and-braces against a stray control byte
+# in a spec string making git call a whole file binary — which happened once
+# with a raw NUL in recruit_source_spec.rb and hid an entire SSRF test change
+# from code review ("Binary files differ"). The escapes in that spec are now
+# written as \0 rather than embedded bytes; this keeps the diff readable even
+# if one slips back in.
+*.rb diff

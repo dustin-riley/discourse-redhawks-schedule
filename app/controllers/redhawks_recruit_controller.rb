@@ -127,7 +127,7 @@ class RedhawksRecruitController < ::ApplicationController
     # Guarded on a real recruit so a slug walk costs exactly one outbound
     # request per request, as before: a bogus slug parses to nil and never
     # reaches the second fetch.
-    recruit = ::RedhawksSchedule::RecruitAssembler.merge(recruit, fetch_interests(body)) unless recruit.nil?
+    recruit = ::RedhawksSchedule::RecruitAssembler.merge(recruit, fetch_interests(body, slug)) unless recruit.nil?
 
     entry =
       if recruit.nil?
@@ -157,8 +157,8 @@ class RedhawksRecruitController < ::ApplicationController
   # over it would stop cards site-wide for five minutes. Equally it must not
   # tombstone: the player demonstrably exists, we just read one page fewer, and
   # the caller still holds the offers the player page carried.
-  def fetch_interests(player_html)
-    url = ::RedhawksSchedule::RecruitSource.interests_url_from(player_html)
+  def fetch_interests(player_html, slug)
+    url = ::RedhawksSchedule::RecruitSource.interests_url_from(player_html, slug)
     return nil if url.nil?
 
     body = FinalDestination::HTTP.get(URI(url))

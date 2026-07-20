@@ -27,7 +27,7 @@ module ::Jobs
       # Only after the tombstone decision is already made, so a failed
       # interests fetch can never influence it: by here the player page has
       # parsed, which is the only thing a tombstone is allowed to be about.
-      recruit = ::RedhawksSchedule::RecruitAssembler.merge(recruit, fetch_interests(body))
+      recruit = ::RedhawksSchedule::RecruitAssembler.merge(recruit, fetch_interests(body, slug))
 
       PluginStore.set(
         ::RedhawksSchedule::PLUGIN_NAME,
@@ -53,8 +53,8 @@ module ::Jobs
     # player page carried — so it must never renew a tombstone or otherwise
     # cost the reader the card. Note `fetch` above already logs and returns nil
     # on a transport failure; this rescue is for the parse and URI paths.
-    def fetch_interests(player_html)
-      url = ::RedhawksSchedule::RecruitSource.interests_url_from(player_html)
+    def fetch_interests(player_html, slug)
+      url = ::RedhawksSchedule::RecruitSource.interests_url_from(player_html, slug)
       return nil if url.nil?
 
       body = fetch(url, "interests fetch")
