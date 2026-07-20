@@ -24,6 +24,11 @@ module ::Jobs
         return
       end
 
+      # Only after the tombstone decision is already made, so a failed
+      # interests fetch can never influence it: by here the player page has
+      # parsed, which is the only thing a tombstone is allowed to be about.
+      recruit = ::RedhawksSchedule::RecruitAssembler.merge(recruit, fetch_interests(body))
+
       PluginStore.set(
         ::RedhawksSchedule::PLUGIN_NAME,
         ::RedhawksSchedule.recruit_store_key(slug),
@@ -39,6 +44,25 @@ module ::Jobs
       FinalDestination::HTTP.get(URI(url))
     rescue StandardError => e
       Rails.logger.warn("[redhawks-recruit] fetch failed: #{e.class}: #{e.message}")
+      nil
+    end
+
+    # Returns nil on every failure path, and swallows everything itself so
+    # that nothing here can reach execute's rescue. A missing or unreachable
+    # interests page is a partial success — the caller still has the offers the
+    # player page carried — so it must never renew a tombstone or otherwise
+    # cost the reader the card. Note `fetch` above already logs and returns nil
+    # on a transport failure; this rescue is for the parse and URI paths.
+    def fetch_interests(player_html)
+      url = ::RedhawksSchedule::RecruitSource.interests_url_from(player_html)
+      return nil if url.nil?
+
+      body = fetch(url)
+      return nil if body.blank?
+
+      ::RedhawksSchedule::RecruitInterestsParser.parse(body)
+    rescue StandardError => e
+      Rails.logger.warn("[redhawks-recruit] interests fetch failed: #{e.class}: #{e.message}")
       nil
     end
 

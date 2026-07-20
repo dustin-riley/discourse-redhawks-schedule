@@ -61,6 +61,8 @@ end
 require_relative "lib/redhawks_schedule/parser"
 require_relative "lib/redhawks_schedule/recruit_source"
 require_relative "lib/redhawks_schedule/recruit_parser"
+require_relative "lib/redhawks_schedule/recruit_interests_parser"
+require_relative "lib/redhawks_schedule/recruit_assembler"
 
 after_initialize do
   require_relative "app/jobs/scheduled/fetch_redhawks_schedule"

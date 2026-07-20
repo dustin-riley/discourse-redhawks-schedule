@@ -124,6 +124,11 @@ class RedhawksRecruitController < ::ApplicationController
     end
 
     recruit = ::RedhawksSchedule::RecruitParser.parse(body)
+    # Guarded on a real recruit so a slug walk costs exactly one outbound
+    # request per request, as before: a bogus slug parses to nil and never
+    # reaches the second fetch.
+    recruit = ::RedhawksSchedule::RecruitAssembler.merge(recruit, fetch_interests(body)) unless recruit.nil?
+
     entry =
       if recruit.nil?
         { "fetched_at" => Time.now.utc.iso8601, "tombstone" => true }
@@ -139,6 +144,29 @@ class RedhawksRecruitController < ::ApplicationController
   rescue StandardError => e
     Rails.logger.warn("[redhawks-recruit] inline fetch failed for #{slug}: #{e.class}: #{e.message}")
     set_fetch_failure_cooldown
+    nil
+  end
+
+  # Returns nil on every failure path, and swallows everything itself so that
+  # nothing here can reach fetch_inline's rescue.
+  #
+  # Deliberately does NOT call set_fetch_failure_cooldown on failure. That
+  # cooldown exists for 247 refusing us outright, and turns every slug in a
+  # walk away at the door. A missing secondary page is not that signal — it is
+  # one page we could not get for one player, and tripping the global cooldown
+  # over it would stop cards site-wide for five minutes. Equally it must not
+  # tombstone: the player demonstrably exists, we just read one page fewer, and
+  # the caller still holds the offers the player page carried.
+  def fetch_interests(player_html)
+    url = ::RedhawksSchedule::RecruitSource.interests_url_from(player_html)
+    return nil if url.nil?
+
+    body = FinalDestination::HTTP.get(URI(url))
+    return nil if body.blank?
+
+    ::RedhawksSchedule::RecruitInterestsParser.parse(body)
+  rescue StandardError => e
+    Rails.logger.warn("[redhawks-recruit] interests fetch failed: #{e.class}: #{e.message}")
     nil
   end
 
