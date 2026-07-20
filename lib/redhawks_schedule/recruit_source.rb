@@ -13,7 +13,20 @@ module RedhawksSchedule
     BASE = "https://247sports.com/player"
 
     def self.valid_slug?(slug)
-      !slug.nil? && slug.is_a?(String) && !(SLUG =~ slug).nil?
+      return false unless slug.is_a?(String)
+
+      # A malformed byte sequence (e.g. a stray \xFF in a UTF-8 string) would
+      # raise ArgumentError out of the regexp match below. Reject it here
+      # instead, since this boundary must return false for any input, never
+      # raise.
+      return false unless slug.valid_encoding?
+
+      # A validly-encoded string in an encoding incompatible with SLUG (e.g.
+      # UTF-16LE) would raise Encoding::CompatibilityError out of the regexp
+      # match below. Reject it here for the same reason.
+      return false unless Encoding.compatible?(SLUG, slug)
+
+      SLUG.match?(slug)
     end
 
     def self.url_for(slug)
