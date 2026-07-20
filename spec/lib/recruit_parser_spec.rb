@@ -164,4 +164,31 @@ RSpec.describe RedhawksSchedule::RecruitParser do
   it "returns nil offers when the page has no offers section" do
     expect(enrolled["offers"]).to be_nil
   end
+
+  it "extracts the composite rating as a float" do
+    expect(hs["composite_rating"]).to eq(0.86)
+  end
+
+  it "keeps the 247 rating separate from the composite" do
+    expect(hs["rating"]).to eq(86)
+  end
+
+  # Stars and ranks keep coming from the 247 section only. The composite
+  # section carries its own of both, and showing two of every number helps
+  # nobody.
+  it "still reads stars and ranks from the 247 section" do
+    expect(hs["stars"]).to eq(3)
+    expect(hs["ranks"]).not_to be_empty
+  end
+
+  it "returns nil composite when the section is absent" do
+    parsed = described_class.parse("<html><body><h1 class='name'>No Rank</h1></body></html>")
+    expect(parsed["composite_rating"]).to be_nil
+  end
+
+  # Enrolled players have a single rankings section, which rankings_section
+  # falls back to. That fallback must not be mistaken for a composite.
+  it "returns nil composite for a single-section page" do
+    expect(enrolled["composite_rating"]).to be_nil
+  end
 end

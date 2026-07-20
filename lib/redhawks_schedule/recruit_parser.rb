@@ -38,6 +38,7 @@ module RedhawksSchedule
         "city" => details["City"],
         "class_year" => details["Class"],
         "rating" => rating,
+        "composite_rating" => composite_rating,
         "stars" => stars,
         "ranks" => ranks,
         "offers" => offers,
@@ -113,6 +114,27 @@ module RedhawksSchedule
 
       raw = text_at_node(section, ".rank-block").to_s
       raw =~ /\A\d+\z/ ? raw.to_i : nil
+    end
+
+    # The composite lives in its own .rankings-section, titled "247Sports
+    # Composite®". Matched on the prefix rather than the whole title because
+    # of the registered-trademark glyph, which is an entity in the source and
+    # not worth depending on the exact decoding of.
+    def composite_section
+      document
+        .css(".rankings-section")
+        .find { |s| text_at_node(s, "h3.title").to_s.start_with?("247Sports Composite") }
+    end
+
+    # A decimal where `rating` takes an integer — the two numbers are on
+    # different scales (86 is 0-100, 0.8600 is 0-1) and must never be
+    # compared or substituted for one another.
+    def composite_rating
+      section = composite_section
+      return nil if section.nil?
+
+      raw = text_at_node(section, ".rank-block").to_s.strip
+      raw =~ /\A\d*\.\d+\z/ ? raw.to_f : nil
     end
 
     # Filled stars are `.icon-starsolid.yellow`; empty ones are `.lightgrey`
