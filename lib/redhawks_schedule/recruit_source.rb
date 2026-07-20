@@ -15,16 +15,24 @@ module RedhawksSchedule
     def self.valid_slug?(slug)
       return false unless slug.is_a?(String)
 
+      # A validly-encoded string in an encoding incompatible with SLUG (e.g.
+      # UTF-16LE) would raise Encoding::CompatibilityError out of the regexp
+      # match below. Encoding.compatible?(SLUG, slug) looks tempting for this,
+      # but it special-cases zero-length strings as compatible with anything
+      # since there are no bytes to reconcile — so an empty UTF-16LE string
+      # sails past it and still blows up at the match, one line down. Check
+      # the encoding *tag* instead of asking about the content: an
+      # ASCII-incompatible encoding can never match SLUG regardless of what
+      # (if anything) the string holds.
+      return false unless slug.encoding.ascii_compatible?
+
       # A malformed byte sequence (e.g. a stray \xFF in a UTF-8 string) would
       # raise ArgumentError out of the regexp match below. Reject it here
       # instead, since this boundary must return false for any input, never
-      # raise.
+      # raise. This is still needed even with the ascii_compatible? guard
+      # above: it catches a different failure (bad bytes within an otherwise
+      # fine encoding), not the encoding tag itself.
       return false unless slug.valid_encoding?
-
-      # A validly-encoded string in an encoding incompatible with SLUG (e.g.
-      # UTF-16LE) would raise Encoding::CompatibilityError out of the regexp
-      # match below. Reject it here for the same reason.
-      return false unless Encoding.compatible?(SLUG, slug)
 
       SLUG.match?(slug)
     end
