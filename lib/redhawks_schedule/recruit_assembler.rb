@@ -45,8 +45,25 @@ module RedhawksSchedule
     def committed_team(offers)
       return nil unless offers.is_a?(Array)
 
-      row = offers.find { |o| o.is_a?(Hash) && o["status"].to_s.downcase == COMMITTED }
+      row = offers.find { |o| o.is_a?(Hash) && committed_status?(o["status"]) }
       row && row["team"]
+    end
+
+    # `to_s.downcase` on a status straight off a scraped page can raise
+    # ArgumentError when the string is tagged UTF-8 but carries invalid
+    # bytes. merge must never raise (see the module comment above): a raise
+    # here reaches fetch_inline's outer rescue, which sets the global fetch
+    # failure cooldown and stops recruit cards for every visitor, not just
+    # this one row. Same reasoning and same two checks as
+    # RecruitSource.valid_slug?: an ASCII-incompatible encoding tag and a
+    # malformed byte sequence within an otherwise ASCII-compatible encoding
+    # are two different ways downcase can blow up, so both are guarded here.
+    def committed_status?(status)
+      status = status.to_s
+      return false unless status.encoding.ascii_compatible?
+      return false unless status.valid_encoding?
+
+      status.downcase == COMMITTED
     end
   end
 end

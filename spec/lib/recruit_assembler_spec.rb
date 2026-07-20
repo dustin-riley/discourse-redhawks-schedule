@@ -111,6 +111,18 @@ RSpec.describe RedhawksSchedule::RecruitAssembler do
     expect(merged["committed_to"]).to be_nil
   end
 
+  # `status.to_s.downcase` raises ArgumentError for a String tagged UTF-8
+  # that carries invalid bytes. merge is called outside the rescue that
+  # protects the interests-page fetch, so a raise here would reach
+  # fetch_inline's outer rescue and trip the global fetch failure cooldown,
+  # taking recruit cards down site-wide rather than just this one row.
+  it "does not raise when a status carries invalid UTF-8 bytes, and reports no commitment" do
+    bad_status = "\xFF".dup.force_encoding("UTF-8")
+    rows = [{ "team" => "Miami (OH)", "status" => bad_status, "offered" => true }]
+    expect { described_class.merge(recruit, rows) }.not_to raise_error
+    expect(described_class.merge(recruit, rows)["committed_to"]).to be_nil
+  end
+
   it "returns nil for a nil recruit" do
     expect(described_class.merge(nil, interest_rows)).to be_nil
   end

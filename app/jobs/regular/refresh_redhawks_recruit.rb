@@ -40,10 +40,10 @@ module ::Jobs
 
     private
 
-    def fetch(url)
+    def fetch(url, label = "fetch")
       FinalDestination::HTTP.get(URI(url))
     rescue StandardError => e
-      Rails.logger.warn("[redhawks-recruit] fetch failed: #{e.class}: #{e.message}")
+      Rails.logger.warn("[redhawks-recruit] #{label} failed: #{e.class}: #{e.message}")
       nil
     end
 
@@ -57,7 +57,7 @@ module ::Jobs
       url = ::RedhawksSchedule::RecruitSource.interests_url_from(player_html)
       return nil if url.nil?
 
-      body = fetch(url)
+      body = fetch(url, "interests fetch")
       return nil if body.blank?
 
       ::RedhawksSchedule::RecruitInterestsParser.parse(body)

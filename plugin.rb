@@ -50,6 +50,12 @@ module ::RedhawksSchedule
   # (60% above a 25-recruit class) while still making a walk of any size slow
   # enough to not be worth running: sustaining it for, say, 1,000 slugs takes
   # 25 minutes at this ceiling.
+  #
+  # This counts *inbound* requests to this endpoint, not outbound fetches to
+  # 247. Those are the same number only for a bogus slug, which parses to nil
+  # and stops after the player-page fetch. A cache miss on a real recruit also
+  # fetches the interests page, so the per-IP outbound ceiling this limiter
+  # implies is effectively double this number for genuine recruits.
   RECRUIT_FETCH_RATE_LIMIT_MAX = 40
   RECRUIT_FETCH_RATE_LIMIT_SECS = 60
 
