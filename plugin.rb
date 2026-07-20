@@ -44,12 +44,13 @@ module ::RedhawksSchedule
   # both costs a 247 round trip and writes a permanent tombstone row. A real
   # reader can only produce a burst of cache misses by opening a thread that
   # onebox-embeds several never-before-seen recruit links at once —
-  # realistically at most a couple dozen for a full recruiting-class post,
-  # all rendered within a few seconds of the page loading. 20 requests per 60
-  # seconds comfortably covers that burst while making a walk of any size
-  # slow enough to not be worth running: sustaining it for, say, 1,000 slugs
-  # takes 50 minutes at this ceiling.
-  RECRUIT_FETCH_RATE_LIMIT_MAX = 20
+  # realistically a full signing-class post, which NCAA initial-counter rules
+  # cap at around 25 recruits — all rendered within a few seconds of the page
+  # loading. 40 requests per 60 seconds gives that worst case real headroom
+  # (60% above a 25-recruit class) while still making a walk of any size slow
+  # enough to not be worth running: sustaining it for, say, 1,000 slugs takes
+  # 25 minutes at this ceiling.
+  RECRUIT_FETCH_RATE_LIMIT_MAX = 40
   RECRUIT_FETCH_RATE_LIMIT_SECS = 60
 
   def self.recruit_store_key(slug)
