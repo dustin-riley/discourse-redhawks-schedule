@@ -4,22 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A **Discourse plugin** serving two unrelated features, each fetched server-side
-and rendered by its own theme component:
-
-| Endpoint | Source | Component |
-|---|---|---|
-| `/redhawks-schedule.json` | Miami Athletics RSS calendar, refreshed every 30 min | `../miamihawktalk-schedule/` |
-| `/redhawks-recruit.json` | 247Sports player pages, fetched per slug on demand | `../miamihawktalk-recruits/` |
+A **Discourse plugin** serving one feature: `/redhawks-schedule.json`, the
+Miami Athletics RSS calendar, refreshed every 30 minutes and fetched
+server-side. It is rendered by `../miamihawktalk-schedule/`.
 
 The schedule exists because `miamiredhawks.com` sends no CORS headers, so a
-browser cannot fetch that feed directly. The two halves share only this repo and
-the PluginStore.
-
-**Working on the recruit half — the parsers, `RecruitSource`, `RecruitAssembler`,
-the recruit controller or job, or the payload shape — use the `recruit-pipeline`
-skill.** It is a public unauthenticated endpoint that scrapes a third party, and
-the invariants are not guessable from the code alone.
+browser cannot fetch that feed directly.
 
 ## Deploying costs downtime
 
@@ -53,7 +43,7 @@ sudo -E -u discourse bundle exec rails runner 'puts PluginStore.get("discourse-r
 ```
 
 `rspec` is installed user-scoped and is **not** on `PATH`. Run the whole
-directory — there are five spec files, and naming one runs a fraction of them.
+directory — there is one spec file, `parser_spec.rb`.
 
 **ActiveSupport is not loaded here.** Matchers that depend on it (`be_in`,
 `in?`) fail. Use plain matchers or `satisfy {}`. The controller and jobs do run
