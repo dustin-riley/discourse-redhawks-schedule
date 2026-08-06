@@ -389,4 +389,53 @@ RSpec.describe RedhawksSchedule::Parser do
       expect(described_class.parse(xml, now: BEFORE_SEASON).first[:sport]).to eq("Women's Soccer")
     end
   end
+
+  describe "broadcast fields" do
+    let(:broadcast_item) do
+      wrap(<<~XML)
+        <item>
+          <title>11/10 7:00 PM Miami University Football vs Ohio</title>
+          <description>Miami University Football vs Ohio\\nTV: ESPN2/ESPNU\\nRadio: Miami Radio Network\\nStreaming Audio: https://miamiredhawks.com/listen\\nTickets: https://redhawktix.evenue.net/events/FBSE\\n</description>
+          <ev:startdate>2026-11-11T00:00:00.0000000Z</ev:startdate>
+          <s:opponent>Ohio</s:opponent>
+          <s:gameid>20845</s:gameid>
+          <s:links>
+            <s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+          </s:links>
+        </item>
+      XML
+    end
+
+    subject(:broadcast) do
+      described_class.parse(broadcast_item, now: BEFORE_SEASON).first[:broadcast]
+    end
+
+    it "reads the TV network" do
+      expect(broadcast[:tv]).to eq("ESPN2/ESPNU")
+    end
+
+    it "reads the radio network" do
+      expect(broadcast[:radio]).to eq("Miami Radio Network")
+    end
+
+    it "keeps the whole URL when the value contains a colon" do
+      expect(broadcast[:audio]).to eq("https://miamiredhawks.com/listen")
+    end
+
+    it "reads tickets" do
+      expect(broadcast[:tickets]).to eq("https://redhawktix.evenue.net/events/FBSE")
+    end
+
+    it "reads livestats from s:links" do
+      expect(broadcast[:livestats]).to eq("https://miamiredhawks.com/sidearmstats/football/summary")
+    end
+
+    it "drops the repeated title line rather than treating it as a label" do
+      expect(broadcast.length).to eq(5)
+    end
+
+    it "is an empty hash when the feed carries nothing" do
+      expect(described_class.parse(timed_item, now: BEFORE_SEASON).first[:broadcast]).to eq({})
+    end
+  end
 end
