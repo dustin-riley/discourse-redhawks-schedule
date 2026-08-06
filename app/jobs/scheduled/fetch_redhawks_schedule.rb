@@ -16,12 +16,21 @@ module ::Jobs
       # previous value in place makes an upstream outage invisible to users.
       return if body.blank? || !body.include?("<rss")
 
-      events = ::RedhawksSchedule::Parser.parse(body)
+      parser = ::RedhawksSchedule::Parser.new(body)
+      generated_at = Time.now.utc.iso8601
 
       PluginStore.set(
         ::RedhawksSchedule::PLUGIN_NAME,
         ::RedhawksSchedule::STORE_KEY,
-        { "generated_at" => Time.now.utc.iso8601, "events" => events.map { |e| serialize(e) } },
+        { "generated_at" => generated_at, "events" => parser.parse.map { |e| serialize(e) } },
+      )
+
+      # Gameday threads need each day of a series, and read stored data rather
+      # than re-fetching, so the uncollapsed list is stored alongside.
+      PluginStore.set(
+        ::RedhawksSchedule::PLUGIN_NAME,
+        ::RedhawksSchedule::ALL_EVENTS_KEY,
+        { "generated_at" => generated_at, "events" => parser.events.map { |e| serialize(e) } },
       )
     rescue StandardError => e
       Rails.logger.warn("[redhawks-schedule] update failed: #{e.class}: #{e.message}")

@@ -11,6 +11,7 @@ enabled_site_setting :redhawks_schedule_enabled
 module ::RedhawksSchedule
   PLUGIN_NAME = "discourse-redhawks-schedule"
   STORE_KEY = "events"
+  ALL_EVENTS_KEY = "all_events"
 end
 
 require_relative "lib/redhawks_schedule/parser"

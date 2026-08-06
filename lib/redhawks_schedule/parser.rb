@@ -55,12 +55,17 @@ module RedhawksSchedule
       @now = now.utc
     end
 
-    def parse
+    # Uncollapsed: one row per calendar item. Gameday threads want each day of
+    # a series; the sidebar wants them merged, which is what #parse does.
+    def events
       # `.map.compact` rather than `filter_map`: the dev Mac runs system Ruby
-      # 2.6, where filter_map does not exist. Discourse's container runs 3.x,
-      # so this would otherwise fail only locally.
-      events = document.xpath("//channel/item").map { |item| build_event(item) }.compact
-      collapse(upcoming(events).sort_by { |e| [e[:start_utc], e[:sport]] })
+      # 2.6, where filter_map does not exist.
+      rows = document.xpath("//channel/item").map { |item| build_event(item) }.compact
+      upcoming(rows).sort_by { |e| [e[:start_utc], e[:sport]] }
+    end
+
+    def parse
+      collapse(events)
     end
 
     private

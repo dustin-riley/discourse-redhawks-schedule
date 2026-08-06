@@ -390,6 +390,42 @@ RSpec.describe RedhawksSchedule::Parser do
     end
   end
 
+  describe "#events" do
+    let(:series) do
+      wrap(<<~XML)
+        <item>
+          <title>10/2 Miami University Men's Golf vs Fall Invitational</title>
+          <ev:startdate>2026-10-02</ev:startdate>
+          <s:opponent>Fall Invitational</s:opponent>
+          <s:gameid>30001</s:gameid>
+        </item>
+        <item>
+          <title>10/3 Miami University Men's Golf vs Fall Invitational</title>
+          <ev:startdate>2026-10-03</ev:startdate>
+          <s:opponent>Fall Invitational</s:opponent>
+          <s:gameid>30002</s:gameid>
+        </item>
+      XML
+    end
+
+    it "keeps each day of a series separate" do
+      events = described_class.new(series, now: BEFORE_SEASON).events
+      expect(events.length).to eq(2)
+      expect(events.map { |e| e[:id] }).to eq(%w[30001 30002])
+    end
+
+    it "still collapses the same series in #parse" do
+      rows = described_class.new(series, now: BEFORE_SEASON).parse
+      expect(rows.length).to eq(1)
+      expect(rows.first[:days]).to eq(2)
+    end
+
+    it "drops past events from #events" do
+      after = Time.utc(2026, 12, 1)
+      expect(described_class.new(series, now: after).events).to be_empty
+    end
+  end
+
   describe "broadcast fields" do
     let(:broadcast_item) do
       wrap(<<~XML)
