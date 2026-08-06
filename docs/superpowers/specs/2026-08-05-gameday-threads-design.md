@@ -134,7 +134,7 @@ redhawks_gameday_sports:
       days_before: { type: integer, validations: { min: 0, max: 14 } }
       digest_day:  { type: enum, choices: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] }
 redhawks_gameday_poster_username:
-  default: "redhawks_bot"
+  default: "swoop_bot"
 ```
 
 `type: objects` is confirmed available to plugin site settings —
@@ -168,16 +168,57 @@ are **not in the feed yet** and will appear as their seasons approach:
 
 ## The bot account
 
-Posts come from a dedicated account, not `system`. Core reserves negative user
-ids (`-1` system, `-2` discobot) and a third-party plugin claiming one risks
-collision, so the bot is seeded idempotently as an ordinary user named by
-`redhawks_gameday_poster_username`: active, approved, trust level 4.
+Posts come from a dedicated account, **Swoop Bot**, created by the plugin when
+it does not already exist. Core reserves negative user ids and a third-party
+plugin claiming one risks collision, so it is an ordinary user: active,
+approved, trust level 4, not staff.
 
 Being a positive-id user it is not `bot?`, so it is subject to new-user rate
-limits and post validations. Create posts with `skip_validations: true`. If the
-account is missing or the setting names a nonexistent user, **log and post
-nothing** — never silently fall back to `system`, because retrofitting authorship
-after threads exist is the problem this choice avoids.
+limits and post validations. Create posts with `skip_validations: true`.
+
+### Identity is the stored id, not the username
+
+Creation is driven by `redhawks_gameday_poster_username` (default
+`swoop_bot`), but once created the resulting **user id is written to
+PluginStore and that becomes the source of truth**. Every later run resolves the
+bot by id.
+
+This matters because the obvious alternative — resolve by username each run,
+create if absent — spawns a duplicate account the first time anyone renames the
+bot in the admin UI, and orphans every existing thread's author. Resolving by id
+means Swoop Bot can be renamed, re-avatared and given a bio freely, exactly as
+core's negative-id bots can, without the plugin noticing or caring.
+
+Consequently the username setting is read **only when no id is stored**. If the
+stored id no longer resolves (account deleted), log and post nothing rather than
+silently recreating — a vanished bot account is a thing to look at, not to paper
+over.
+
+### Why not an existing bot
+
+Both shortcuts were checked against core and rejected.
+
+`system` (`-1`) **cannot be renamed durably.** `db/fixtures/009_users.rb` calls
+`User.seed` with no guard, and seed-fu reassigns every attribute on records it
+finds (`seeder.rb:61-75`), so each `db:migrate` — every container rebuild —
+resets `username` to `system`. The fixture also actively evicts any other user
+holding that username. Beyond that, `system` is the attribution for staff action
+logs, automated PMs and topic notices, so renaming it relabels the site's entire
+automated voice, and it is `admin: true, moderator: true`.
+
+`discobot` (`-2`) **renames cleanly** — its fixture is guarded by
+`unless User.find_by(id: -2)` — but it answers back. `actions.rb:93` defines
+`reply_to_bot_post?` as `post.reply_to_post.user_id == -2`, which feeds
+`public_reply?` (`track_selector.rb:263`) and routes any reply to a discobot
+post into `bot_commands`. Every fan replying in a gameday thread would
+intermittently receive the new-user tutorial's "I'm not sure what you mean"
+message, and `roll 2d6` / `quote` / `fortune` would become live commands in
+every game thread. Suppressing that needs
+`discourse_narrative_bot_disable_public_replies`, a global switch that breaks
+onboarding site-wide to borrow one account.
+
+Renaming discobot to something Miami-themed remains free and unrelated to this
+feature.
 
 ## Job behaviour
 
@@ -237,7 +278,9 @@ initialisation rather than relying on a remembered manual admin step.
 | Game cancelled | Vanishes from feed; thread stays as-is |
 | Configured sport matches nothing | Logged as unmatched; never fatal |
 | `Streaming Video` in an unrecognised format | Plain link instead of iframe; logged |
-| Bot account missing | Log, post nothing |
+| No bot id stored yet | Create Swoop Bot, store its id |
+| Bot renamed in admin UI | No effect — resolved by stored id |
+| Stored bot id no longer resolves | Log, post nothing; do not recreate |
 
 ## Testing
 
@@ -254,7 +297,8 @@ with no ActiveSupport, per this repo's constraints:
 - burst cap defers rather than drops
 
 The job gets one thin Rails spec proving it calls `PostCreator` with what the
-planner returned, and stops when disabled or when the bot is missing.
+planner returned, stops when disabled, creates Swoop Bot exactly once across two
+runs, and keeps posting as the same account after a rename.
 
 ## Out of scope
 
