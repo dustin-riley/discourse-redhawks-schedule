@@ -40,10 +40,20 @@ module RedhawksSchedule
       local(utc).strftime("%G-W%V")
     end
 
+    # Eastern midnight can fall on either side of the annual clock change,
+    # since the switch happens at 2am local, not at midnight — so the
+    # offset in effect at midnight is not always the offset in effect at
+    # `utc`. Resolve the offset that applies AT the target midnight itself:
+    # take a first guess using the offset of the original instant, then
+    # recompute the offset at that guess and use it. One iteration always
+    # converges because midnight is never within an hour of the 2am switch.
+    # Do not "simplify" this back to `midnight - offset(utc)` — that reads
+    # the wrong offset on both transition dates.
     def start_of_day(utc)
       wall = local(utc)
       midnight = Time.utc(wall.year, wall.month, wall.day)
-      midnight - offset(utc)
+      guess = midnight - offset(utc)
+      midnight - offset(guess)
     end
 
     # Second Sunday in March, 02:00 local standard == 07:00 UTC.

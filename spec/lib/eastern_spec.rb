@@ -66,5 +66,21 @@ RSpec.describe RedhawksSchedule::Eastern do
       expect(described_class.start_of_day(Time.utc(2026, 9, 4, 17)))
         .to eq(Time.utc(2026, 9, 4, 4))
     end
+
+    it "resolves the offset at midnight, not at the given instant, on the spring-forward date" do
+      # DST starts 2026-03-08 at 07:00 UTC (2am local standard), so
+      # midnight Eastern on the 8th is still EST (-5) even though the
+      # instant passed in is already after the switch (EDT, -4).
+      expect(described_class.start_of_day(Time.utc(2026, 3, 8, 12)))
+        .to eq(Time.utc(2026, 3, 8, 5))
+    end
+
+    it "resolves the offset at midnight, not at the given instant, on the fall-back date" do
+      # DST ends 2026-11-01 at 06:00 UTC (2am local daylight), so
+      # midnight Eastern on the 1st is still EDT (-4) even though the
+      # instant passed in is already after the switch (EST, -5).
+      expect(described_class.start_of_day(Time.utc(2026, 11, 1, 12)))
+        .to eq(Time.utc(2026, 11, 1, 4))
+    end
   end
 end
