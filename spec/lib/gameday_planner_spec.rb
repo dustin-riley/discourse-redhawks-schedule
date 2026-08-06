@@ -5,6 +5,7 @@ require_relative "../../lib/redhawks_schedule/gameday_planner"
 
 RSpec.describe RedhawksSchedule::GamedayPlanner do
   NOW = Time.utc(2026, 9, 1, 12)
+  DAY_SECONDS = 24 * 60 * 60
 
   def event(overrides = {})
     {
@@ -111,6 +112,68 @@ RSpec.describe RedhawksSchedule::GamedayPlanner do
     it "takes the soonest games first" do
       ids = plan(many, config)[:actions].map { |a| a[:event][:id] }
       expect(ids).to eq(%w[30001 30002 30003 30004 30005])
+    end
+  end
+
+  describe "digest mode" do
+    # 2026-08-31 12:00 UTC is Monday, 8:00 AM Eastern.
+    MONDAY = Time.utc(2026, 8, 31, 12)
+
+    let(:config) do
+      [{ sport: "Field Hockey", mode: "digest", category: [9], digest_day: "Monday" }]
+    end
+
+    let(:this_week) do
+      [
+        event(id: "40001", sport: "Field Hockey", start_utc: Time.utc(2026, 9, 4, 17)),
+        event(id: "40002", sport: "Field Hockey", start_utc: Time.utc(2026, 9, 6, 19)),
+      ]
+    end
+
+    it "plans one digest holding the week's games" do
+      result = plan(this_week, config, {}, MONDAY)
+      action = result[:actions].first
+
+      expect(result[:actions].length).to eq(1)
+      expect(action[:kind]).to eq(:digest)
+      expect(action[:sport]).to eq("Field Hockey")
+      expect(action[:category_id]).to eq(9)
+      expect(action[:events].map { |e| e[:id] }).to eq(%w[40001 40002])
+    end
+
+    it "keys the digest by Eastern ISO week" do
+      action = plan(this_week, config, {}, MONDAY)[:actions].first
+      expect(action[:key]).to eq("gameday:digest:Field Hockey:2026-W36")
+    end
+
+    it "posts nothing on any other day of the week" do
+      tuesday = MONDAY + DAY_SECONDS
+      expect(plan(this_week, config, {}, tuesday)[:actions]).to be_empty
+    end
+
+    it "posts nothing when the week holds no games" do
+      later = [event(id: "40003", sport: "Field Hockey", start_utc: Time.utc(2026, 10, 1, 17))]
+      expect(plan(later, config, {}, MONDAY)[:actions]).to be_empty
+    end
+
+    it "skips a week already in the ledger" do
+      ledger = { "gameday:digest:Field Hockey:2026-W36" => 55 }
+      expect(plan(this_week, config, ledger, MONDAY)[:actions]).to be_empty
+    end
+
+    it "excludes games beyond seven days" do
+      mixed = this_week + [event(id: "40009", sport: "Field Hockey", start_utc: Time.utc(2026, 9, 30, 17))]
+      action = plan(mixed, config, {}, MONDAY)[:actions].first
+      expect(action[:events].map { |e| e[:id] }).to eq(%w[40001 40002])
+    end
+
+    it "never applies the burst cap to digests" do
+      wide = (1..8).map do |n|
+        event(id: "410#{n}", sport: "Field Hockey", start_utc: Time.utc(2026, 9, 1, 17))
+      end
+      result = plan(wide, config, {}, MONDAY, 1)
+      expect(result[:actions].length).to eq(1)
+      expect(result[:actions].first[:events].length).to eq(8)
     end
   end
 end
