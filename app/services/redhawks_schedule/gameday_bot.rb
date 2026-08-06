@@ -39,7 +39,31 @@ module ::RedhawksSchedule
       username = SiteSetting.redhawks_gameday_poster_username
       username = "swoop_bot" if username.blank?
 
-      user = User.find_by_username(username) || build_user(username)
+      existing = User.find_by_username(username)
+      if existing
+        # Adopt an existing account at this username only if its email is
+        # ours. That still self-heals the case where a previous run's
+        # build_user succeeded but the PluginStore.set below raised before
+        # recording the id -- the next run finds that orphan by username and
+        # picks it back up. It refuses to adopt anyone else: username is free
+        # text an admin can type, and without this check a real member who
+        # already holds that username would be silently annexed as the
+        # poster for every gameday topic. Do not weaken this back to a bare
+        # username lookup.
+        if existing.email == EMAIL
+          user = existing
+        else
+          Rails.logger.warn(
+            "[redhawks-schedule] redhawks_gameday_poster_username (#{username}) belongs to " \
+              "an existing account that is not the gameday bot; change the site setting to an " \
+              "unused username and try again",
+          )
+          return nil
+        end
+      else
+        user = build_user(username)
+      end
+
       PluginStore.set(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule::BOT_ID_KEY, user.id)
       user
     rescue StandardError => e
