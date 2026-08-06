@@ -437,5 +437,39 @@ RSpec.describe RedhawksSchedule::Parser do
     it "is an empty hash when the feed carries nothing" do
       expect(described_class.parse(timed_item, now: BEFORE_SEASON).first[:broadcast]).to eq({})
     end
+
+    it "derives the framable player URL from a showcase link" do
+      item = wrap(<<~XML)
+        <item>
+          <title>8/20 7:00 PM Miami University Women's Soccer vs Morehead State</title>
+          <description>Miami University Women's Soccer vs Morehead State\\nStreaming Video: https://admin.miamiredhawks.com/showcase?Live=630\\n</description>
+          <ev:startdate>2026-08-20T23:00:00.0000000Z</ev:startdate>
+          <s:gameid>20927</s:gameid>
+        </item>
+      XML
+
+      broadcast = described_class.parse(item, now: BEFORE_SEASON).first[:broadcast]
+
+      expect(broadcast[:video_embed]).to eq(
+        "https://miamiredhawks.com/showcase/embed.aspx?Live=630&type=Live",
+      )
+      expect(broadcast[:video]).to eq("https://admin.miamiredhawks.com/showcase?Live=630")
+    end
+
+    it "omits video_embed when the streaming video URL is an unfamiliar shape" do
+      item = wrap(<<~XML)
+        <item>
+          <title>8/20 7:00 PM Miami University Women's Soccer vs Morehead State</title>
+          <description>Miami University Women's Soccer vs Morehead State\\nStreaming Video: https://youtube.com/watch?v=abc123\\n</description>
+          <ev:startdate>2026-08-20T23:00:00.0000000Z</ev:startdate>
+          <s:gameid>20927</s:gameid>
+        </item>
+      XML
+
+      broadcast = described_class.parse(item, now: BEFORE_SEASON).first[:broadcast]
+
+      expect(broadcast.key?(:video_embed)).to be(false)
+      expect(broadcast[:video]).to eq("https://youtube.com/watch?v=abc123")
+    end
   end
 end

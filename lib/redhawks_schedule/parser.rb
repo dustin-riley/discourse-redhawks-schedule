@@ -40,6 +40,12 @@ module RedhawksSchedule
       "tickets" => :tickets,
     }.freeze
 
+    # Only ONE event in the whole feed has ever carried a Streaming Video link,
+    # so this pattern generalises from a single sample. A non-match must fall
+    # back to a plain link — a wrong iframe is worse than a working link.
+    SHOWCASE_LIVE_ID = /\/showcase\?Live=(\d+)/i
+    EMBED_TEMPLATE = "https://miamiredhawks.com/showcase/embed.aspx?Live=%s&type=Live"
+
     def self.parse(xml, now: Time.now.utc)
       new(xml, now: now).parse
     end
@@ -157,6 +163,12 @@ module RedhawksSchedule
 
       livestats = presence(text(item, "s:links/s:livestats"))
       found[:livestats] = livestats if livestats
+
+      video = found[:video]
+      if video
+        match = SHOWCASE_LIVE_ID.match(video)
+        found[:video_embed] = format(EMBED_TEMPLATE, match[1]) if match
+      end
 
       found
     end
