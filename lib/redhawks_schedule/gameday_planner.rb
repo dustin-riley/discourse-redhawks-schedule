@@ -92,6 +92,45 @@ module RedhawksSchedule
       }
     end
 
+    # The sports the test endpoint is allowed to post for, mapped to where.
+    # Extracted so the controller can distinguish "nothing configured" from
+    # "nothing left to post" without re-implementing `normalize`.
+    def thread_sports(config)
+      config.each_with_object({}) do |row, map|
+        normalized = normalize(row)
+        next unless normalized[:mode] == "thread"
+        next if normalized[:category_id].nil?
+
+        map[normalized[:sport]] = normalized[:category_id]
+      end
+    end
+
+    # The one topic the test endpoint would post right now. Deliberately
+    # ignores `days_before` -- waiting for the window is what the endpoint
+    # exists to avoid. Takes no `now`: the stored list arrives already
+    # upcoming-filtered and sorted by [start_utc, sport], so the first match
+    # is the next event.
+    def next_test_action(events:, config:, ledger:)
+      categories = thread_sports(config)
+      return nil if categories.empty?
+
+      event =
+        events.find do |e|
+          next false if e[:id].nil?
+          next false unless categories.key?(e[:sport])
+
+          !ledger.key?("gameday:game:#{e[:id]}")
+        end
+      return nil if event.nil?
+
+      {
+        kind: :thread,
+        key: "gameday:game:#{event[:id]}",
+        category_id: categories[event[:sport]],
+        event: event,
+      }
+    end
+
     # Site settings hand back string keys; specs are easier to read with
     # symbols. Accept both rather than making the untestable job convert.
     def normalize(row)

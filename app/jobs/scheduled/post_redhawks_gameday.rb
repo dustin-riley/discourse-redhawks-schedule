@@ -73,27 +73,9 @@ module ::Jobs
     end
 
     def stored_events
-      stored = PluginStore.get(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule::ALL_EVENTS_KEY)
-      return [] if stored.nil?
-
-      (stored["events"] || []).map { |row| deserialize(row) }
-    end
-
-    # PluginStore round-trips through JSON, so everything comes back with
-    # string keys and times as strings. The planner and composer expect symbol
-    # keys and real Times.
-    def deserialize(row)
-      event = {}
-      row.each { |key, value| event[key.to_sym] = value }
-
-      event[:start_utc] = Time.iso8601(event[:start_utc]) if event[:start_utc].is_a?(String)
-      event[:end_utc] = Time.iso8601(event[:end_utc]) if event[:end_utc].is_a?(String)
-
-      broadcast = {}
-      (event[:broadcast] || {}).each { |key, value| broadcast[key.to_sym] = value }
-      event[:broadcast] = broadcast
-
-      event
+      ::RedhawksSchedule::StoredEvents.deserialize(
+        PluginStore.get(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule::ALL_EVENTS_KEY),
+      )
     end
   end
 end

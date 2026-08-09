@@ -24,15 +24,21 @@ require_relative "lib/redhawks_schedule/parser"
 require_relative "lib/redhawks_schedule/eastern"
 require_relative "lib/redhawks_schedule/gameday_composer"
 require_relative "lib/redhawks_schedule/gameday_planner"
+require_relative "lib/redhawks_schedule/stored_events"
 
 after_initialize do
   require_relative "app/services/redhawks_schedule/gameday_bot"
   require_relative "app/jobs/scheduled/fetch_redhawks_schedule"
   require_relative "app/jobs/scheduled/post_redhawks_gameday"
   require_relative "app/controllers/redhawks_schedule_controller"
+  require_relative "app/controllers/redhawks_gameday_test_controller"
 
   Discourse::Application.routes.append do
     get "/redhawks-schedule" => "redhawks_schedule#index", :format => :json
+
+    scope "/admin/plugins/discourse-redhawks-schedule", constraints: AdminConstraint.new do
+      post "/gameday-test" => "redhawks_gameday_test#create", :format => :json
+    end
   end
 
   # Allowlist the player once, rather than relying on a remembered manual step.
