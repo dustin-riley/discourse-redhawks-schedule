@@ -431,7 +431,9 @@ git commit -m "Verify the admin controller base class against Discourse source"
 
 **Interfaces:**
 - Consumes: `GamedayPlanner.thread_sports(config)`, `GamedayPlanner.next_test_action(events:, config:, ledger:)` (Task 1); `StoredEvents.deserialize(payload)` (Task 2); the base class confirmed in Task 3. Also existing: `GamedayBot.resolve`, `GamedayComposer.thread_title(event)`, `GamedayComposer.thread_body(event)`.
-- Produces: `POST /redhawks-gameday-test.json` → 200 with `topic_id`, `topic_url`, `title`, `sport`, `start_utc`, `time_known`, `category_id`; or 422 with `reason`.
+- Produces: `POST /admin/plugins/discourse-redhawks-schedule/gameday-test.json` → 200 with `topic_id`, `topic_url`, `title`, `sport`, `start_utc`, `time_known`, `category_id`; or 422 with `reason`.
+
+**Route corrected by Task 3.** The design assumed a top-level `POST /redhawks-gameday-test.json`. That was wrong: every bundled-plugin admin controller checked routes under `/admin/plugins/<slug>/…` behind a route-level `constraints:` guard. `NOTES-api-verification.md` §5 has the evidence. The path below is the corrected one — use it, not the design doc's.
 
 **Note on TDD order here:** this task's spec requires `rails_helper` and therefore cannot be run on the dev Mac at all — not to fail, not to pass. Write it first anyway, as the statement of intended behaviour, then verify it in the container in Task 5. Do not skip it on the grounds that it cannot be run locally.
 
@@ -482,7 +484,7 @@ RSpec.describe "gameday test endpoint" do
     before { sign_in(admin) }
 
     it "posts one topic into the configured category" do
-      expect { post "/redhawks-gameday-test.json" }.to change { Topic.count }.by(1)
+      expect { post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json" }.to change { Topic.count }.by(1)
 
       expect(response.status).to eq(200)
       expect(Topic.last.category_id).to eq(category.id)
@@ -490,7 +492,7 @@ RSpec.describe "gameday test endpoint" do
     end
 
     it "returns the created topic so it can be opened" do
-      post "/redhawks-gameday-test.json"
+      post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json"
       body = response.parsed_body
 
       expect(body["topic_id"]).to eq(Topic.last.id)
@@ -503,11 +505,11 @@ RSpec.describe "gameday test endpoint" do
     # The whole point: usable before the switch is thrown.
     it "works while gameday posting is disabled" do
       SiteSetting.redhawks_gameday_enabled = false
-      expect { post "/redhawks-gameday-test.json" }.to change { Topic.count }.by(1)
+      expect { post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json" }.to change { Topic.count }.by(1)
     end
 
     it "never writes the ledger, so the real job still posts this game" do
-      post "/redhawks-gameday-test.json"
+      post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json"
 
       ledger = PluginStore.get(RedhawksSchedule::PLUGIN_NAME, RedhawksSchedule::LEDGER_KEY)
       expect(ledger.to_h).to be_empty
@@ -520,7 +522,7 @@ RSpec.describe "gameday test endpoint" do
         { "gameday:game:20845" => 991 },
       )
 
-      expect { post "/redhawks-gameday-test.json" }.to_not change { Topic.count }
+      expect { post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json" }.to_not change { Topic.count }
       expect(response.status).to eq(422)
       expect(response.parsed_body["reason"]).to include("already been posted")
     end
@@ -528,7 +530,7 @@ RSpec.describe "gameday test endpoint" do
     it "explains an empty configuration rather than reporting nothing to post" do
       SiteSetting.redhawks_gameday_sports = []
 
-      post "/redhawks-gameday-test.json"
+      post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json"
       expect(response.status).to eq(422)
       expect(response.parsed_body["reason"]).to include("configured")
     end
@@ -538,7 +540,7 @@ RSpec.describe "gameday test endpoint" do
         { "sport" => "Football", "mode" => "digest", "category" => [category.id], "digest_day" => "Monday" },
       ]
 
-      post "/redhawks-gameday-test.json"
+      post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json"
       expect(response.status).to eq(422)
       expect(response.parsed_body["reason"]).to include("configured")
     end
@@ -546,7 +548,7 @@ RSpec.describe "gameday test endpoint" do
     it "explains an empty store rather than raising" do
       PluginStore.remove(RedhawksSchedule::PLUGIN_NAME, RedhawksSchedule::ALL_EVENTS_KEY)
 
-      post "/redhawks-gameday-test.json"
+      post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json"
       expect(response.status).to eq(422)
       expect(response.parsed_body["reason"]).to include("no stored events")
     end
@@ -554,7 +556,7 @@ RSpec.describe "gameday test endpoint" do
     it "explains an unresolvable bot rather than raising" do
       allow(RedhawksSchedule::GamedayBot).to receive(:resolve).and_return(nil)
 
-      expect { post "/redhawks-gameday-test.json" }.to_not change { Topic.count }
+      expect { post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json" }.to_not change { Topic.count }
       expect(response.status).to eq(422)
       expect(response.parsed_body["reason"]).to include("bot")
     end
@@ -562,7 +564,7 @@ RSpec.describe "gameday test endpoint" do
     it "is unreachable when the plugin is disabled" do
       SiteSetting.redhawks_schedule_enabled = false
 
-      post "/redhawks-gameday-test.json"
+      post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json"
       expect(response.status).to eq(404)
     end
   end
@@ -570,12 +572,12 @@ RSpec.describe "gameday test endpoint" do
   it "refuses an ordinary user" do
     sign_in(user)
 
-    expect { post "/redhawks-gameday-test.json" }.to_not change { Topic.count }
+    expect { post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json" }.to_not change { Topic.count }
     expect(response.status).to eq(403)
   end
 
   it "refuses anonymous callers" do
-    expect { post "/redhawks-gameday-test.json" }.to_not change { Topic.count }
+    expect { post "/admin/plugins/discourse-redhawks-schedule/gameday-test.json" }.to_not change { Topic.count }
     expect(response.status).to eq(403)
   end
 end
@@ -583,7 +585,7 @@ end
 
 - [ ] **Step 2: Write the controller**
 
-Create `app/controllers/redhawks_gameday_test_controller.rb`. Substitute the base class and any `requires_plugin` line confirmed in Task 3 — the `::Admin::AdminController` below is the assumption, not the verified answer:
+Create `app/controllers/redhawks_gameday_test_controller.rb`. The base class and the `requires_plugin` call below are what Task 3 verified against Discourse `main`: `::Admin::AdminController` runs `before_action :ensure_admin`, which raises unless `current_user.admin?` — moderators are rejected, which is what the design wants.
 
 ```ruby
 # frozen_string_literal: true
@@ -598,6 +600,8 @@ Create `app/controllers/redhawks_gameday_test_controller.rb`. Substitute the bas
 # should stay invisible; here a human is waiting on the response and needs to
 # know why nothing was posted.
 class RedhawksGamedayTestController < ::Admin::AdminController
+  requires_plugin ::RedhawksSchedule::PLUGIN_NAME
+
   def create
     config = SiteSetting.redhawks_gameday_sports
     if config.blank? || ::RedhawksSchedule::GamedayPlanner.thread_sports(config).empty?
@@ -669,13 +673,18 @@ In `plugin.rb`, inside `after_initialize`, add the require after the existing co
   require_relative "app/controllers/redhawks_gameday_test_controller"
 ```
 
-and add the route inside the existing `Discourse::Application.routes.append do` block, below the `get` line:
+and add the route inside the existing `Discourse::Application.routes.append do` block, below the `get` line. `AdminConstraint` is the route-level guard `discourse-ai` uses; it sits on top of the controller's own `ensure_admin` rather than replacing it:
 
 ```ruby
-    post "/redhawks-gameday-test" => "redhawks_gameday_test#create", :format => :json
+    scope "/admin/plugins/discourse-redhawks-schedule", constraints: AdminConstraint.new do
+      post "/gameday-test" => "redhawks_gameday_test#create", :format => :json
+    end
 ```
 
-If Task 3 found that admin routes must be namespaced, use the namespaced path it recorded instead, and update the paths in the Step 1 spec to match.
+Two things to watch when this first runs in Task 5, both recorded here so a failure is diagnosed rather than guessed at:
+
+- **The route helper name.** A `scope` with a leading-slash path produces the path above; confirm the generated route is exactly `/admin/plugins/discourse-redhawks-schedule/gameday-test` with `rake routes | grep gameday` in the container if the spec 404s.
+- **The plugin-disabled status.** The Step 1 spec asserts 404 when `redhawks_schedule_enabled` is false. Both `enabled_site_setting` and `requires_plugin` gate that path, and Task 3 did not verify which status wins. If the container reports something other than 404, change the spec to match observed behaviour and note it in `NOTES-api-verification.md` — do not force the code to produce 404.
 
 - [ ] **Step 4: Check both files parse**
 
