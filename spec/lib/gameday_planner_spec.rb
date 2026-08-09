@@ -176,4 +176,87 @@ RSpec.describe RedhawksSchedule::GamedayPlanner do
       expect(result[:actions].first[:events].length).to eq(8)
     end
   end
+
+  describe ".thread_sports" do
+    it "maps thread-mode sports to their category" do
+      config = [{ sport: "Football", mode: "thread", category: [7], days_before: 5 }]
+      expect(described_class.thread_sports(config)).to eq({ "Football" => 7 })
+    end
+
+    it "excludes digest and off rows" do
+      config = [
+        { sport: "Field Hockey", mode: "digest", category: [9], digest_day: "Monday" },
+        { sport: "Soccer", mode: "off", category: [11] },
+      ]
+      expect(described_class.thread_sports(config)).to eq({})
+    end
+
+    it "excludes a thread row with no category" do
+      config = [{ sport: "Football", mode: "thread", category: nil, days_before: 5 }]
+      expect(described_class.thread_sports(config)).to eq({})
+    end
+
+    it "accepts string keys, as the site setting supplies them" do
+      config = [{ "sport" => "Football", "mode" => "thread", "category" => [7] }]
+      expect(described_class.thread_sports(config)).to eq({ "Football" => 7 })
+    end
+  end
+
+  describe ".next_test_action" do
+    let(:config) do
+      [{ sport: "Football", mode: "thread", category: [7], days_before: 5 }]
+    end
+
+    def next_test(events, cfg = config, ledger = {})
+      described_class.next_test_action(events: events, config: cfg, ledger: ledger)
+    end
+
+    it "returns a thread action for the next configured event" do
+      action = next_test([event])
+
+      expect(action[:kind]).to eq(:thread)
+      expect(action[:key]).to eq("gameday:game:20845")
+      expect(action[:category_id]).to eq(7)
+      expect(action[:event][:opponent]).to eq("Ohio")
+    end
+
+    # The stored list is already upcoming-filtered and sorted by
+    # [start_utc, sport] at fetch time, so "next" is "first match".
+    it "takes the first match in stored order without re-sorting" do
+      later = event(id: "30002", start_utc: Time.utc(2026, 9, 12, 17))
+      sooner = event(id: "30001", start_utc: Time.utc(2026, 9, 5, 17))
+
+      expect(next_test([later, sooner])[:event][:id]).to eq("30002")
+    end
+
+    it "ignores the days_before window entirely" do
+      far = event(start_utc: Time.utc(2026, 12, 25, 17))
+      expect(next_test([far])[:event][:id]).to eq("20845")
+    end
+
+    it "skips a game already in the ledger and takes the one after" do
+      ledger = { "gameday:game:20845" => 991 }
+      second = event(id: "20846", opponent: "Toledo")
+
+      expect(next_test([event, second], config, ledger)[:event][:id]).to eq("20846")
+    end
+
+    it "returns nil when every candidate is in the ledger" do
+      ledger = { "gameday:game:20845" => 991 }
+      expect(next_test([event], config, ledger)).to be_nil
+    end
+
+    it "returns nil when no sport is configured for threads" do
+      digest_only = [{ sport: "Football", mode: "digest", category: [9], digest_day: "Monday" }]
+      expect(next_test([event], digest_only)).to be_nil
+    end
+
+    it "ignores events for unconfigured sports" do
+      expect(next_test([event(sport: "Men's Golf")])).to be_nil
+    end
+
+    it "skips an event carrying no id, since it cannot be keyed" do
+      expect(next_test([event(id: nil), event(id: "20846")])[:event][:id]).to eq("20846")
+    end
+  end
 end
