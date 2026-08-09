@@ -13,13 +13,20 @@ plugins:
     default: []
     schema:
       name: sport
+      # Without this, core's editor labels every row `${schema.name} ${index+1}`
+      # -- "sport 1", "sport 2" -- so the nav tree gives no way to tell which
+      # sport a row is. `identifier` makes each row show its own sport name.
+      identifier: sport
       properties:
         sport:
           type: string
           required: true
         mode:
+          # Deliberately not `required`. Core's enum field renders `default` but
+          # never writes it to the object, so a required `mode` the admin never
+          # opened is stored as absent and rejects the whole setting on save.
+          # Non-required saves clean, and the planner reads a blank mode as off.
           type: enum
-          required: true
           default: "off"
           choices:
             - "thread"
