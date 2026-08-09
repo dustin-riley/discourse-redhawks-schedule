@@ -1,0 +1,7 @@
+en:
+  js:
+    redhawks_schedule:
+      gameday_test:
+        label: "Post test thread"
+        title: "Post a gameday thread for the next scheduled event, without waiting for its window to open"
+        failed: "The test thread could not be posted. Check the logs."
