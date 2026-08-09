@@ -361,7 +361,9 @@ git commit -m "Extract the stored-event deserializer so two callers share it"
 
 The spec flags this as unverified, and the repo's convention is to check Discourse API facts against source and write down the finding rather than trust memory — `NOTES-api-verification.md` exists because a plugin outlet was assumed wrong once.
 
-This task requires the live container. Use the `discourse-server-ops` skill for the SSH session.
+Read the source on GitHub, not the container. That is what `NOTES-api-verification.md` already does — its header says "by reading `discourse/discourse` source directly rather than grepping the running container," and the container greps from the earlier plan had gone stale against a moved tree. It is also the more accurate reference here: Task 5 rebuilds the container, which pulls whatever `latest` is that day, so current `main` is what will actually be deployed — the currently-running image is older.
+
+Fetch raw files from `https://raw.githubusercontent.com/discourse/discourse/main/<path>`. No SSH, no container.
 
 **Files:**
 - Modify: `NOTES-api-verification.md`
@@ -369,32 +371,27 @@ This task requires the live container. Use the `discourse-server-ops` skill for 
 **Interfaces:**
 - Produces: the confirmed base class and any required `requires_plugin` call, consumed by Task 4's controller.
 
-- [ ] **Step 1: Read the admin controller source in the container**
+- [ ] **Step 1: Read the admin controller source**
 
-```bash
-cd /var/discourse && ./launcher enter app
-cd /var/www/discourse
-sed -n '1,60p' app/controllers/admin/admin_controller.rb
+Fetch `app/controllers/admin/admin_controller.rb`:
+
+```
+https://raw.githubusercontent.com/discourse/discourse/main/app/controllers/admin/admin_controller.rb
 ```
 
-Expected: a class definition showing which filters enforce admin-only access (look for `requires_login`, `ensure_admin`, and whether `check_xhr` is skipped).
+Expected: a class definition showing which filters enforce admin-only access — look for `requires_login`, `ensure_admin` (or `ensure_staff`), and whether `check_xhr` is skipped. Note precisely whether it enforces **admin** or merely **staff**: the design calls for admin-only, and a base class that admits moderators is a finding, not a detail.
 
 - [ ] **Step 2: Check whether plugin controllers must declare their plugin**
 
-```bash
-grep -rn "def requires_plugin" lib/ app/controllers/application_controller.rb
-grep -rln "requires_plugin" plugins/*/app/controllers/ | head -5
-```
+Fetch `app/controllers/application_controller.rb` and search it for `requires_plugin`.
 
-Expected: either a `requires_plugin` class method exists and plugin controllers call it, or no such method exists in this version. Record which.
+Expected: either a `requires_plugin` class method exists — in which case record its exact signature and what it takes (a plugin name string, or a registered plugin instance) — or it does not exist in this version. Record which, and quote the definition if present.
 
-- [ ] **Step 3: Confirm a non-namespaced route reaches an AdminController subclass**
+- [ ] **Step 3: Find how bundled plugins route admin controllers**
 
-```bash
-grep -rn "AdminController" plugins/*/plugin.rb plugins/*/app/controllers/*.rb | head -10
-```
+Use GitHub code search, or fetch a known bundled plugin's `plugin.rb`, to find real examples of a plugin routing to an admin controller. `plugins/chat/plugin.rb` and `plugins/discourse-ai/plugin.rb` are good candidates.
 
-Expected: examples of how other plugins route to admin controllers — specifically whether their routes sit under `/admin/plugins/...` or at the top level. If every example is namespaced, Task 4's route must be namespaced too.
+Expected: whether their admin routes sit under `/admin/plugins/...` or at the top level, and whether their controllers subclass `::Admin::AdminController`. If every example is namespaced, Task 4's route must be namespaced too — say so explicitly in the findings.
 
 - [ ] **Step 4: Record the findings**
 
@@ -403,7 +400,7 @@ Append a new section to `NOTES-api-verification.md`, matching the existing style
 ```markdown
 ## 5. Admin-only controllers — verified <DATE>
 
-Read `app/controllers/admin/admin_controller.rb` in the container.
+Read `app/controllers/admin/admin_controller.rb` on `discourse/discourse` `main`.
 
 <quote the class definition and its filters>
 
@@ -412,13 +409,15 @@ and <does / does not> call `requires_plugin`. The route <is / is not> namespaced
 under `/admin/plugins/`, because <what step 3 showed>.
 ```
 
-Replace every `<...>` with what the commands actually returned. If the findings contradict the design spec's assumption of a top-level `POST /redhawks-gameday-test.json`, say so explicitly here and carry the corrected path into Task 4 — the route in Task 4 is provisional on this task's result.
+Replace every `<...>` with what the fetched source actually showed, and cite the file path and the URL you read. If the findings contradict the design spec's assumption of a top-level `POST /redhawks-gameday-test.json`, say so explicitly here and carry the corrected path into Task 4 — the route in Task 4 is provisional on this task's result.
+
+Record one caveat honestly: this reads `main`, while the deployed container runs an older image until Task 5 rebuilds it. That is the right reference for code being deployed by that rebuild, but if `main` has changed something recently the rebuild will pick it up too. Note the date read.
 
 - [ ] **Step 5: Commit**
 
 ```bash
 git add NOTES-api-verification.md
-git commit -m "Verify the admin controller base class against container source"
+git commit -m "Verify the admin controller base class against Discourse source"
 ```
 
 ---
