@@ -5,11 +5,6 @@ require "time"
 module RedhawksSchedule
   # US Eastern wall-clock helpers.
   #
-  # ActiveSupport's Time.zone is unavailable here — lib/ stays free of Rails so
-  # it can be unit tested on a machine with no Discourse checkout — so this
-  # implements the US federal rule directly. Every digest decision depends on
-  # the Eastern date, and 59% of feed events are date-only Eastern dates, so
-  # doing this in UTC would land digests on the wrong day.
   module Eastern
     STANDARD_OFFSET = -5 * 60 * 60
     DAYLIGHT_OFFSET = -4 * 60 * 60
