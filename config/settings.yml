@@ -4,3 +4,45 @@ plugins:
     client: true
   redhawks_schedule_feed_url:
     default: "https://miamiredhawks.com/calendar.ashx/calendar.rss"
+  redhawks_gameday_enabled:
+    default: false
+  redhawks_gameday_poster_username:
+    default: "swoop_bot"
+  redhawks_gameday_sports:
+    type: objects
+    default: []
+    schema:
+      name: sport
+      properties:
+        sport:
+          type: string
+          required: true
+        mode:
+          type: enum
+          required: true
+          default: "off"
+          choices:
+            - "thread"
+            - "digest"
+            - "off"
+        category:
+          type: categories
+          required: true
+          validations:
+            max: 1
+        days_before:
+          type: integer
+          validations:
+            min: 0
+            max: 14
+        digest_day:
+          type: enum
+          default: "Monday"
+          choices:
+            - "Monday"
+            - "Tuesday"
+            - "Wednesday"
+            - "Thursday"
+            - "Friday"
+            - "Saturday"
+            - "Sunday"

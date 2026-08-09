@@ -389,4 +389,123 @@ RSpec.describe RedhawksSchedule::Parser do
       expect(described_class.parse(xml, now: BEFORE_SEASON).first[:sport]).to eq("Women's Soccer")
     end
   end
+
+  describe "#events" do
+    let(:series) do
+      wrap(<<~XML)
+        <item>
+          <title>10/2 Miami University Men's Golf vs Fall Invitational</title>
+          <ev:startdate>2026-10-02</ev:startdate>
+          <s:opponent>Fall Invitational</s:opponent>
+          <s:gameid>30001</s:gameid>
+        </item>
+        <item>
+          <title>10/3 Miami University Men's Golf vs Fall Invitational</title>
+          <ev:startdate>2026-10-03</ev:startdate>
+          <s:opponent>Fall Invitational</s:opponent>
+          <s:gameid>30002</s:gameid>
+        </item>
+      XML
+    end
+
+    it "keeps each day of a series separate" do
+      events = described_class.new(series, now: BEFORE_SEASON).events
+      expect(events.length).to eq(2)
+      expect(events.map { |e| e[:id] }).to eq(%w[30001 30002])
+    end
+
+    it "still collapses the same series in #parse" do
+      rows = described_class.new(series, now: BEFORE_SEASON).parse
+      expect(rows.length).to eq(1)
+      expect(rows.first[:days]).to eq(2)
+    end
+
+    it "drops past events from #events" do
+      after = Time.utc(2026, 12, 1)
+      expect(described_class.new(series, now: after).events).to be_empty
+    end
+  end
+
+  describe "broadcast fields" do
+    let(:broadcast_item) do
+      wrap(<<~XML)
+        <item>
+          <title>11/10 7:00 PM Miami University Football vs Ohio</title>
+          <description>Miami University Football vs Ohio\\nTV: ESPN2/ESPNU\\nRadio: Miami Radio Network\\nStreaming Audio: https://miamiredhawks.com/listen\\nTickets: https://redhawktix.evenue.net/events/FBSE\\n</description>
+          <ev:startdate>2026-11-11T00:00:00.0000000Z</ev:startdate>
+          <s:opponent>Ohio</s:opponent>
+          <s:gameid>20845</s:gameid>
+          <s:links>
+            <s:livestats>https://miamiredhawks.com/sidearmstats/football/summary</s:livestats>
+          </s:links>
+        </item>
+      XML
+    end
+
+    subject(:broadcast) do
+      described_class.parse(broadcast_item, now: BEFORE_SEASON).first[:broadcast]
+    end
+
+    it "reads the TV network" do
+      expect(broadcast[:tv]).to eq("ESPN2/ESPNU")
+    end
+
+    it "reads the radio network" do
+      expect(broadcast[:radio]).to eq("Miami Radio Network")
+    end
+
+    it "keeps the whole URL when the value contains a colon" do
+      expect(broadcast[:audio]).to eq("https://miamiredhawks.com/listen")
+    end
+
+    it "reads tickets" do
+      expect(broadcast[:tickets]).to eq("https://redhawktix.evenue.net/events/FBSE")
+    end
+
+    it "reads livestats from s:links" do
+      expect(broadcast[:livestats]).to eq("https://miamiredhawks.com/sidearmstats/football/summary")
+    end
+
+    it "drops the repeated title line rather than treating it as a label" do
+      expect(broadcast.length).to eq(5)
+    end
+
+    it "is an empty hash when the feed carries nothing" do
+      expect(described_class.parse(timed_item, now: BEFORE_SEASON).first[:broadcast]).to eq({})
+    end
+
+    it "derives the framable player URL from a showcase link" do
+      item = wrap(<<~XML)
+        <item>
+          <title>8/20 7:00 PM Miami University Women's Soccer vs Morehead State</title>
+          <description>Miami University Women's Soccer vs Morehead State\\nStreaming Video: https://admin.miamiredhawks.com/showcase?Live=630\\n</description>
+          <ev:startdate>2026-08-20T23:00:00.0000000Z</ev:startdate>
+          <s:gameid>20927</s:gameid>
+        </item>
+      XML
+
+      broadcast = described_class.parse(item, now: BEFORE_SEASON).first[:broadcast]
+
+      expect(broadcast[:video_embed]).to eq(
+        "https://miamiredhawks.com/showcase/embed.aspx?Live=630&type=Live",
+      )
+      expect(broadcast[:video]).to eq("https://admin.miamiredhawks.com/showcase?Live=630")
+    end
+
+    it "omits video_embed when the streaming video URL is an unfamiliar shape" do
+      item = wrap(<<~XML)
+        <item>
+          <title>8/20 7:00 PM Miami University Women's Soccer vs Morehead State</title>
+          <description>Miami University Women's Soccer vs Morehead State\\nStreaming Video: https://youtube.com/watch?v=abc123\\n</description>
+          <ev:startdate>2026-08-20T23:00:00.0000000Z</ev:startdate>
+          <s:gameid>20927</s:gameid>
+        </item>
+      XML
+
+      broadcast = described_class.parse(item, now: BEFORE_SEASON).first[:broadcast]
+
+      expect(broadcast.key?(:video_embed)).to be(false)
+      expect(broadcast[:video]).to eq("https://youtube.com/watch?v=abc123")
+    end
+  end
 end

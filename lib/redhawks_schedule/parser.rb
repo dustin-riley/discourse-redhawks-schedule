@@ -29,6 +29,23 @@ module RedhawksSchedule
     DATE_ONLY_GRACE = 30 * 60 * 60
     COLLAPSE_WINDOW = 48 * 60 * 60
 
+    # The description repeats the title, then appends labelled lines delimited
+    # by a LITERAL backslash-n — two characters, not a newline.
+    DESCRIPTION_DELIMITER = "\\n"
+    BROADCAST_LABELS = {
+      "streaming video" => :video,
+      "tv" => :tv,
+      "radio" => :radio,
+      "streaming audio" => :audio,
+      "tickets" => :tickets,
+    }.freeze
+
+    # Only ONE event in the whole feed has ever carried a Streaming Video link,
+    # so this pattern generalises from a single sample. A non-match must fall
+    # back to a plain link — a wrong iframe is worse than a working link.
+    SHOWCASE_LIVE_ID = /\/showcase\?Live=(\d+)/i
+    EMBED_TEMPLATE = "https://miamiredhawks.com/showcase/embed.aspx?Live=%s&type=Live"
+
     def self.parse(xml, now: Time.now.utc)
       new(xml, now: now).parse
     end
@@ -38,12 +55,17 @@ module RedhawksSchedule
       @now = now.utc
     end
 
-    def parse
+    # Uncollapsed: one row per calendar item. Gameday threads want each day of
+    # a series; the sidebar wants them merged, which is what #parse does.
+    def events
       # `.map.compact` rather than `filter_map`: the dev Mac runs system Ruby
-      # 2.6, where filter_map does not exist. Discourse's container runs 3.x,
-      # so this would otherwise fail only locally.
-      events = document.xpath("//channel/item").map { |item| build_event(item) }.compact
-      collapse(upcoming(events).sort_by { |e| [e[:start_utc], e[:sport]] })
+      # 2.6, where filter_map does not exist.
+      rows = document.xpath("//channel/item").map { |item| build_event(item) }.compact
+      upcoming(rows).sort_by { |e| [e[:start_utc], e[:sport]] }
+    end
+
+    def parse
+      collapse(events)
     end
 
     private
@@ -72,6 +94,7 @@ module RedhawksSchedule
         opponent_logo: presence(text(item, "s:opponentlogo")),
         promo: presence(text(item, "s:gamepromoname")),
         url: presence(text(item, "link")),
+        broadcast: broadcast(item),
       }
     end
 
@@ -126,6 +149,33 @@ module RedhawksSchedule
       Time.iso8601(value).utc
     rescue ArgumentError
       nil
+    end
+
+    def broadcast(item)
+      found = {}
+
+      # The first segment is the title repeated, never a labelled field.
+      text(item, "description").split(DESCRIPTION_DELIMITER)[1..-1].to_a.each do |line|
+        label, value = line.split(":", 2)
+        next if value.nil?
+
+        key = BROADCAST_LABELS[label.strip.downcase]
+        next if key.nil?
+
+        value = value.strip
+        found[key] = value unless value.empty?
+      end
+
+      livestats = presence(text(item, "s:links/s:livestats"))
+      found[:livestats] = livestats if livestats
+
+      video = found[:video]
+      if video
+        match = SHOWCASE_LIVE_ID.match(video)
+        found[:video_embed] = format(EMBED_TEMPLATE, match[1]) if match
+      end
+
+      found
     end
 
     def text(node, path)
