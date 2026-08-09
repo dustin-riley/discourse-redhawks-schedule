@@ -15,7 +15,7 @@ module ::RedhawksSchedule
   # in every game thread.
   class GamedayBot
     DISPLAY_NAME = "Swoop Bot"
-    EMAIL = "swoop-bot@miamihawktalk.fans"
+    EMAIL = "rileymdustin+bot@gmail.com"
 
     def self.resolve
       stored_id = PluginStore.get(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule::BOT_ID_KEY)
