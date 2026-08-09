@@ -24,6 +24,7 @@ require_relative "lib/redhawks_schedule/parser"
 require_relative "lib/redhawks_schedule/eastern"
 require_relative "lib/redhawks_schedule/gameday_composer"
 require_relative "lib/redhawks_schedule/gameday_planner"
+require_relative "lib/redhawks_schedule/stored_events"
 
 after_initialize do
   require_relative "app/services/redhawks_schedule/gameday_bot"
