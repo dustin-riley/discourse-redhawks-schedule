@@ -9,6 +9,29 @@ module RedhawksSchedule
   # copy change cannot break scheduling.
   module GamedayComposer
     IFRAME = '<iframe src="%s" width="100%%" height="420" frameborder="0" allowfullscreen></iframe>'
+    SPORT_EMOJI = {
+      "Football" => "🏈",
+      "Hockey" => "🏒",
+      "Ice Hockey" => "🏒",
+      "Men's Basketball" => "🏀",
+      "Women's Basketball" => "🏀",
+      "Men's Soccer" => "⚽",
+      "Women's Soccer" => "⚽",
+      "Volleyball" => "🏐",
+      "Women's Volleyball" => "🏐",
+      "Baseball" => "⚾",
+      "Softball" => "🥎",
+      "Field Hockey" => "🏑",
+      "Men's Tennis" => "🎾",
+      "Women's Tennis" => "🎾",
+      "Men's Golf" => "⛳",
+      "Women's Golf" => "⛳",
+      "Men's Cross Country" => "🏃",
+      "Women's Cross Country" => "🏃",
+      "Track & Field, Cross Country" => "🏃",
+      "Track & Field" => "🏃",
+    }.freeze
+    DEFAULT_EMOJI = "🗓️"
 
     module_function
 
@@ -17,23 +40,49 @@ module RedhawksSchedule
     end
 
     def thread_body(event)
-      lines = ["**#{matchup(event)}**", when_line(event)]
-      lines << event[:location] if event[:location]
-
       broadcast = event[:broadcast] || {}
-      stream = stream_block(broadcast)
-      lines += ["", stream] if stream
 
-      details = detail_lines(broadcast)
-      lines += [""] + details unless details.empty?
+      segments = [
+        headline(event),
+        when_where(event),
+        watch_line(broadcast),
+        stream_block(broadcast),
+        thread_links(event, broadcast),
+      ]
 
-      links = link_line(broadcast)
-      lines += ["", links] if links
+      segments.compact.reject(&:empty?).join("\n\n")
+    end
 
-      lines << ""
-      lines << "[Game page](#{event[:url]})" if event[:url]
+    def headline(event)
+      line = "#{sport_emoji(event[:sport])} **#{matchup(event)}**"
+      line += " · #{event[:promo]}" if event[:promo]
+      line
+    end
 
-      lines.join("\n").strip
+    def when_where(event)
+      lines = ["📅 #{when_line(event)}"]
+      lines << "📍 #{event[:location]}" if event[:location]
+      lines.join("\n")
+    end
+
+    def watch_line(broadcast)
+      parts = []
+      parts << "📺 #{broadcast[:tv]}" if broadcast[:tv]
+      parts << "📻 #{broadcast[:radio]}" if broadcast[:radio]
+      return nil if parts.empty?
+
+      parts.join(" · ")
+    end
+
+    def thread_links(event, broadcast)
+      links = []
+      links << "🎟️ [Tickets](#{broadcast[:tickets]})" if broadcast[:tickets]
+      links << "📊 [Live stats](#{broadcast[:livestats]})" if broadcast[:livestats]
+      links << "🔊 [Listen live](#{broadcast[:audio]})" if broadcast[:audio]
+      links << "🔗 [Game page](#{event[:url]})" if event[:url]
+      return nil if links.empty?
+
+      links.join(" · ")
     end
 
     def digest_title(sport, now)
@@ -41,14 +90,13 @@ module RedhawksSchedule
     end
 
     def digest_body(sport, events)
-      lines = ["#{sport} games this week:", ""]
+      lines = ["#{sport_emoji(sport)} **#{sport} — this week**", ""]
 
       events.each do |event|
-        line = "- #{when_line(event)} — #{side(event)} #{event[:opponent]}"
-        line += " (#{event[:location]})" if event[:location]
+        line = "- 📅 #{digest_when(event)} — #{side(event)} #{event[:opponent]}"
 
         stats = (event[:broadcast] || {})[:livestats]
-        line += " · [Live stats](#{stats})" if stats
+        line += " · 📊 [Live stats](#{stats})" if stats
 
         lines << line
       end
@@ -56,8 +104,16 @@ module RedhawksSchedule
       lines.join("\n")
     end
 
+    def digest_when(event)
+      "#{Eastern.local(event[:start_utc]).strftime('%a, %b %-d')}#{time_suffix(event)}"
+    end
+
     def matchup(event)
       "#{event[:sport]} #{side(event)} #{event[:opponent]}"
+    end
+
+    def sport_emoji(sport)
+      SPORT_EMOJI.fetch(sport, DEFAULT_EMOJI)
     end
 
     def side(event)
@@ -65,36 +121,20 @@ module RedhawksSchedule
     end
 
     def when_line(event)
-      local = Eastern.local(event[:start_utc])
-      date = local.strftime("%A, %B %-d")
-      return "#{date} · Time TBA" unless event[:time_known]
-
-      "#{date} · #{local.strftime('%-I:%M %p')} ET"
+      "#{Eastern.local(event[:start_utc]).strftime('%A, %B %-d')}#{time_suffix(event)}"
     end
 
-    # Three states: framable player, plain link, nothing.
+    def time_suffix(event)
+      return " · Time TBA" unless event[:time_known]
+
+      " · #{Eastern.local(event[:start_utc]).strftime('%-I:%M %p')} ET"
+    end
+
     def stream_block(broadcast)
       return format(IFRAME, broadcast[:video_embed]) if broadcast[:video_embed]
-      return "[Watch the stream](#{broadcast[:video]})" if broadcast[:video]
+      return "▶️ [Watch the stream](#{broadcast[:video]})" if broadcast[:video]
 
       nil
-    end
-
-    def detail_lines(broadcast)
-      lines = []
-      lines << "**TV:** #{broadcast[:tv]}" if broadcast[:tv]
-      lines << "**Radio:** #{broadcast[:radio]}" if broadcast[:radio]
-      lines
-    end
-
-    def link_line(broadcast)
-      links = []
-      links << "[Listen live](#{broadcast[:audio]})" if broadcast[:audio]
-      links << "[Live stats](#{broadcast[:livestats]})" if broadcast[:livestats]
-      links << "[Tickets](#{broadcast[:tickets]})" if broadcast[:tickets]
-      return nil if links.empty?
-
-      links.join(" · ")
     end
   end
 end

@@ -30,17 +30,39 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
   end
 
   describe ".thread_body" do
-    it "leads with the matchup, Eastern kickoff and location" do
+    it "leads with the sport emoji, matchup, and promo when present" do
+      body = described_class.thread_body(event(promo: "Homecoming"))
+      expect(body.lines.first.strip).to eq("🏈 **Football vs Ohio** · Homecoming")
+    end
+
+    it "omits the promo separator when there is no promo" do
       body = described_class.thread_body(event)
-      expect(body).to include("**Football vs Ohio**")
-      expect(body).to include("Tuesday, November 10 · 7:00 PM ET")
-      expect(body).to include("Oxford, Ohio")
+      expect(body.lines.first.strip).to eq("🏈 **Football vs Ohio**")
+    end
+
+    it "shows the Eastern kickoff and location with markers" do
+      body = described_class.thread_body(event)
+      expect(body).to include("📅 Tuesday, November 10 · 7:00 PM ET")
+      expect(body).to include("📍 Oxford, Ohio")
     end
 
     it "says Time TBA when the feed announced no time" do
       body = described_class.thread_body(event(time_known: false))
-      expect(body).to include("Time TBA")
+      expect(body).to include("📅 Tuesday, November 10 · Time TBA")
       expect(body).to_not include("PM ET")
+    end
+
+    it "combines TV and radio on one watch line" do
+      body = described_class.thread_body(
+        event(broadcast: { tv: "ESPN2/ESPNU", radio: "Miami Radio Network" }),
+      )
+      expect(body).to include("📺 ESPN2/ESPNU · 📻 Miami Radio Network")
+    end
+
+    it "shows TV alone when there is no radio" do
+      body = described_class.thread_body(event(broadcast: { tv: "ESPN2/ESPNU" }))
+      expect(body).to include("📺 ESPN2/ESPNU")
+      expect(body).to_not include("📻")
     end
 
     it "embeds the player when the stream is framable" do
@@ -54,38 +76,46 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
 
     it "links the stream plainly when it is not framable" do
       body = described_class.thread_body(event(broadcast: { video: "https://youtube.com/watch?v=abc" }))
-      expect(body).to include("[Watch the stream](https://youtube.com/watch?v=abc)")
+      expect(body).to include("▶️ [Watch the stream](https://youtube.com/watch?v=abc)")
       expect(body).to_not include("<iframe")
     end
 
-    it "shows a TV badge with no embed for a network broadcast" do
-      body = described_class.thread_body(event(broadcast: { tv: "ESPN2/ESPNU" }))
-      expect(body).to include("**TV:** ESPN2/ESPNU")
-      expect(body).to_not include("<iframe")
-    end
-
-    it "lists radio, audio, live stats and tickets when present" do
+    it "collects tickets, live stats, listen-live, and the game page onto one links line" do
       body = described_class.thread_body(
         event(
           broadcast: {
-            radio: "Miami Radio Network",
             audio: "https://miamiredhawks.com/listen",
             livestats: "https://miamiredhawks.com/sidearmstats/football/summary",
             tickets: "https://redhawktix.evenue.net/events/FBSE",
           },
         ),
       )
-      expect(body).to include("**Radio:** Miami Radio Network")
-      expect(body).to include("[Listen live](https://miamiredhawks.com/listen)")
-      expect(body).to include("[Live stats](https://miamiredhawks.com/sidearmstats/football/summary)")
-      expect(body).to include("[Tickets](https://redhawktix.evenue.net/events/FBSE)")
+      expect(body).to include(
+        "🎟️ [Tickets](https://redhawktix.evenue.net/events/FBSE) · " \
+        "📊 [Live stats](https://miamiredhawks.com/sidearmstats/football/summary) · " \
+        "🔊 [Listen live](https://miamiredhawks.com/listen) · " \
+        "🔗 [Game page](https://miamiredhawks.com/calendar.aspx?game_id=20845)",
+      )
     end
 
-    it "omits the whole broadcast section when the feed carries nothing" do
+    it "degrades to headline, when, where, and game page when the feed is bare" do
       body = described_class.thread_body(event)
-      expect(body).to_not include("**TV:**")
+      expect(body).to_not include("📺")
+      expect(body).to_not include("📻")
       expect(body).to_not include("<iframe")
-      expect(body).to_not include("[Tickets]")
+      expect(body).to_not include("🎟️")
+      expect(body).to include("🔗 [Game page](https://miamiredhawks.com/calendar.aspx?game_id=20845)")
+    end
+
+    it "renders a sparse event with no leading, trailing, or double blank lines" do
+      expect(described_class.thread_body(event)).to eq(<<~BODY.strip)
+        🏈 **Football vs Ohio**
+
+        📅 Tuesday, November 10 · 7:00 PM ET
+        📍 Oxford, Ohio
+
+        🔗 [Game page](https://miamiredhawks.com/calendar.aspx?game_id=20845)
+      BODY
     end
   end
 
@@ -97,7 +127,12 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
   end
 
   describe ".digest_body" do
-    it "lists each game on its own line" do
+    it "heads the digest with the sport emoji and name" do
+      body = described_class.digest_body("Field Hockey", [event(sport: "Field Hockey")])
+      expect(body.lines.first.strip).to eq("🏑 **Field Hockey — this week**")
+    end
+
+    it "lists each game on its own line with a short date" do
       body = described_class.digest_body(
         "Field Hockey",
         [
@@ -112,16 +147,30 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
         ],
       )
 
-      expect(body).to include("Friday, September 4 · 1:00 PM ET — vs Michigan State")
-      expect(body).to include("Sunday, September 6 · Time TBA — at Ohio")
+      expect(body).to include("- 📅 Fri, Sep 4 · 1:00 PM ET — vs Michigan State")
+      expect(body).to include("- 📅 Sun, Sep 6 · Time TBA — at Ohio")
     end
 
-    it "carries a live stats link into the line when present" do
+    it "carries a live stats link into the row when present" do
       body = described_class.digest_body(
         "Field Hockey",
         [event(sport: "Field Hockey", broadcast: { livestats: "https://example.com/stats" })],
       )
-      expect(body).to include("[Live stats](https://example.com/stats)")
+      expect(body).to include("· 📊 [Live stats](https://example.com/stats)")
+    end
+  end
+
+  describe ".sport_emoji" do
+    it "maps known feed sports to their emoji" do
+      expect(described_class.sport_emoji("Football")).to eq("🏈")
+      expect(described_class.sport_emoji("Hockey")).to eq("🏒")
+      expect(described_class.sport_emoji("Women's Basketball")).to eq("🏀")
+      expect(described_class.sport_emoji("Field Hockey")).to eq("🏑")
+      expect(described_class.sport_emoji("Track & Field, Cross Country")).to eq("🏃")
+    end
+
+    it "falls back to a neutral marker for an unmapped sport" do
+      expect(described_class.sport_emoji("Kayaking")).to eq("🗓️")
     end
   end
 end
