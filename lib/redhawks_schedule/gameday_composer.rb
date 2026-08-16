@@ -9,6 +9,29 @@ module RedhawksSchedule
   # copy change cannot break scheduling.
   module GamedayComposer
     IFRAME = '<iframe src="%s" width="100%%" height="420" frameborder="0" allowfullscreen></iframe>'
+    SPORT_EMOJI = {
+      "Football" => "🏈",
+      "Hockey" => "🏒",
+      "Ice Hockey" => "🏒",
+      "Men's Basketball" => "🏀",
+      "Women's Basketball" => "🏀",
+      "Men's Soccer" => "⚽",
+      "Women's Soccer" => "⚽",
+      "Volleyball" => "🏐",
+      "Women's Volleyball" => "🏐",
+      "Baseball" => "⚾",
+      "Softball" => "🥎",
+      "Field Hockey" => "🏑",
+      "Men's Tennis" => "🎾",
+      "Women's Tennis" => "🎾",
+      "Men's Golf" => "⛳",
+      "Women's Golf" => "⛳",
+      "Men's Cross Country" => "🏃",
+      "Women's Cross Country" => "🏃",
+      "Track & Field, Cross Country" => "🏃",
+      "Track & Field" => "🏃",
+    }.freeze
+    DEFAULT_EMOJI = "🗓️"
 
     module_function
 
@@ -58,6 +81,10 @@ module RedhawksSchedule
 
     def matchup(event)
       "#{event[:sport]} #{side(event)} #{event[:opponent]}"
+    end
+
+    def sport_emoji(sport)
+      SPORT_EMOJI.fetch(sport, DEFAULT_EMOJI)
     end
 
     def side(event)

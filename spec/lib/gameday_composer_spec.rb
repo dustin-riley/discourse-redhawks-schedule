@@ -124,4 +124,18 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
       expect(body).to include("[Live stats](https://example.com/stats)")
     end
   end
+
+  describe ".sport_emoji" do
+    it "maps known feed sports to their emoji" do
+      expect(described_class.sport_emoji("Football")).to eq("🏈")
+      expect(described_class.sport_emoji("Hockey")).to eq("🏒")
+      expect(described_class.sport_emoji("Women's Basketball")).to eq("🏀")
+      expect(described_class.sport_emoji("Field Hockey")).to eq("🏑")
+      expect(described_class.sport_emoji("Track & Field, Cross Country")).to eq("🏃")
+    end
+
+    it "falls back to a neutral marker for an unmapped sport" do
+      expect(described_class.sport_emoji("Kayaking")).to eq("🗓️")
+    end
+  end
 end
