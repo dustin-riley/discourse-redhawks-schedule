@@ -15,7 +15,13 @@ module ::RedhawksSchedule
   # in every game thread.
   class GamedayBot
     DISPLAY_NAME = "Swoop Bot"
-    EMAIL = "rileymdustin+bot@gmail.com"
+    # Must not normalize onto a real account's address. `normalize_emails` is
+    # on, so Gmail plus-addressing collapses: rileymdustin+bot@gmail.com
+    # normalizes to rileymdustin@gmail.com, which the site owner already holds,
+    # and User.create! fails with "Email has already been taken". The bot never
+    # receives mail -- build_user sets both email levels to never -- so this
+    # only has to be unique, and an address on our own domain is.
+    EMAIL = "swoop-bot@miamihawktalk.fans"
 
     def self.resolve
       stored_id = PluginStore.get(::RedhawksSchedule::PLUGIN_NAME, ::RedhawksSchedule::BOT_ID_KEY)
