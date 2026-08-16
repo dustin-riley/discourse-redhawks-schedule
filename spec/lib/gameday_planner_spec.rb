@@ -70,6 +70,14 @@ RSpec.describe RedhawksSchedule::GamedayPlanner do
       expect(plan([event], off)[:actions]).to be_empty
     end
 
+    it "treats a missing mode as off" do
+      # `mode` is not a required property, because core's schema editor renders
+      # the "off" default without ever storing it. A row saved without one has
+      # to stay silent rather than fall through to another branch.
+      no_mode = [{ sport: "Football", category: [7], days_before: 5 }]
+      expect(plan([event], no_mode)[:actions]).to be_empty
+    end
+
     it "accepts string keys, as the site setting supplies them" do
       string_config = [
         { "sport" => "Football", "mode" => "thread", "category" => [7], "days_before" => 5 },
