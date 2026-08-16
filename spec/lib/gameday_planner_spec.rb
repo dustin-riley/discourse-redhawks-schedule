@@ -177,6 +177,48 @@ RSpec.describe RedhawksSchedule::GamedayPlanner do
     end
   end
 
+  # Discourse hands back a site setting of type `objects` as a raw JSON string.
+  # Every caller in production goes through this path, and nothing did until a
+  # button in the admin UI made someone press it.
+  describe "config arriving as a JSON string" do
+    let(:json) do
+      '[{"sport":"Football","mode":"thread","category":[7],"days_before":5}]'
+    end
+
+    it "plans from a JSON string exactly as from an array" do
+      expect(plan([event], json)[:actions].length).to eq(1)
+      expect(plan([event], json)[:actions].first[:category_id]).to eq(7)
+    end
+
+    it "maps thread sports from a JSON string" do
+      expect(described_class.thread_sports(json)).to eq({ "Football" => 7 })
+    end
+
+    it "selects a test action from a JSON string" do
+      action = described_class.next_test_action(events: [event], config: json, ledger: {})
+      expect(action[:event][:id]).to eq("20845")
+    end
+
+    it "reads an empty JSON array as nothing configured" do
+      expect(described_class.thread_sports("[]")).to eq({})
+      expect(plan([event], "[]")[:actions]).to be_empty
+    end
+
+    it "reads unparseable JSON as nothing configured rather than raising" do
+      expect(described_class.thread_sports("not json")).to eq({})
+      expect(plan([event], "not json")[:actions]).to be_empty
+    end
+
+    it "reads JSON that is not an array as nothing configured" do
+      expect(described_class.thread_sports('{"sport":"Football"}')).to eq({})
+    end
+
+    it "reads nil as nothing configured" do
+      expect(described_class.thread_sports(nil)).to eq({})
+      expect(plan([event], nil)[:actions]).to be_empty
+    end
+  end
+
   describe ".thread_sports" do
     it "maps thread-mode sports to their category" do
       config = [{ sport: "Football", mode: "thread", category: [7], days_before: 5 }]
