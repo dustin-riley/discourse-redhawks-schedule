@@ -90,19 +90,22 @@ module RedhawksSchedule
     end
 
     def digest_body(sport, events)
-      lines = ["#{sport} games this week:", ""]
+      lines = ["#{sport_emoji(sport)} **#{sport} — this week**", ""]
 
       events.each do |event|
-        line = "- #{when_line(event)} — #{side(event)} #{event[:opponent]}"
-        line += " (#{event[:location]})" if event[:location]
+        line = "- 📅 #{digest_when(event)} — #{side(event)} #{event[:opponent]}"
 
         stats = (event[:broadcast] || {})[:livestats]
-        line += " · [Live stats](#{stats})" if stats
+        line += " · 📊 [Live stats](#{stats})" if stats
 
         lines << line
       end
 
       lines.join("\n")
+    end
+
+    def digest_when(event)
+      "#{Eastern.local(event[:start_utc]).strftime('%a, %b %-d')}#{time_suffix(event)}"
     end
 
     def matchup(event)

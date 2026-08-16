@@ -116,7 +116,12 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
   end
 
   describe ".digest_body" do
-    it "lists each game on its own line" do
+    it "heads the digest with the sport emoji and name" do
+      body = described_class.digest_body("Field Hockey", [event(sport: "Field Hockey")])
+      expect(body.lines.first.strip).to eq("🏑 **Field Hockey — this week**")
+    end
+
+    it "lists each game on its own line with a short date" do
       body = described_class.digest_body(
         "Field Hockey",
         [
@@ -131,16 +136,16 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
         ],
       )
 
-      expect(body).to include("Friday, September 4 · 1:00 PM ET — vs Michigan State")
-      expect(body).to include("Sunday, September 6 · Time TBA — at Ohio")
+      expect(body).to include("- 📅 Fri, Sep 4 · 1:00 PM ET — vs Michigan State")
+      expect(body).to include("- 📅 Sun, Sep 6 · Time TBA — at Ohio")
     end
 
-    it "carries a live stats link into the line when present" do
+    it "carries a live stats link into the row when present" do
       body = described_class.digest_body(
         "Field Hockey",
         [event(sport: "Field Hockey", broadcast: { livestats: "https://example.com/stats" })],
       )
-      expect(body).to include("[Live stats](https://example.com/stats)")
+      expect(body).to include("· 📊 [Live stats](https://example.com/stats)")
     end
   end
 
