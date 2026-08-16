@@ -106,6 +106,17 @@ RSpec.describe RedhawksSchedule::GamedayComposer do
       expect(body).to_not include("🎟️")
       expect(body).to include("🔗 [Game page](https://miamiredhawks.com/calendar.aspx?game_id=20845)")
     end
+
+    it "renders a sparse event with no leading, trailing, or double blank lines" do
+      expect(described_class.thread_body(event)).to eq(<<~BODY.strip)
+        🏈 **Football vs Ohio**
+
+        📅 Tuesday, November 10 · 7:00 PM ET
+        📍 Oxford, Ohio
+
+        🔗 [Game page](https://miamiredhawks.com/calendar.aspx?game_id=20845)
+      BODY
+    end
   end
 
   describe ".digest_title" do

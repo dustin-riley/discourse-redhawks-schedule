@@ -136,6 +136,5 @@ module RedhawksSchedule
 
       nil
     end
-
   end
 end
