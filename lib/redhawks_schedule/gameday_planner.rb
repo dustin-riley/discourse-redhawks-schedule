@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "json"
 require "time"
 require_relative "eastern"
 
@@ -15,7 +16,7 @@ module RedhawksSchedule
     module_function
 
     def plan(events:, config:, ledger:, now:, limit: DEFAULT_LIMIT)
-      rows = config.map { |row| normalize(row) }
+      rows = config_rows(config)
       seen_sports = {}
       events.each { |e| seen_sports[e[:sport]] = true }
 
@@ -96,12 +97,11 @@ module RedhawksSchedule
     # Extracted so the controller can distinguish "nothing configured" from
     # "nothing left to post" without re-implementing `normalize`.
     def thread_sports(config)
-      config.each_with_object({}) do |row, map|
-        normalized = normalize(row)
-        next unless normalized[:mode] == "thread"
-        next if normalized[:category_id].nil?
+      config_rows(config).each_with_object({}) do |row, map|
+        next unless row[:mode] == "thread"
+        next if row[:category_id].nil?
 
-        map[normalized[:sport]] = normalized[:category_id]
+        map[row[:sport]] = row[:category_id]
       end
     end
 
@@ -129,6 +129,33 @@ module RedhawksSchedule
         category_id: categories[event[:sport]],
         event: event,
       }
+    end
+
+    # A site setting of type `objects` comes back as a raw JSON STRING, not an
+    # array: TypeSupervisor JSON-generates it on write and has no matching case
+    # on read, so the string is handed straight back. Both callers therefore
+    # have to parse, and doing it here means neither of the two untestable
+    # entry points -- the job and the controller -- carries the knowledge.
+    #
+    # An array is still accepted, because that is what a spec finds easier to
+    # write, and unparseable JSON reads as "nothing configured": the planner has
+    # nowhere to report to, and refusing to post is the safe reading of a
+    # setting nobody can make sense of.
+    def config_rows(config)
+      rows =
+        if config.is_a?(String)
+          begin
+            JSON.parse(config)
+          rescue JSON::ParserError
+            []
+          end
+        else
+          config || []
+        end
+
+      return [] unless rows.is_a?(Array)
+
+      rows.map { |row| normalize(row) }
     end
 
     # Site settings hand back string keys; specs are easier to read with
